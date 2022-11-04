@@ -10,9 +10,18 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
 
     private RenderLine linecontroller;
+    private int HP = 5;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.name == "Bullet(Clone)")
+        {
+            HP = HP - 1;
+            if(HP <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
 
 
         if (collision.gameObject.name == "SuperBullet(Clone)")
