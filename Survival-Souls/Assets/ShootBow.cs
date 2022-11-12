@@ -16,6 +16,8 @@ public class ShootBow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.DrawRay(FirePoint.position, FirePoint.right*3, Color.red);
+
         if (Input.GetButton("Fire1"))
         {
             chargeTime += Time.deltaTime;
@@ -49,8 +51,12 @@ public class ShootBow : MonoBehaviour
         void shot()
         {
             GameObject bullet = Instantiate(Bullet, FirePoint.position, FirePoint.rotation);
+            /*
+                         bullet.transform.position = FirePoint.position;
+            bullet.transform.forward = FirePoint.right;
+             */
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(FirePoint.up * bulletSpeed, ForceMode2D.Impulse);
+            rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
 
         }
 
@@ -58,7 +64,7 @@ public class ShootBow : MonoBehaviour
         {
             GameObject bullet = Instantiate(Bullet, FirePoint.position, FirePoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(FirePoint.up * bulletSpeed * 2, ForceMode2D.Impulse);
+            rb.AddForce(FirePoint.right * bulletSpeed * 2, ForceMode2D.Impulse);
             bullet.transform.localScale = bullet.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
         }
 
@@ -66,7 +72,7 @@ public class ShootBow : MonoBehaviour
         {
             GameObject superbullet = Instantiate(SuperBullet, FirePoint.position, FirePoint.rotation);
             Rigidbody2D rb = superbullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(FirePoint.up * bulletSpeed, ForceMode2D.Impulse);
+            rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
         }
 
 

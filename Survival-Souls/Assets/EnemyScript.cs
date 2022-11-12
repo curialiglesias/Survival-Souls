@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -9,12 +8,15 @@ public class EnemyScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
+
     private RenderLine linecontroller;
     private int HP = 5;
+    
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "Bullet(Clone)")
+        if(collision.gameObject.name == "Arrow(Clone)")
         {
             HP = HP - 1;
             if(HP <= 0)

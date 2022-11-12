@@ -20,8 +20,8 @@ public class Spawner : MonoBehaviour
 
         GameObject enemy = GameObject.Instantiate(enemyPrefab);
         enemy.transform.position = transform.position;
-        enemy.name = "Enemy";
-        enemy.GetComponent<Enemy>().player = player;
+        //enemy.name = "Enemy";
+        //enemy.GetComponentInChildren<Enemy>().player = player;
 
     }
 }

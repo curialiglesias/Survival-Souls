@@ -12,23 +12,35 @@ public class PlayerLife : MonoBehaviour
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        if (collision.gameObject.name == "slime funcional(Clone)")
+        {
+            HP = HP - 10;
+        }
     }
 
     void Start()
     {
         InvokeRepeating("Subtract", 1f, 1f);
-        if(HP < 200)
-        {
-            gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius --;
-
-        }
     }
 
     void Subtract()
     {
-        HP -= 100;
+        HP -= 1;
     }
 
+    void Update()
+    {
+        if (HP < 300 && HP > 100)
+        {
+            gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius = 2;
+
+        }
+
+        if(HP < 100)
+        {
+            gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius = 1;
+        }
+
+    }
 
 }
