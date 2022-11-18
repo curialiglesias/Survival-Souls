@@ -6,12 +6,14 @@ public class WeaponAim : MonoBehaviour
 {
 
     private Transform aimTransform;
+    private SpriteRenderer playerSprite;
 
     // Start is called before the first frame update
     void Start()
     {
         aimTransform = transform.Find("Aim");
-        
+        playerSprite = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -35,9 +37,9 @@ public class WeaponAim : MonoBehaviour
 
         // Put the weapon behind the character when facing forward
         if (angle > 0 && angle < 180) {
-            SetLayerAllChildren(aimTransform, 0);
+            SetLayerAllChildren(aimTransform, playerSprite.sortingOrder - 1);
         } else {
-            SetLayerAllChildren(aimTransform, 1);
+            SetLayerAllChildren(aimTransform, playerSprite.sortingOrder + 1);
         }
 
         static void SetLayerAllChildren(Transform root, int layer)
