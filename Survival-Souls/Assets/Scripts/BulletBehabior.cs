@@ -10,8 +10,18 @@ public class BulletBehabior : MonoBehaviour
         Destroy(gameObject, 5);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
+        if (collider.CompareTag("Enemy")){
+
+            collider.gameObject.GetComponent<Enemy>().HP--;
+
+            if (collider.gameObject.GetComponent<Enemy>().HP <= 0)
+            {
+                Destroy(collider.gameObject);
+            }
+        }
+
         Destroy(gameObject);
     }
 
