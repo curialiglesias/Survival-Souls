@@ -10,13 +10,6 @@ public class PlayerLife : MonoBehaviour
     private int HP = 500;
     
     // Start is called before the first frame update
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "slime funcional(Clone)")
-        {
-            HP = HP - 10;
-        }
-    }
 
     void Start()
     {

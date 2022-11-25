@@ -14,9 +14,11 @@ public class BulletBehabior : MonoBehaviour
     {
         if (collider.CompareTag("Enemy")){
 
-            collider.gameObject.GetComponent<Enemy>().HP--;
+            var enemy = collider.gameObject.GetComponent<Enemy>();
 
-            if (collider.gameObject.GetComponent<Enemy>().HP <= 0)
+            enemy.HP--;
+
+            if (enemy.HP <= 0)
             {
                 Destroy(collider.gameObject);
             }
