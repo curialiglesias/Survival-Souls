@@ -6,15 +6,28 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     NavMeshAgent agent;
-
-
     private GameObject player;
+
     //private RenderLine linecontroller;
     public int HP = 5;
+
+    private Animator enemyAnimator;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        enemyAnimator = GetComponent<Animator>();
+        player = GameObject.Find("Player");
+    }
+
+    void Update()
+    {
+        Vector2 enemyRotation = (player.transform.position - transform.position).normalized;
+        //Debug.Log(enemyRotation);
+
+        // Set Animation parameters
+        enemyAnimator.SetFloat("Horizontal", enemyRotation.x);
+        enemyAnimator.SetFloat("Vertical", enemyRotation.y);
     }
 
 
