@@ -5,10 +5,7 @@ using UnityEngine;
 public class BulletBehabior : MonoBehaviour
 {
 
-    private void Awake()
-    {
-        Destroy(gameObject, 5);
-    }
+    private float timer;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -24,8 +21,19 @@ public class BulletBehabior : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
+    
 
+        private void Update()
+    {
+        timer += 1.0F * Time.deltaTime;
+
+        if(timer > 5)
+        {
+            gameObject.SetActive(false);
+            timer = 0;
+        }
+    }
 }

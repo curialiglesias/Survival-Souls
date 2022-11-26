@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShootBow : MonoBehaviour
 {
-    
+
 
     public Transform FirePoint;
     public GameObject Bullet;
@@ -22,7 +22,7 @@ public class ShootBow : MonoBehaviour
             chargeTime += Time.deltaTime;
         }
 
-        if(chargeTime > 2)
+        if (chargeTime > 2)
         {
             //playsound
             if (Input.GetButtonUp("Fire1"))
@@ -41,17 +41,25 @@ public class ShootBow : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Special"))
+        /*if (Input.GetButtonDown("Special"))
         {
             supershot();
         }
-
+        */
 
         void shot()
         {
-            GameObject bullet = Instantiate(Bullet, FirePoint.position, FirePoint.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
+            GameObject arrow = Pool.instance.GetPooledObject();
+
+            if (arrow != null)
+            {
+                arrow.SetActive(true);
+                arrow.transform.position = FirePoint.position;
+                arrow.transform.rotation = FirePoint.rotation;
+                Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
+                rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
+            }
+
 
         }
 
@@ -63,13 +71,13 @@ public class ShootBow : MonoBehaviour
             bullet.transform.localScale = bullet.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
         }
 
-        void supershot()
+        /*void supershot()
         {
             GameObject superbullet = Instantiate(SuperBullet, FirePoint.position, FirePoint.rotation);
             Rigidbody2D rb = superbullet.GetComponent<Rigidbody2D>();
             rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
         }
-
+        */
 
     }
 }
