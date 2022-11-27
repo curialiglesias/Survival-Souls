@@ -8,16 +8,19 @@ public class Pool : MonoBehaviour
     private List<GameObject> pool = new List<GameObject>();
     private int amount = 20;
 
+    public static Pool instance;
 
     [SerializeField] private GameObject Arrow;
-
-    public static Pool instance;
 
     private void Awake()
     {
         if(instance == null)
         {
             instance = this;
+        }
+        else
+        {
+            Destroy(this);
         }
     }
     void Start()

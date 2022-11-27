@@ -10,7 +10,7 @@ public class PlayerLife : MonoBehaviour
     private int HP = 500;
     private Rigidbody2D rb;
 
-    private float knockbackForce = 20f;
+    private float knockbackForce = 20;
     
     // Start is called before the first frame update
 

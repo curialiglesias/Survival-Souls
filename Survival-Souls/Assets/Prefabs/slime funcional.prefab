@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1924692438}
   - component: {fileID: 1924692434}
   - component: {fileID: -4228413863521722266}
+  - component: {fileID: 8645764996208090016}
   m_Layer: 0
   m_Name: slime funcional
   m_TagString: Enemy
@@ -259,4 +260,18 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &8645764996208090016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069494121323787840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df15173fdf6234d42bd9fc7b88a5a8e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 10
+  delay: 0.2
