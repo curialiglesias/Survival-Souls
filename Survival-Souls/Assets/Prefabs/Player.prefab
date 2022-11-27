@@ -309,6 +309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  kbf: 20
+  kbStunTime: 1
 --- !u!114 &2282083163135677593
 MonoBehaviour:
   m_ObjectHideFlags: 0
