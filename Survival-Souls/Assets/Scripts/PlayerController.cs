@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
 
-    public float kbf = 20f;
+    public float kbforce = 20f;
     public float kbStunTime;
 
     bool canMove;
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.collider.tag == "Enemy")
         {
-            Vector2 dir = ((collision.transform.position - transform.position).normalized) * kbf;
+            Vector2 dir = ((transform.position - collision.transform.position).normalized) * kbforce;
             canMove = false;
             rb2d.AddForce(dir, ForceMode2D.Impulse);
             StartCoroutine(KnockbackStunTime(kbStunTime));
@@ -69,6 +69,5 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         canMove = true;
     }
-
 
 }

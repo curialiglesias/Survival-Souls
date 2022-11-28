@@ -25,17 +25,6 @@ public class PlayerLife : MonoBehaviour
         HP -= 1;
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.collider.tag == "Enemy")
-        {
-            Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
-            HP = HP - 50;
-            rb.AddForce(knockbackDir * knockbackForce, ForceMode2D.Impulse);
-        }
-    }
-
     void Update()
     {
         if (HP < 300 && HP > 100)
