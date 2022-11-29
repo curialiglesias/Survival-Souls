@@ -33,7 +33,7 @@ public class Spawner : MonoBehaviour
             else
             {
                 yield return new WaitForSeconds(delay[0]);
-                GameObject enemy = Instantiate(EnemyPrefabs[0]);
+                GameObject enemy = Instantiate(EnemyPrefabs[0], new Vector3(Random.Range(-2f, 2), Random.Range(-2f, 2), 0) ,Quaternion.identity);
                 StartCoroutine(spawnEnemy1(EnemyPrefabs, delay, timeStart));
             }
 
@@ -57,7 +57,7 @@ public class Spawner : MonoBehaviour
             else
             {
                 yield return new WaitForSeconds(delay[1]);
-                GameObject enemy = Instantiate(EnemyPrefabs[1]);
+                GameObject enemy = Instantiate(EnemyPrefabs[1], new Vector3(Random.Range(-2f, 2), Random.Range(-2f, 2), 0), Quaternion.identity);
                 StartCoroutine(spawnEnemy2(EnemyPrefabs, delay, timeStart));
             }
         }
