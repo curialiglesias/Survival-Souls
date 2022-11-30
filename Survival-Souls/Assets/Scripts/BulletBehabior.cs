@@ -19,6 +19,7 @@ public class BulletBehabior : MonoBehaviour
             {
                 Destroy(collider.gameObject);
             }
+            CameraShake.instance.StartShake(.2f, .1f);
         }
 
         gameObject.SetActive(false);
