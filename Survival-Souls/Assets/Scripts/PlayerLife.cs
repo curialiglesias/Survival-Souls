@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PlayerLife : MonoBehaviour
 {
-    private int HP = 500;
+    public int HP = 500;
     private Rigidbody2D rb;
 
     private float knockbackForce = 20;

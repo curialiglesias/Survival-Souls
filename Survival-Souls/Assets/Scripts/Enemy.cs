@@ -34,6 +34,11 @@ public class Enemy : MonoBehaviour
         enemyAnimator.SetFloat("Attack", enemyDistance);
     }
 
+    public void attack()
+    {
+
+    }
+
 
     /*Collider2D[] hitColliders = Physics2D.OverlapCircleAll(gameObject.transform.position, 1.5f, 64);
 
