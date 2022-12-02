@@ -22,12 +22,16 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        Vector2 enemyRotation = (player.transform.position - transform.position).normalized;
-        //Debug.Log(enemyRotation);
+        // Vector calculations relative to the player
+        Vector2 distanceToPlayer = (player.transform.position - transform.position);
+        Vector2 enemyRotation = distanceToPlayer.normalized;
+        float enemyDistance = distanceToPlayer.magnitude;
+        //Debug.Log(enemyDistance);
 
         // Set Animation parameters
         enemyAnimator.SetFloat("Horizontal", enemyRotation.x);
         enemyAnimator.SetFloat("Vertical", enemyRotation.y);
+        enemyAnimator.SetFloat("Attack", enemyDistance);
     }
 
 
