@@ -31,7 +31,8 @@ public class Enemy : MonoBehaviour
         // Set Animation parameters
         enemyAnimator.SetFloat("Horizontal", enemyRotation.x);
         enemyAnimator.SetFloat("Vertical", enemyRotation.y);
-        enemyAnimator.SetFloat("Attack", enemyDistance);
+
+        enemyAnimator.SetBool("Attack", enemyDistance < 1);
     }
 
     public void attack()
