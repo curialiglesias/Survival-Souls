@@ -11,6 +11,7 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
 
     private float knockbackForce = 20;
+    private int maxHP;
     
     // Start is called before the first frame update
 
@@ -18,6 +19,7 @@ public class PlayerLife : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         InvokeRepeating("Subtract", 1f, 1f);
+        maxHP = HP;
     }
 
     void Subtract()
@@ -38,6 +40,15 @@ public class PlayerLife : MonoBehaviour
             gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius = 1;
         }
 
+    }
+
+    public void Heal(int amount)
+    {
+        if (HP >= 0)
+        {
+            HP += amount;
+            if (HP > maxHP) { HP = maxHP; }
+        }      
     }
 
 }

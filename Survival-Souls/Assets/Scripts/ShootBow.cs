@@ -10,6 +10,7 @@ public class ShootBow : MonoBehaviour
     public GameObject Bullet;
     public GameObject SuperBullet;
     private float chargeTime;
+    public Pool ArrowPool;
 
     public float bulletSpeed = 20f;
 
@@ -49,7 +50,7 @@ public class ShootBow : MonoBehaviour
 
         void shot()
         {
-            GameObject arrow = Pool.instance.GetPooledObject();
+            GameObject arrow = ArrowPool.GetPooledObject();
 
             if (arrow != null)
             {

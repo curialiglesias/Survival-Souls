@@ -6,11 +6,9 @@ using UnityEngine.Pool;
 public class Pool : MonoBehaviour
 {
     private List<GameObject> pool = new List<GameObject>();
-    private int amount = 20;
-
-    public static Pool instance;
-
-    [SerializeField] private GameObject Arrow;
+    public int amount = 20;
+    private Pool instance;
+    public GameObject objectToPool;
 
     private void Awake()
     {
@@ -27,7 +25,7 @@ public class Pool : MonoBehaviour
     { 
         for(int i = 0; i < amount ; i++)
         {
-            GameObject obj = Instantiate(Arrow);
+            GameObject obj = Instantiate(objectToPool);
             obj.SetActive(false);
             pool.Add(obj);
 
