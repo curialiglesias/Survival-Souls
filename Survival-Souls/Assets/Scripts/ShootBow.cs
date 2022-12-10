@@ -7,50 +7,25 @@ public class ShootBow : MonoBehaviour
 
 
     public Transform FirePoint;
-    public GameObject Bullet;
-    public GameObject SuperBullet;
-    private float chargeTime;
-    public Pool ArrowPool;
+
 
     public float bulletSpeed = 20f;
 
     // Update is called once per frame
+
     void Update()
     {
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonUp("Fire1"))
         {
-            chargeTime += Time.deltaTime;
+            shot();
         }
+    }
 
-        if (chargeTime > 2)
-        {
-            //playsound
-            if (Input.GetButtonUp("Fire1"))
-            {
-                chargeShot();
-                chargeTime = 0;
-            }
-        }
-
-        else
-        {
-            if (Input.GetButtonUp("Fire1"))
-            {
-                shot();
-                chargeTime = 0;
-            }
-        }
-
-        /*if (Input.GetButtonDown("Special"))
-        {
-            supershot();
-        }
-        */
 
         void shot()
         {
-            GameObject arrow = ArrowPool.GetPooledObject();
+            GameObject arrow = ObjectPools.SharedInstance.GetPooledObject("Arrow");
 
             if (arrow != null)
             {
@@ -64,7 +39,7 @@ public class ShootBow : MonoBehaviour
 
         }
 
-        void chargeShot()
+        /*void chargeShot()
         {
             GameObject bullet = Instantiate(Bullet, FirePoint.position, FirePoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -81,4 +56,5 @@ public class ShootBow : MonoBehaviour
         */
 
     }
-}
+
+

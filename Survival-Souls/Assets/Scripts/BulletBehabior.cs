@@ -7,6 +7,7 @@ public class BulletBehabior : MonoBehaviour
 
     private float timer;
 
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Enemy")){
