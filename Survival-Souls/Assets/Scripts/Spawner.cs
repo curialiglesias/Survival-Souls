@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class Spawner : MonoBehaviour
 {
@@ -13,14 +14,16 @@ public class Spawner : MonoBehaviour
     private float boss_tier_time = 600f;
     private float timeStart;
 
+    Transform maincam = GameObject.Find("MainCamera").GetComponent<Transform>();
+
+
     void Start()
     {
         timeStart = Time.time;
         StartCoroutine(spawnEnemy1(delays, timeStart));
-
     }
 
-    private IEnumerator spawnEnemy1(/*GameObject[] EnemyLow*/float[] delay, float timeStart)
+    private IEnumerator spawnEnemy1(float[] delay, float timeStart)
     {
         GameObject slime = ObjectPools.SharedInstance.GetPooledObject("SlimeEnemy");
         if (slime != null)
@@ -35,24 +38,21 @@ public class Spawner : MonoBehaviour
                 else
                 {
                     yield return new WaitForSeconds(delay[0]);
-                    //GameObject enemyGame = Instantiate(enemy);//, new Vector3(Random.Range(-1f, 1), Random.Range(-1f, 1), 0) ,Quaternion.identity);
+                    slime.transform.position = new Vector3(maincam.position.x - 50, maincam.position.y - 50, 0);
                     slime.SetActive(true);
                     StartCoroutine(spawnEnemy1(delay, timeStart));
                 }
-
             }
             else
             {
                 StartCoroutine(spawnEnemy2(delay, timeStart));
             }
         }
-
     }
 
     private IEnumerator spawnEnemy2(float[] delay, float timeStart)
     {
         GameObject golem = ObjectPools.SharedInstance.GetPooledObject("GolemEnemy");
-
         if (golem != null) {
             if (Time.time - timeStart > low_tier_time && Time.time - timeStart <= medium_tier_time)
             {
@@ -64,13 +64,11 @@ public class Spawner : MonoBehaviour
                 else
                 {
                     yield return new WaitForSeconds(delay[1]);
+                    golem.transform.position = new Vector3(maincam.position.x - 50, maincam.position.y - 50, 0);
                     golem.SetActive(true);
-                    //GameObject enemy = Instantiate(EnemyPrefabs[1]);//, new Vector3(Random.Range(-0f, 0), Random.Range(-0f, 0), 0), Quaternion.identity);
                     StartCoroutine(spawnEnemy2(delay, timeStart));
                 }
             }
-  
         }
-
     }
 }
