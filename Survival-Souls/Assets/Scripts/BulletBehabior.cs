@@ -10,15 +10,15 @@ public class BulletBehabior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Enemy")){
-
+        if (collider.tag.Contains("Enemy")){
+            
             var enemy = collider.gameObject.GetComponent<Enemy>();
 
             enemy.HP--;
 
             if (enemy.HP <= 0)
             {
-                Destroy(collider.gameObject);
+                collider.gameObject.SetActive(false);
             }
             CameraShake.instance.StartShake(.2f, .1f);
         }
@@ -28,7 +28,7 @@ public class BulletBehabior : MonoBehaviour
 
     
 
-        private void Update()
+    private void Update()
     {
         timer += 1.0F * Time.deltaTime;
 

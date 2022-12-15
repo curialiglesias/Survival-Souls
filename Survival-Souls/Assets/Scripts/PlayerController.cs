@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Enemy")
+        if (collision.collider.tag.Contains("Enemy"))
         {
             Vector2 dir = ((transform.position - collision.transform.position).normalized) * kbforce;
             canMove = false;

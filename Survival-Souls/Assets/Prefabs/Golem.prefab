@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1946246605696621930}
   m_Layer: 0
   m_Name: Golem
-  m_TagString: Enemy
+  m_TagString: GolemEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chance: 1
-  DropPool: {fileID: 0}
 --- !u!95 &2990095410883122510
 Animator:
   serializedVersion: 4
@@ -195,7 +194,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.25386465
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8589108769287330342}
   m_Layer: 0
   m_Name: slime funcional
-  m_TagString: Enemy
+  m_TagString: SlimeEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,7 +198,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.16
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
