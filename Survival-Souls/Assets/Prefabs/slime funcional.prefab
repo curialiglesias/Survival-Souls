@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -4228413863521722266}
   - component: {fileID: 5906203453837070081}
   - component: {fileID: 8589108769287330342}
+  - component: {fileID: 1985899525479628379}
   m_Layer: 0
   m_Name: slime funcional
   m_TagString: SlimeEnemy
@@ -198,7 +199,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.16
-  m_Speed: 1.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -210,3 +211,16 @@ NavMeshAgent:
   m_BaseOffset: 0.125
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1985899525479628379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069494121323787840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ef9a346bc72114798523ec4bff2ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chance: 0.5

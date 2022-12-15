@@ -18,6 +18,8 @@ public class BulletBehabior : MonoBehaviour
 
             if (enemy.HP <= 0)
             {
+                DropOnDestroy drop = collider.gameObject.AddComponent<DropOnDestroy>();
+                drop.Drop();                
                 collider.gameObject.SetActive(false);
             }
             CameraShake.instance.StartShake(.2f, .1f);
