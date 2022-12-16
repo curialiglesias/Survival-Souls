@@ -16,7 +16,7 @@ public class BulletBehabior : MonoBehaviour
 
             if (enemy.HP <= 0)
             {
-                DropOnDestroy drop = collider.gameObject.AddComponent<DropOnDestroy>();
+                DropOnDestroy drop = collider.gameObject.GetComponent<DropOnDestroy>();
                 drop.Drop();                
                 collider.gameObject.SetActive(false);
             }
