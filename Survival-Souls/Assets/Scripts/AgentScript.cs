@@ -8,6 +8,7 @@ public class AgentScript : MonoBehaviour
     [SerializeField] private Transform target;
 
     private NavMeshAgent agent;
+    public bool canMove = true;
 
 
     private void Start()
@@ -24,7 +25,10 @@ public class AgentScript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        agent.SetDestination(target.position);
+        if (canMove)
+        {
+            agent.SetDestination(target.position);
+        }
     }
 }
     

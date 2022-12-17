@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float kbStunTime;
 
     bool canMove;
+    private GameObject gameAgent;
 
  
     void Start()
@@ -60,14 +61,23 @@ public class PlayerController : MonoBehaviour
             Vector2 dir = ((transform.position - collision.transform.position).normalized) * kbforce;
             canMove = false;
             rb2d.AddForce(dir, ForceMode2D.Impulse);
-            StartCoroutine(KnockbackStunTime(kbStunTime));
+            var enemy = collision.collider.gameObject.GetComponent<AgentScript>();
+            enemy.canMove = false;
+            StartCoroutine(KnockbackStunTime(kbStunTime, collision));
         }
     }
 
-    IEnumerator KnockbackStunTime(float cooldown)
+    IEnumerator KnockbackStunTime(float cooldown, Collision2D collision)
     {
+
+        var enemy = collision.collider.gameObject.GetComponent<AgentScript>();
+
         yield return new WaitForSeconds(cooldown);
         canMove = true;
+        
+        yield return new WaitForSeconds(cooldown + 3f);
+        enemy.canMove = true;
+
     }
 
 }

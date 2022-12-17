@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
     private GameObject player;
 
     //private RenderLine linecontroller;
-    public int HP = 5;
+    public int HP;
+    public int initialHP;
 
     private Animator enemyAnimator;
 

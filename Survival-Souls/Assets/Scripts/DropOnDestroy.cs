@@ -17,11 +17,11 @@ public class DropOnDestroy : MonoBehaviour
 
             if (drop != null)
             {
-                drop.SetActive(true);
-                Debug.Log(drop);
-
                 Transform t = drop.transform;
                 t.position = transform.position;
+
+                drop.SetActive(true);
+                Debug.Log(drop);
             }
         }
     }
