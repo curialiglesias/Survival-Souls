@@ -8,6 +8,7 @@ public class BulletBehabior : MonoBehaviour
 
     private void Start()
     {
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -24,7 +25,7 @@ public class BulletBehabior : MonoBehaviour
                 drop.Drop();
                 collider.gameObject.SetActive(false);
                 enemy.HP = enemy.initialHP;
-
+                Spawner.SharedInstance.creditGain(20);
             }
             CameraShake.instance.StartShake(.2f, .1f);
         }

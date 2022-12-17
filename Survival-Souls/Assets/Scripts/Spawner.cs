@@ -6,6 +6,10 @@ using Unity.VisualScripting;
 using UnityEngine.AI;
 //using UnityEngine.Random;
 
+[System.Serializable]
+
+
+
 public class Spawner : MonoBehaviour
 {
     public float delay = 2f;
@@ -20,35 +24,25 @@ public class Spawner : MonoBehaviour
     private float y;
     private NavMeshTriangulation navMeshTriangulation;
     Vector3 playerPos;
+    public static Spawner SharedInstance;
 
-
-
+    void Awake()
+    {
+        SharedInstance = this;
+    }
     void Start()
     {
         //timeStart = Time.time;
         StartCoroutine(spawnEnemy(delay));
     }
 
-
-    private void Update()
+    //String enemyTag
+    public void creditGain(int addedCredit)
     {
-
-
-
-    }
-
-    public void creditGain(String enemyTag)
-    {
-
-        if (enemyTag.Contains("Slime"))
         {
-            credit += 2;
+            credit += addedCredit;
         }
-        else
-        {
-            credit += 6;
-
-        }
+ 
     }
 
     private IEnumerator spawnEnemy(float delay)
