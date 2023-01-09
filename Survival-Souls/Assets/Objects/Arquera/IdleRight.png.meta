@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8406b6bdee2d5954ba4dc3996a509907
+guid: 0f2bcaf436044d446ab018829cb88877
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,11 +114,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Caminar_Arriba_0
+      name: IdleRight_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 76
-        width: 1840
-        height: 2488
+        y: 4
+        width: 1759
+        height: 2454
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc1bf04de6bc4f345ac1224d9da0b16f
-      internalID: 565138021
+      spriteID: 3bef4705cf9cf524b8b298766ce7cafb
+      internalID: 1397535186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caminar_Arriba_1
+      name: IdleRight_1
       rect:
         serializedVersion: 2
-        x: 2247
+        x: 2160
         y: 0
-        width: 1840
-        height: 2493
+        width: 1759
+        height: 2454
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,50 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a483651d0b71fd544b1551a020f474ff
-      internalID: 1193170020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caminar_Arriba_2
-      rect:
-        serializedVersion: 2
-        x: 4532
-        y: 63
-        width: 1840
-        height: 2493
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce9c8d5fa941a0a4d86f0ee2866e65c9
-      internalID: 1481210031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caminar_Arriba_3
-      rect:
-        serializedVersion: 2
-        x: 6762
-        y: 0
-        width: 1840
-        height: 2493
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73649bd66ee0e8148ab9fa58fb28cd28
-      internalID: -1647341486
+      spriteID: c04ec27c1d4ce5f4db7bae5c8bd425d5
+      internalID: 949427068
       vertices: []
       indices: 
       edges: []
@@ -215,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: c3176e52c2f38fa4ca136027a2780bda
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Caminar_Arriba_1: 1193170020
-      Caminar_Arriba_3: -1647341486
-      Caminar_Arriba_0: 565138021
-      Caminar_Arriba_2: 1481210031
+      IdleRight_0: 1397535186
+      IdleRight_1: 949427068
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

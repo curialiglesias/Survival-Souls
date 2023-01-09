@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576647615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0, z: 0}
-  m_LocalScale: {x: 1.47, y: 1.47, z: 1.47}
+  m_LocalPosition: {x: 0.17, y: 0, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2282083162314664559}
@@ -128,12 +128,12 @@ GameObject:
   - component: {fileID: 2282083163135677598}
   - component: {fileID: 2282083163135677595}
   - component: {fileID: 2282083163135677599}
+  - component: {fileID: 5734348853635448542}
   - component: {fileID: 2282083163135677594}
   - component: {fileID: 2282083163135677593}
   - component: {fileID: 619980512}
   - component: {fileID: 619980513}
   - component: {fileID: 619980514}
-  - component: {fileID: 5734348853635448542}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -218,7 +218,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -2120331024, guid: 7f8991f520010744f9c5e02c0f62f603, type: 3}
+  m_Sprite: {fileID: 1397535186, guid: 0f2bcaf436044d446ab018829cb88877, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -242,7 +242,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 15
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -250,6 +250,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &5734348853635448542
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282083163135677568}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.2621779, y: 0.45028535}
+  m_Direction: 0
 --- !u!114 &2282083163135677594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,8 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  kbforce: 20
-  kbStunTime: 1
+  kbforce: 8
+  kbStunTime: 0.2
 --- !u!114 &2282083163135677593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,9 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 1576647616}
-  Bullet: {fileID: 4672002943666498013, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
-  SuperBullet: {fileID: 4672002943666498013, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
-  ArrowPool: {fileID: 768487220309697382, guid: e93439ba6d5e8d845a9aa1ce12511624, type: 3}
   bulletSpeed: 5
 --- !u!114 &619980514
 MonoBehaviour:
@@ -386,19 +399,3 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!70 &5734348853635448542
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2282083163135677568}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.06959413}
-  m_Size: {x: 0.3518, y: 0.3518}
-  m_Direction: 0

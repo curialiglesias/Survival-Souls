@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f8991f520010744f9c5e02c0f62f603
+guid: 0bad4c020b5654d4695569f2ebc0f4c5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,11 +114,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Respirar_Derecha_0
+      name: WalkDown_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
-        width: 1759
-        height: 2454
+        y: 67
+        width: 1840
+        height: 2490
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74d947ddde4f87942bf1fff4cabfd410
-      internalID: -2120331024
+      spriteID: 89a3230266298e041adae43b919f4dba
+      internalID: -2039898846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Respirar_Derecha_1
+      name: WalkDown_1
       rect:
         serializedVersion: 2
-        x: 2160
+        x: 2261
         y: 0
-        width: 1759
-        height: 2454
+        width: 1840
+        height: 2464
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +164,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cb149a989498be479cfe9d1965bf4e4
-      internalID: -386835865
+      spriteID: 7c71737846f8840438fc78fba4aa83f5
+      internalID: -1555164550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkDown_2
+      rect:
+        serializedVersion: 2
+        x: 4522
+        y: 63
+        width: 1840
+        height: 2490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60554da63722ca3498d1a72a5d5dd768
+      internalID: -1795141115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkDown_3
+      rect:
+        serializedVersion: 2
+        x: 6783
+        y: 0
+        width: 1840
+        height: 2469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffafd90024cdffc429605e1d4244b0d2
+      internalID: -1951885817
       vertices: []
       indices: 
       edges: []
@@ -173,7 +215,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 622b24708c92efd4187688030051d2ed
     internalID: 0
     vertices: []
     indices: 
@@ -181,8 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Respirar_Derecha_0: -2120331024
-      Respirar_Derecha_1: -386835865
+      WalkDown_1: -1555164550
+      WalkDown_3: -1951885817
+      WalkDown_2: -1795141115
+      WalkDown_0: -2039898846
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

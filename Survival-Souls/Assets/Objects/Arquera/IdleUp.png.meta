@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5a4add0990eb5094c8d55ea4105b5541
+guid: 791eda5f414c79c4da3d258e60400297
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,11 +114,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,55 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Caminar_Izquierda_0
+      name: IdleUp_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 86
-        width: 1764
-        height: 2448
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f4b2cd104a15884cba066340cb829ed
-      internalID: 624918507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caminar_Izquierda_1
-      rect:
-        serializedVersion: 2
-        x: 2221
-        y: 103
-        width: 1764
-        height: 2456
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69c3f4d85bcf0de4ba91ec1901b306c5
-      internalID: -1283480028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caminar_Izquierda_2
-      rect:
-        serializedVersion: 2
-        x: 4437
         y: 0
-        width: 1764
-        height: 2530
+        width: 1836
+        height: 2488
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e072489511e5f8458f4e71f9baef0de
-      internalID: 47455371
+      spriteID: 48252848205be0c46b68ba8a45470b9a
+      internalID: -558540356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caminar_Izquierda_3
+      name: IdleUp_1
       rect:
         serializedVersion: 2
-        x: 6662
-        y: 99
-        width: 1760
-        height: 2460
+        x: 2194
+        y: 4
+        width: 1836
+        height: 2488
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53224e536ec87e44295dd5159225f6f3
-      internalID: -787879924
+      spriteID: 5d49014878dc369478c6efcec6b21e34
+      internalID: -1399014551
       vertices: []
       indices: 
       edges: []
@@ -215,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 693d970d82dd512448e89d968f0069f8
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Caminar_Izquierda_2: 47455371
-      Caminar_Izquierda_1: -1283480028
-      Caminar_Izquierda_3: -787879924
-      Caminar_Izquierda_0: 624918507
+      IdleUp_1: -1399014551
+      IdleUp_0: -558540356
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

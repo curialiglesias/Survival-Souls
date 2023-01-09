@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 520ffac5a88b3ae47bf32ab607771885
+guid: 6e3406471b6390d4d815e8692fc82e90
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,11 +114,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,54 +129,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Caminar_Derecha_0
+      name: IdleLeft_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 99
-        width: 1760
-        height: 2459
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5a80938f66d27f41a407bf8f7c1fe2a
-      internalID: 1233360753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caminar_Derecha_1
-      rect:
-        serializedVersion: 2
-        x: 2221
         y: 0
-        width: 1764
-        height: 2529
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6498cf092e50ec949acb26b9a50393a7
-      internalID: 1805489419
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caminar_Derecha_2
-      rect:
-        serializedVersion: 2
-        x: 4438
-        y: 103
-        width: 1764
+        width: 1758
         height: 2455
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -185,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9edb62f353036f6478a63b8b2b99742b
-      internalID: 240359945
+      spriteID: 45d6ecfb037b81e44bf2708b9eeb510c
+      internalID: 243757817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caminar_Derecha_3
+      name: IdleLeft_1
       rect:
         serializedVersion: 2
-        x: 6659
-        y: 86
-        width: 1764
-        height: 2447
+        x: 2160
+        y: 2
+        width: 1758
+        height: 2455
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e0abfa895110e24eb005e7314da285e
-      internalID: -1618285003
+      spriteID: 05d7028df5898544a8d76cbc247eab02
+      internalID: 1326871735
       vertices: []
       indices: 
       edges: []
@@ -215,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: b250a5f1836e148428494e7c3e0d4233
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Caminar_Derecha_3: -1618285003
-      Caminar_Derecha_0: 1233360753
-      Caminar_Derecha_1: 1805489419
-      Caminar_Derecha_2: 240359945
+      IdleLeft_0: 243757817
+      IdleLeft_1: 1326871735
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
