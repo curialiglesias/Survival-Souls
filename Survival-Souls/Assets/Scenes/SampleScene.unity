@@ -76018,10 +76018,10 @@ MonoBehaviour:
     canExpand: 1
   - amount: 8
     objectToPool: {fileID: 7952376087864467259, guid: a6ec97b4197e7ae4ead74cb409f99eec, type: 3}
-    canExpand: 0
+    canExpand: 1
   - amount: 10
     objectToPool: {fileID: 9069494121323787840, guid: 675896f09a5d0e84c95c54f6d2c1746d, type: 3}
-    canExpand: 0
+    canExpand: 1
   - amount: 10
     objectToPool: {fileID: 1246377495219384934, guid: 179aed43d5856e841887699f4dd5bcee, type: 3}
     canExpand: 1
@@ -83677,8 +83677,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 62.2, y: -191.8}
-  m_SizeDelta: {x: 200.7, y: 44.5}
+  m_AnchoredPosition: {x: 862.1, y: -59}
+  m_SizeDelta: {x: 124.0997, y: 44.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913848474
 MonoBehaviour:
@@ -84816,6 +84816,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 619980514, guid: b094b741073611c44a3131b5340a3a4b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 619980514, guid: b094b741073611c44a3131b5340a3a4b, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 619980514, guid: b094b741073611c44a3131b5340a3a4b, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 619980514, guid: b094b741073611c44a3131b5340a3a4b, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 619980514, guid: b094b741073611c44a3131b5340a3a4b, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2282083163135677568, guid: b094b741073611c44a3131b5340a3a4b, type: 3}
       propertyPath: m_Name
       value: Player

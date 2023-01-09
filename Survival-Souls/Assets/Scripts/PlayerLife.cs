@@ -7,12 +7,16 @@ using UnityEngine.Rendering.Universal;
 
 public class PlayerLife : MonoBehaviour
 {
-    public int HP = 500;
+    public float HP = 500;
+    public float HPDecraseRate = 5;
     private Rigidbody2D rb;
 
     private float knockbackForce = 20;
-    private int maxHP;
-    
+    private float maxHP;
+    private float radius;
+    private float maxRadius;
+    private float minRadius;
+
     // Start is called before the first frame update
 
     void Start()
@@ -20,26 +24,22 @@ public class PlayerLife : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         InvokeRepeating("Subtract", 1f, 1f);
         maxHP = HP;
+        maxRadius = gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius;
+        minRadius = 0.25f;
     }
 
     void Subtract()
     {
-        HP -= 1;
+        HP -= HPDecraseRate;
     }
 
     void Update()
     {
-        if (HP < 300 && HP > 100)
+        radius = (HP / maxHP) * maxRadius;
+        if (radius > minRadius)
         {
-            gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius = 2;
-
+            gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius = radius;
         }
-
-        if(HP < 100)
-        {
-            gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius = 1;
-        }
-
     }
 
     public void Heal(int amount)

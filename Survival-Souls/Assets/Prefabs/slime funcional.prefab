@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  canMove: 1
 --- !u!195 &8589108769287330342
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -225,4 +226,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToDrop: {fileID: 1246377495219384934, guid: 179aed43d5856e841887699f4dd5bcee, type: 3}
-  chance: 0.5
+  chance: 1

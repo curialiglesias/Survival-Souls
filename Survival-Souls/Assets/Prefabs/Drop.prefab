@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2501966965282916097}
   - component: {fileID: 900471770380184063}
   - component: {fileID: -6951840886408065730}
+  - component: {fileID: 1745153749}
   m_Layer: 0
   m_Name: Drop
   m_TagString: Drop
@@ -115,3 +116,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.10000001, y: 0.10000001}
   m_Direction: 0
+--- !u!95 &1745153749
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246377495219384934}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ad33648d3338bc4faed599ab5e83864, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
