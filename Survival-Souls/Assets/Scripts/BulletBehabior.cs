@@ -25,7 +25,15 @@ public class BulletBehabior : MonoBehaviour
                 drop.Drop();
                 collider.gameObject.SetActive(false);
                 enemy.HP = enemy.initialHP;
-                Spawner.SharedInstance.creditGain(20);
+                if (collider.tag.Contains("Slime"))
+                {
+                    Spawner.SharedInstance.creditGain(2);
+                }
+                else
+                {
+                    Spawner.SharedInstance.creditGain(6);
+
+                }
             }
             CameraShake.instance.StartShake(.2f, .1f);
         }

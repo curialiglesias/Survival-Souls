@@ -10,9 +10,6 @@ public class Clock : MonoBehaviour
     public float time = 0;
     public TextMeshProUGUI clockText;
 
-
-
-
     void Update()
     {
         time += Time.deltaTime;
