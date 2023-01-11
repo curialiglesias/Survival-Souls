@@ -51,23 +51,23 @@ public class Spawner : MonoBehaviour
         GameObject golem = ObjectPools.SharedInstance.GetPooledObject("GolemEnemy");
         if (slime != null && golem != null)
         {
-            if (credit > 0 && credit < 15)
+            if (credit > 0 && credit <= 6)
             {
                 yield return new WaitForSeconds(delay);
                 x = UnityEngine.Random.Range(-7.0f, 8.0f);
                 y = UnityEngine.Random.Range(-7.0f, 3.5f);
                 slime.transform.position = new Vector3(x, y, 0);
                 slime.SetActive(true);
-                credit = credit - 1;
+                credit -= 1;
                 StartCoroutine(spawnEnemy(delay));
-            }else if (credit >= 15)
+            }else if (credit > 6)
             {
                 yield return new WaitForSeconds(delay);
                 x = UnityEngine.Random.Range(-7.0f, 8.0f);
                 y = UnityEngine.Random.Range(-7.0f, 3.5f);
                 golem.transform.position = new Vector3(x, y, 0);
                 golem.SetActive(true);
-                credit -= 10;
+                credit -= 5;
                 StartCoroutine(spawnEnemy(delay));
             }
             else
