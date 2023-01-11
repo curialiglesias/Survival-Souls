@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 79977a773f0113542802db5473dae8f1
+guid: 9db9a016f5a77024d89fa071bdd9a2fa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,11 +114,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,12 +129,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Respirar_Arriba_0
+      name: WalkUp_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1836
+        y: 76
+        width: 1840
         height: 2488
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 612bd71355385364f8a832501809eb37
-      internalID: -1680084415
+      spriteID: 8f20a1fc2cded2846a9a87460ee686ad
+      internalID: 1631644996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Respirar_Arriba_1
+      name: WalkUp_1
       rect:
         serializedVersion: 2
-        x: 2194
-        y: 4
-        width: 1836
-        height: 2488
+        x: 2247
+        y: 0
+        width: 1840
+        height: 2493
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +164,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67424a966599a4e4c9a4e02102ed216c
-      internalID: 487899684
+      spriteID: 8f98711efa076a9418a2853c1b3df854
+      internalID: 1463228147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkUp_2
+      rect:
+        serializedVersion: 2
+        x: 4532
+        y: 63
+        width: 1840
+        height: 2493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606fb2f12fa4ef84c85e59cfc918b114
+      internalID: -475081572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkUp_3
+      rect:
+        serializedVersion: 2
+        x: 6762
+        y: 0
+        width: 1840
+        height: 2493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe3822247e669442bfcc10d0cf55b90
+      internalID: -1491403457
       vertices: []
       indices: 
       edges: []
@@ -173,7 +215,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 42f7aca5392c75942973a3d61ef52071
     internalID: 0
     vertices: []
     indices: 
@@ -181,8 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Respirar_Arriba_1: 487899684
-      Respirar_Arriba_0: -1680084415
+      WalkUp_0: 1631644996
+      WalkUp_3: -1491403457
+      WalkUp_1: 1463228147
+      WalkUp_2: -475081572
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

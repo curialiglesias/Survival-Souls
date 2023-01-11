@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b0b3c294577cb7143a3b4d2cdb97fc89
+guid: 058372653745bf14497d84d3501b2ac3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,11 +114,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Respirar_Abajo_0
+      name: WalkRight_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1837
-        height: 2486
+        width: 1760
+        height: 2457
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0552a41304e822f43b8cabe42353cfc3
-      internalID: 1693322997
+      spriteID: 658ff0c681d057442b8aeb7589102cc1
+      internalID: 858775700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Respirar_Abajo_1
+      name: WalkRight_1
       rect:
         serializedVersion: 2
-        x: 2235
+        x: 2221
         y: 0
-        width: 1837
-        height: 2486
+        width: 1764
+        height: 2428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +164,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b22cf1e79580ce34da30d0fddac26b5c
-      internalID: 1683082650
+      spriteID: ec9d2a8243aea0340aef923e538150a8
+      internalID: 1212532103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkRight_2
+      rect:
+        serializedVersion: 2
+        x: 4438
+        y: 0
+        width: 1764
+        height: 2457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50868b22b9b3a7941aa91f43ef25fe92
+      internalID: 1248924393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkRight_3
+      rect:
+        serializedVersion: 2
+        x: 6663
+        y: 0
+        width: 1760
+        height: 2432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630b5636848d63741a6953ddd0a2c5a1
+      internalID: 1318597086
       vertices: []
       indices: 
       edges: []
@@ -173,7 +215,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 3ba6ad645b3d18545b49dc598f9cb511
     internalID: 0
     vertices: []
     indices: 
@@ -181,8 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Respirar_Abajo_1: 1683082650
-      Respirar_Abajo_0: 1693322997
+      WalkRight_2: 1248924393
+      WalkRight_3: 1318597086
+      WalkRight_0: 858775700
+      WalkRight_1: 1212532103
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

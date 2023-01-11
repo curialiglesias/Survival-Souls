@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03b32b7c85c7cca45a2905f41c37d4fe
+guid: 866cf767bbe755c43bad965cf427857c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,11 +114,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,34 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Caminar_Abajo_0
+      name: WalkLeft_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 67
-        width: 1840
-        height: 2490
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06f2f7fe01e395a4ea5b7dc4286c3c24
-      internalID: 1306765188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caminar_Abajo_1
-      rect:
-        serializedVersion: 2
-        x: 2261
         y: 0
-        width: 1840
-        height: 2464
+        width: 1760
+        height: 2433
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,41 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2b5d73d3bdf32d4c8690ea8ce26752d
-      internalID: 155749120
+      spriteID: 09e0c3615aaae8343b52db800fb1fba4
+      internalID: 552890026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caminar_Abajo_2
+      name: WalkLeft_1
       rect:
         serializedVersion: 2
-        x: 4522
-        y: 63
-        width: 1840
-        height: 2490
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 888c6408f099e7b478e87ab4d5448d6a
-      internalID: 1527901905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caminar_Abajo_3
-      rect:
-        serializedVersion: 2
-        x: 6783
+        x: 2221
         y: 0
-        width: 1840
-        height: 2469
+        width: 1764
+        height: 2458
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +164,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e61a0204aa1118d4f8d3e7d1b3c4dc1f
-      internalID: -491723492
+      spriteID: 39c50c91a4fe5874a9cfbc8129074da1
+      internalID: -1188200267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkLeft_2
+      rect:
+        serializedVersion: 2
+        x: 4437
+        y: 0
+        width: 1764
+        height: 2429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb48225fcb387ed4caca4a178a344b81
+      internalID: 697029966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkLeft_3
+      rect:
+        serializedVersion: 2
+        x: 6662
+        y: 0
+        width: 1760
+        height: 2458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c559b170619e4498ed0e6d100999db
+      internalID: -1742991548
       vertices: []
       indices: 
       edges: []
@@ -215,7 +215,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ed0b0f0cc0dacf74fa52586d28a5bb05
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Caminar_Abajo_3: -491723492
-      Caminar_Abajo_2: 1527901905
-      Caminar_Abajo_1: 155749120
-      Caminar_Abajo_0: 1306765188
+      WalkLeft_2: 697029966
+      WalkLeft_1: -1188200267
+      WalkLeft_3: -1742991548
+      WalkLeft_0: 552890026
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

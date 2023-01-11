@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1baf6e2201b95264eb6314b99a515fb7
+guid: d9bad257fcab35642ab4b9d14e31af4a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,11 +114,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Respirar_Izquierda_0
+      name: IdleDown_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1758
-        height: 2455
+        width: 1837
+        height: 2486
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b843c5e36ff2e804eb7a2a17907bb1a6
-      internalID: 274470614
+      spriteID: 1b9399b4804efda48bbaa23aa17e679e
+      internalID: 1495135663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Respirar_Izquierda_1
+      name: IdleDown_1
       rect:
         serializedVersion: 2
-        x: 2160
-        y: 2
-        width: 1758
-        height: 2455
+        x: 2235
+        y: 0
+        width: 1837
+        height: 2486
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5620e0849811fa446a1de24c8f486d23
-      internalID: 108876078
+      spriteID: 99a3c9925a936664ca51e191239f2d03
+      internalID: 1521897838
       vertices: []
       indices: 
       edges: []
@@ -173,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 13921ae069e6f8b448949820682b427b
     internalID: 0
     vertices: []
     indices: 
@@ -181,8 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Respirar_Izquierda_1: 108876078
-      Respirar_Izquierda_0: 274470614
+      IdleDown_0: 1495135663
+      IdleDown_1: 1521897838
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
