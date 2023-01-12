@@ -13,7 +13,7 @@ public class DropOnDestroy : MonoBehaviour
         if (Random.value <= chance)
         {
             GameObject drop = ObjectPools.SharedInstance.GetPooledObject(itemToDrop.name);
-            Debug.Log(drop);
+
 
             if (drop != null)
             {

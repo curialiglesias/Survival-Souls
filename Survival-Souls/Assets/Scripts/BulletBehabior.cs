@@ -23,8 +23,11 @@ public class BulletBehabior : MonoBehaviour
             {
                 DropOnDestroy drop = collider.gameObject.GetComponent<DropOnDestroy>();
                 drop.Drop();
+
                 collider.gameObject.SetActive(false);
+
                 enemy.HP = enemy.initialHP;
+
                 if (collider.tag.Contains("Slime"))
                 {
                     Spawner.SharedInstance.creditGain(2);

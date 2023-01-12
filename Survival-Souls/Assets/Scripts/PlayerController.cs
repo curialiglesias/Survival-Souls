@@ -61,8 +61,11 @@ public class PlayerController : MonoBehaviour
             Vector2 dir = ((transform.position - collision.transform.position).normalized) * kbforce;
             canMove = false;
             rb2d.AddForce(dir, ForceMode2D.Impulse);
-            var enemy = collision.collider.gameObject.GetComponent<AgentScript>();
-            enemy.canMove = false;
+            var enemy = collision.collider.gameObject;
+
+            enemy.GetComponent<AgentScript>().canMove = false;
+            GetComponent<PlayerLife>().HP -= enemy.GetComponent<Enemy>().damage;
+            
             StartCoroutine(KnockbackStunTime(kbStunTime, collision));
         }
     }

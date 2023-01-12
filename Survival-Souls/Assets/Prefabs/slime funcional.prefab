@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 5
   initialHP: 5
+  damage: 5
 --- !u!50 &-4228413863521722266
 Rigidbody2D:
   serializedVersion: 4

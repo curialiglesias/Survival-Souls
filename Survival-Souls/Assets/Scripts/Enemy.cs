@@ -6,11 +6,13 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     NavMeshAgent agent;
-    private GameObject player;
+    private Transform playerPosition;
 
     //private RenderLine linecontroller;
     public int HP;
     public int initialHP;
+    public float damage;
+
 
     private Animator enemyAnimator;
 
@@ -18,16 +20,16 @@ public class Enemy : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
-        player = GameObject.Find("Player");
+        playerPosition = GameObject.Find("Player").transform;
     }
 
     void Update()
     {
         // Vector calculations relative to the player
-        Vector2 distanceToPlayer = (player.transform.position - transform.position);
+        Vector2 distanceToPlayer = (playerPosition.transform.position - transform.position);
         Vector2 enemyRotation = distanceToPlayer.normalized;
         float enemyDistance = distanceToPlayer.magnitude;
-        //Debug.Log(enemyDistance);
+
 
         // Set Animation parameters
         enemyAnimator.SetFloat("Horizontal", enemyRotation.x);
@@ -36,10 +38,7 @@ public class Enemy : MonoBehaviour
         enemyAnimator.SetBool("Attack", enemyDistance < 1);
     }
 
-    public void attack()
-    {
 
-    }
 
 
     /*Collider2D[] hitColliders = Physics2D.OverlapCircleAll(gameObject.transform.position, 1.5f, 64);
