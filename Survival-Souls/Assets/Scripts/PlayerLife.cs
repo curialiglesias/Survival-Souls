@@ -9,9 +9,8 @@ public class PlayerLife : MonoBehaviour
 {
     public float HP = 500;
     public float HPDecraseRate = 5;
-    private Rigidbody2D rb;
+    public GameObject gameOverPanel;
 
-    private float knockbackForce = 20;
     private float maxHP;
     private float radius;
     private float maxRadius;
@@ -21,7 +20,6 @@ public class PlayerLife : MonoBehaviour
 
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
         InvokeRepeating("Subtract", 1f, 1f);
         maxHP = HP;
         maxRadius = gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius;
@@ -38,8 +36,23 @@ public class PlayerLife : MonoBehaviour
         radius = (HP / maxHP) * maxRadius;
         if (radius > minRadius)
         {
-            gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius = radius;
+            GetComponentInChildren<Light2D>().pointLightOuterRadius = radius;
         }
+
+        if (HP <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
+        gameOverPanel.SetActive(true);
+        GetComponent<PlayerController>().enabled = false;
+        GetComponent<WeaponAim>().enabled = false;
+        GetComponent<ShootBow>().enabled = false;
+
     }
 
     public void Heal(int amount)
@@ -48,7 +61,6 @@ public class PlayerLife : MonoBehaviour
         {
             HP += amount;
             if (HP > maxHP) { HP = maxHP; }
-        }      
+        }
     }
-
 }

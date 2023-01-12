@@ -21,7 +21,6 @@ public class DropOnDestroy : MonoBehaviour
                 t.position = transform.position;
 
                 drop.SetActive(true);
-                Debug.Log(drop);
             }
         }
     }
