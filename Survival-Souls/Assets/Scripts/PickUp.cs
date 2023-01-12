@@ -14,7 +14,7 @@ public class PickUp : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {

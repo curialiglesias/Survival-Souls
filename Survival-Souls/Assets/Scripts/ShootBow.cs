@@ -22,12 +22,11 @@ public class ShootBow : MonoBehaviour
         }
     }
 
-
         void shot()
         {
             GameObject arrow = ObjectPools.SharedInstance.GetPooledObject("Arrow");
-
-            if (arrow != null)
+            
+        if (arrow != null)
             {
                 arrow.SetActive(true);
                 arrow.transform.position = FirePoint.position;
@@ -35,9 +34,8 @@ public class ShootBow : MonoBehaviour
                 Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
                 rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
             }
-
-
-        }
+        
+    }
 
         /*void chargeShot()
         {

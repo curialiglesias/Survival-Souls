@@ -7,8 +7,16 @@ public class BulletBehabior : MonoBehaviour
     private float timer;
 
 
-    private void OnTriggerEnter2D(Collider2D collider)
+private void OnTriggerEnter2D(Collider2D collider)
     {
+        if (collider.tag.Contains("Drop"))
+        {
+
+        }
+        else
+        {
+
+        
         if (collider.tag.Contains("Enemy")){
             
             var enemy = collider.gameObject.GetComponent<Enemy>();
@@ -38,6 +46,7 @@ public class BulletBehabior : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+        }
     }
 
     
