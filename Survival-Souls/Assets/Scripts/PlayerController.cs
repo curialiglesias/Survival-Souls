@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
             rb2d.AddForce(dir, ForceMode2D.Impulse);
             var enemy = collision.collider.gameObject;
 
-            enemy.GetComponent<AgentScript>().canMove = false;
+            enemy.GetComponent<Enemy>().canMove = false;
             GetComponent<PlayerLife>().HP -= enemy.GetComponent<Enemy>().damage;
             
             StartCoroutine(KnockbackStunTime(kbStunTime, collision));
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator KnockbackStunTime(float cooldown, Collision2D collision)
     {
 
-        var enemy = collision.collider.gameObject.GetComponent<AgentScript>();
+        var enemy = collision.collider.gameObject.GetComponent<Enemy>();
 
         yield return new WaitForSeconds(cooldown);
         canMove = true;

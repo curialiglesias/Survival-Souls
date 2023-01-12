@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1924692438}
   - component: {fileID: 1924692434}
   - component: {fileID: -4228413863521722266}
-  - component: {fileID: 5906203453837070081}
   - component: {fileID: 8589108769287330342}
   - component: {fileID: 1985899525479628379}
   m_Layer: 0
@@ -154,6 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a49dc328d48f8a4485334818be4006b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  canMove: 1
   HP: 5
   initialHP: 5
   damage: 5
@@ -178,20 +179,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5906203453837070081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9069494121323787840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14270d0fa72b3e14187cdd1faa25f5f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  canMove: 1
 --- !u!195 &8589108769287330342
 NavMeshAgent:
   m_ObjectHideFlags: 0
