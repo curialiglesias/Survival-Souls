@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -45,7 +46,7 @@ public class Clock : MonoBehaviour
     {
         string path = JSONSaving.SharedInstance.GetPath();
 
-        if (!System.IO.File.Exists(path))
+        if (!System.IO.File.Exists(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json"))
         {
             PlayerData player = new PlayerData((int)time, 1, 1, 1, 1, 1);
             JSONSaving.SharedInstance.SaveData(player);
@@ -55,9 +56,10 @@ public class Clock : MonoBehaviour
             PlayerData check = JSONSaving.SharedInstance.LoadData();
             check.points += (int)time;
             JSONSaving.SharedInstance.SaveData(check);
-            stop = true;
+            
         }
-        
+        stop = true;
+
 
     }
 }

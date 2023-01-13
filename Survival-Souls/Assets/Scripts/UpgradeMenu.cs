@@ -40,9 +40,12 @@ public class UpgradeMenu : MonoBehaviour
     {
         int value;
         int.TryParse(upgrade.text, out value);
-        value++;
-        upgrade.text = value.ToString();
-        moneyValue = moneyValue - 50;
+        if(moneyValue >= 50)
+        {
+            value++;
+            upgrade.text = value.ToString();
+            moneyValue = moneyValue - 50;
+        }
     }
     public void Save()
     {
