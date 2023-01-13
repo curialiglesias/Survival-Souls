@@ -5,11 +5,15 @@ using System.IO;
 
 public class JSONSaving : MonoBehaviour
 {
+    public static JSONSaving SharedInstance;
     private PlayerData playerData;
-
     private string path;
     private string persistentPath;
 
+    void Awake()
+    {
+        SharedInstance = this;
+    }
     void Start()
     {
         //CreatePlayerData();
@@ -27,7 +31,12 @@ public class JSONSaving : MonoBehaviour
         persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
     }
 
-    public void SaveData()
+    public string GetPath()
+    {
+        return this.path;
+    }
+
+    public void SaveData(PlayerData playerData)
     {
         string savePath = persistentPath;
 
@@ -39,7 +48,7 @@ public class JSONSaving : MonoBehaviour
         writer.Write(json);
     }
 
-    public void LoadData()
+    public PlayerData LoadData()
     {
         using StreamReader reader = new StreamReader(persistentPath);
         string json = reader.ReadToEnd();
@@ -47,6 +56,7 @@ public class JSONSaving : MonoBehaviour
         PlayerData data = JsonUtility.FromJson<PlayerData>(json);
         Debug.Log(data.ToString());
 
+        return data;
     }
 
 }

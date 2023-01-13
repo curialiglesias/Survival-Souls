@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -16,6 +17,8 @@ public class PlayerLife : MonoBehaviour
     private float maxRadius;
     private float minRadius;
 
+    private Boolean stop = false;
+
     // Start is called before the first frame update
 
     void Start()
@@ -33,26 +36,30 @@ public class PlayerLife : MonoBehaviour
 
     void Update()
     {
-        radius = (HP / maxHP) * maxRadius;
-        if (radius > minRadius)
+        if (!stop)
         {
-            GetComponentInChildren<Light2D>().pointLightOuterRadius = radius;
+            radius = (HP / maxHP) * maxRadius;
+            if (radius > minRadius)
+            {
+                GetComponentInChildren<Light2D>().pointLightOuterRadius = radius;
+            }
+
+            if (HP <= 0)
+            {
+                GameOver();
+                stop = true;
+            }
         }
 
-        if (HP <= 0)
-        {
-            GameOver();
-        }
     }
 
     public void GameOver()
     {
-        Debug.Log("Game Over");
         gameOverPanel.SetActive(true);
         GetComponent<PlayerController>().enabled = false;
         GetComponent<WeaponAim>().enabled = false;
         GetComponent<ShootBow>().enabled = false;
-
+        Clock.SharedInstance.StopClock();
     }
 
     public void Heal(int amount)
