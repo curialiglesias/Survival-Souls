@@ -6,6 +6,7 @@ public class PickUp : MonoBehaviour
 {
     private GameObject player;
     public int healAmount;
+    //public AudioSource pickUpSound;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class PickUp : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             player.GetComponent<PlayerLife>().Heal(healAmount);
+            //pickUpSound.Play();
             gameObject.SetActive(false);
         }
     }

@@ -7,7 +7,7 @@ public class ShootBow : MonoBehaviour
 
 
     public Transform FirePoint;
-
+    public AudioSource shootSound;
 
     public float bulletSpeed = 20f;
 
@@ -33,6 +33,7 @@ public class ShootBow : MonoBehaviour
                 arrow.transform.rotation = FirePoint.rotation;
                 Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
                 rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
+                shootSound.Play();
             }
         
     }

@@ -17,7 +17,10 @@ public class PlayerController : MonoBehaviour
     bool canMove;
     private GameObject gameAgent;
 
- 
+    public AudioSource footstepSound;
+    public AudioSource knockbackSound;
+
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -27,7 +30,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
         // WASD input
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("Horizontal", mouseX);
         playerAnimator.SetFloat("Vertical", mouseY);
         playerAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
+
 
     }
     void FixedUpdate()
@@ -65,8 +68,9 @@ public class PlayerController : MonoBehaviour
 
             enemy.GetComponent<Enemy>().canMove = false;
             GetComponent<PlayerLife>().HP -= enemy.GetComponent<Enemy>().damage;
-            
+
             StartCoroutine(KnockbackStunTime(kbStunTime, collision));
+
         }
     }
 
@@ -74,6 +78,7 @@ public class PlayerController : MonoBehaviour
     {
 
         var enemy = collision.collider.gameObject.GetComponent<Enemy>();
+        knockbackSound.Play();
 
         yield return new WaitForSeconds(cooldown);
         canMove = true;
