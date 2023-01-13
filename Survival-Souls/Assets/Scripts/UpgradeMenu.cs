@@ -19,11 +19,17 @@ public class UpgradeMenu : MonoBehaviour
     {
         PlayerData = JSONSaving.SharedInstance.LoadDataFromPath(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json");
         moneyValue = PlayerData.points;
+        upgrade1.text = PlayerData.velocity.ToString();
+        upgrade2.text = PlayerData.attack.ToString();
+        upgrade3.text = PlayerData.soulTime.ToString();
+        upgrade4.text = PlayerData.decraseRate.ToString();
+        upgrade5.text = PlayerData.bonusPoints.ToString();
     }
 
     public void Display()
     {
         moneyText.text = "Points: " + moneyValue.ToString();
+
     }
     // Update is called once per frame
     void Update()
