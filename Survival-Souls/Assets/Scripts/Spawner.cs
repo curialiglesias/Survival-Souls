@@ -22,6 +22,7 @@ public class Spawner : MonoBehaviour
     public int credit;
     private float x;
     private float y;
+    private int randomSpawn;
     private NavMeshTriangulation navMeshTriangulation;
     Vector3 playerPos;
     public static Spawner SharedInstance;
@@ -49,6 +50,9 @@ public class Spawner : MonoBehaviour
     {
         GameObject slime = ObjectPools.SharedInstance.GetPooledObject("SlimeEnemy");
         GameObject golem = ObjectPools.SharedInstance.GetPooledObject("GolemEnemy");
+        GameObject golemIce = ObjectPools.SharedInstance.GetPooledObject("GolemiceEnemy");
+        GameObject golemRock = ObjectPools.SharedInstance.GetPooledObject("GolemrockEnemy");
+
         if (slime != null && golem != null)
         {
             if (credit > 0 && credit <= 6)
@@ -65,9 +69,27 @@ public class Spawner : MonoBehaviour
                 yield return new WaitForSeconds(delay);
                 x = UnityEngine.Random.Range(-7.0f, 8.0f);
                 y = UnityEngine.Random.Range(-7.0f, 3.5f);
-                golem.transform.position = new Vector3(x, y, 0);
-                golem.SetActive(true);
-                credit -= 5;
+                randomSpawn = UnityEngine.Random.Range(1,4);
+
+                if (randomSpawn == 1)
+                {
+                    golem.transform.position = new Vector3(x, y, 0);
+                    golem.SetActive(true);
+                    credit -= 5;
+                }
+                else if (randomSpawn == 2)
+                {
+                    golemIce.transform.position = new Vector3(x, y, 0);
+                    golemIce.SetActive(true);
+                    credit -= 5;
+                }
+                else
+                {
+                    golemRock.transform.position = new Vector3(x, y, 0);
+                    golemRock.SetActive(true);
+                    credit -= 5;
+                }
+
                 StartCoroutine(spawnEnemy(delay));
             }
             else

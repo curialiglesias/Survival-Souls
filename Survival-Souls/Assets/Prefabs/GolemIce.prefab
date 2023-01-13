@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 2566118791149469551}
   m_Layer: 0
   m_Name: GolemIce
-  m_TagString: GolemEnemy
+  m_TagString: GolemiceEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
