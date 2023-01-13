@@ -60,6 +60,8 @@ public class PlayerLife : MonoBehaviour
         GetComponent<PlayerController>().enabled = false;
         GetComponent<WeaponAim>().enabled = false;
         GetComponent<ShootBow>().enabled = false;
+        GameObject.Find("Cursor").SetActive(false);
+        Cursor.visible = true;
         Clock.SharedInstance.StopClock();
     }
 
