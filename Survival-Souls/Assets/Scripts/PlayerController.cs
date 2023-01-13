@@ -14,11 +14,10 @@ public class PlayerController : MonoBehaviour
     public float kbforce = 20f;
     public float kbStunTime;
 
-    bool canMove;
+    private bool canMove;
     private GameObject gameAgent;
-
-    public AudioSource footstepSound;
-    public AudioSource knockbackSound;
+    private bool isMoving;
+    private bool playingFootsteps;
 
 
     void Start()
@@ -26,7 +25,9 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         canMove = true;
-    }
+        isMoving = false;
+        playingFootsteps = false;
+}
 
     void Update()
     {
@@ -46,6 +47,21 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("Vertical", mouseY);
         playerAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
 
+        //Play sound when moving
+        if(moveInput != new Vector2(0,0))
+        {
+            isMoving = true;
+        } else {
+            isMoving = false;
+            playingFootsteps = false;
+            GetComponent<AudioSource>().Pause();
+        }
+
+        if (isMoving == true && playingFootsteps == false)
+        {
+            GetComponent<AudioSource>().Play();
+            playingFootsteps = true;
+        }
 
     }
     void FixedUpdate()
@@ -67,6 +83,7 @@ public class PlayerController : MonoBehaviour
             var enemy = collision.collider.gameObject;
 
             enemy.GetComponent<Enemy>().canMove = false;
+            enemy.GetComponent<AudioSource>().Play();
             GetComponent<PlayerLife>().HP -= enemy.GetComponent<Enemy>().damage;
 
             StartCoroutine(KnockbackStunTime(kbStunTime, collision));
@@ -78,7 +95,6 @@ public class PlayerController : MonoBehaviour
     {
 
         var enemy = collision.collider.gameObject.GetComponent<Enemy>();
-        knockbackSound.Play();
 
         yield return new WaitForSeconds(cooldown);
         canMove = true;

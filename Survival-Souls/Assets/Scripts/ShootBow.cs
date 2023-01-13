@@ -5,10 +5,7 @@ using UnityEngine;
 public class ShootBow : MonoBehaviour
 {
 
-
     public Transform FirePoint;
-    public AudioSource shootSound;
-
     public float bulletSpeed = 20f;
 
     // Update is called once per frame
@@ -22,19 +19,19 @@ public class ShootBow : MonoBehaviour
         }
     }
 
-        void shot()
-        {
-            GameObject arrow = ObjectPools.SharedInstance.GetPooledObject("Arrow");
+    void shot()
+    {
+        GameObject arrow = ObjectPools.SharedInstance.GetPooledObject("Arrow");
             
         if (arrow != null)
-            {
-                arrow.SetActive(true);
-                arrow.transform.position = FirePoint.position;
-                arrow.transform.rotation = FirePoint.rotation;
-                Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
-                rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
-                shootSound.Play();
-            }
+        {
+            arrow.SetActive(true);
+            arrow.transform.position = FirePoint.position;
+            arrow.transform.rotation = FirePoint.rotation;
+            Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
+            rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
+            arrow.GetComponent<AudioSource>().Play();
+        }
         
     }
 
@@ -54,6 +51,6 @@ public class ShootBow : MonoBehaviour
         }
         */
 
-    }
+}
 
 

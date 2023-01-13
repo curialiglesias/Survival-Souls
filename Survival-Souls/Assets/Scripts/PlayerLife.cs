@@ -55,6 +55,7 @@ public class PlayerLife : MonoBehaviour
 
     public void GameOver()
     {
+        GameObject.Find("Music").GetComponent<AudioSource>().Pause();
         gameOverPanel.SetActive(true);
         GetComponent<PlayerController>().enabled = false;
         GetComponent<WeaponAim>().enabled = false;
