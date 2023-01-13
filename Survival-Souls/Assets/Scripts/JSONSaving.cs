@@ -54,7 +54,15 @@ public class JSONSaving : MonoBehaviour
         string json = reader.ReadToEnd();
 
         PlayerData data = JsonUtility.FromJson<PlayerData>(json);
-        Debug.Log(data.ToString());
+
+        return data;
+    }
+    public PlayerData LoadDataFromPath(string persistentPath)
+    {
+        using StreamReader reader = new StreamReader(persistentPath);
+        string json = reader.ReadToEnd();
+
+        PlayerData data = JsonUtility.FromJson<PlayerData>(json);
 
         return data;
     }
