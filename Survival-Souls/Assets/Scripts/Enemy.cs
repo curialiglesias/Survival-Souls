@@ -24,9 +24,11 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+
         agent = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
         playerPosition = GameObject.Find("Player").transform;
+        Debug.Log(playerPosition.transform.position);
         randomDir = GetRandomDir();
 
         if (target == null)
@@ -62,7 +64,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void Roam()
+    public virtual void Roam()
     {
         InvokeRepeating("GetRandomDir", 0f, 5f);
         agent.SetDestination(randomDir);

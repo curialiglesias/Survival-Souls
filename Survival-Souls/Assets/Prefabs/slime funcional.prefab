@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 1924692436}
   - component: {fileID: 1924692439}
   - component: {fileID: 1924692438}
-  - component: {fileID: 1924692434}
   - component: {fileID: -4228413863521722266}
   - component: {fileID: 8589108769287330342}
   - component: {fileID: 1985899525479628379}
   - component: {fileID: -760115520040860330}
+  - component: {fileID: 5578308668879133913}
   m_Layer: 0
   m_Name: slime funcional
   m_TagString: SlimeEnemy
@@ -142,23 +142,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1924692434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9069494121323787840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a49dc328d48f8a4485334818be4006b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  canMove: 1
-  HP: 5
-  initialHP: 5
-  damage: 5
 --- !u!50 &-4228413863521722266
 Rigidbody2D:
   serializedVersion: 4
@@ -312,3 +295,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5578308668879133913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069494121323787840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c265b1f92f02a409283cb8cc92f8ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  canMove: 1
+  HP: 5
+  initialHP: 5
+  damage: 0
+  scale: 3
