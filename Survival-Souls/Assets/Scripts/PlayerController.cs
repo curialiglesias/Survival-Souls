@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public float kbStunTime;
 
     private bool canMove;
-    private GameObject gameAgent;
     private bool isMoving;
     private bool playingFootsteps;
 

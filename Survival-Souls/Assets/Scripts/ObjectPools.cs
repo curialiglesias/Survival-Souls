@@ -17,8 +17,6 @@ public class ObjectPools : MonoBehaviour
     public List<ObjectPoolItem> itemsToPool;
     private List<GameObject> pooledObjects;
 
-
-
     void Awake()
     {
         SharedInstance = this;
