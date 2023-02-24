@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform target;
 
 
-    private NavMeshAgent agent;
+    [SerializeField] public NavMeshAgent agent;
     public bool canMove = true;
     private Transform playerPosition;
 
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     private Vector2 randomDir;
 
 
-    private Animator enemyAnimator;
+    [SerializeField] public Animator enemyAnimator;
 
     void Start()
     {
@@ -28,7 +28,6 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
         playerPosition = GameObject.Find("Player").transform;
-        Debug.Log(playerPosition.transform.position);
         randomDir = GetRandomDir();
 
         if (target == null)
@@ -76,6 +75,8 @@ public class Enemy : MonoBehaviour
     {
         return new Vector2(UnityEngine.Random.Range(-1f,1f), UnityEngine.Random.Range(-1f,1f)).normalized;
     }
+
+
 
 
 

@@ -60,4 +60,19 @@ public class ObjectPools : MonoBehaviour
         }
         return null;
     }
+
+    public List<Transform> GetActiveObjects(string tag)
+    {
+        List<Transform> actives = new List<Transform>();
+
+        for (int i = 0; i < pooledObjects.Count; i++)
+        {
+            if (pooledObjects[i].activeInHierarchy)
+            {
+                actives.Add(pooledObjects[i].gameObject.transform);
+            }
+        }
+
+        return actives;
+    }
 }
