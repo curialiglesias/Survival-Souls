@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Services.Analytics.Internal;
+//using Unity.Services.Analytics.Internal;
 using UnityEngine;
+using Unity.Services.Core.Analytics;
 
 public class Slime : Enemy
 {
@@ -24,7 +25,7 @@ public class Slime : Enemy
         }
     }
 
-public Vector2 GetRandomDir(List<Transform> actives)
+    public Vector2 GetRandomDir(List<Transform> actives)
     {
         Debug.Log (actives.Count);
         int bestTarget = 0;
@@ -51,7 +52,7 @@ public Vector2 GetRandomDir(List<Transform> actives)
         
     }
 
-    public  void Fusion()
+    public void Fusion()
     {
         Vector2 randomDir = GetRandomDir(ObjectPools.SharedInstance.GetActiveObjects("Slime"));
         agent.SetDestination(randomDir);

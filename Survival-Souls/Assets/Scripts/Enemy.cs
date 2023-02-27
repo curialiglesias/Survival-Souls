@@ -48,19 +48,19 @@ public class Enemy : MonoBehaviour
             if (distanceToPlayer.magnitude > 2)
             {
                 Roam();
+
+            }else if (distanceToPlayer.magnitude < 2 && distanceToPlayer.magnitude > 1)
+            {
+                FloorSpikesOn(distanceToPlayer);
             }
             else
             {
                 agent.SetDestination(target.position);
                 enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
                 enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
-
                 enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
-
             }
-
         }
-
     }
 
     public virtual void Roam()
@@ -70,6 +70,10 @@ public class Enemy : MonoBehaviour
         enemyAnimator.SetFloat("Horizontal", randomDir.x);
         enemyAnimator.SetFloat("Vertical", randomDir.y);
     }
+
+
+   public virtual void FloorSpikesOn(Vector2 distanceToPlayer) {}
+
 
     public Vector2 GetRandomDir()
     {

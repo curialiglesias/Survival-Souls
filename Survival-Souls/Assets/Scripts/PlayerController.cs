@@ -92,7 +92,6 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator KnockbackStunTime(float cooldown, Collision2D collision)
     {
-
         var enemy = collision.collider.gameObject.GetComponent<Enemy>();
 
         yield return new WaitForSeconds(cooldown);
@@ -100,7 +99,6 @@ public class PlayerController : MonoBehaviour
         
         yield return new WaitForSeconds(cooldown + 3f);
         enemy.canMove = true;
-
     }
 
 }
