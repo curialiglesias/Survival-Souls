@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
 
             }else if (distanceToPlayer.magnitude < 2 && distanceToPlayer.magnitude > 1)
             {
-                FloorSpikesOn(distanceToPlayer);
+                FloorSpikesOn(distanceToPlayer, playerPosition);
             }
             else
             {
@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-   public virtual void FloorSpikesOn(Vector2 distanceToPlayer) {}
+   public virtual void FloorSpikesOn(Vector2 distanceToPlayer, Transform playerPosition) {}
 
 
     public Vector2 GetRandomDir()
