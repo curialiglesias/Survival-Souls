@@ -129,9 +129,11 @@ GameObject:
   - component: {fileID: 2282083163135677595}
   - component: {fileID: 2282083163135677599}
   - component: {fileID: 5734348853635448542}
+  - component: {fileID: -2863114663058486347}
   - component: {fileID: 2282083163135677594}
   - component: {fileID: 2282083163135677593}
   - component: {fileID: 619980512}
+  - component: {fileID: 6097809201188813812}
   - component: {fileID: 619980513}
   - component: {fileID: 619980514}
   m_Layer: 0
@@ -266,6 +268,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.2621779, y: 0.45028535}
   m_Direction: 0
+--- !u!70 &-2863114663058486347
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282083163135677568}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.2621779, y: 0.45028535}
+  m_Direction: 0
 --- !u!114 &2282083163135677594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +324,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 500
+  HPDecraseRate: 5
+  gameOverPanel: {fileID: 0}
+--- !u!114 &6097809201188813812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282083163135677568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8314fa2343c6cc47a0688cdd1ff48f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFreeze: 0
+  enemy: {fileID: 295557799156033966, guid: 7b602b7e469bc0f488f247e84fd64138, type: 3}
 --- !u!114 &619980513
 MonoBehaviour:
   m_ObjectHideFlags: 0
