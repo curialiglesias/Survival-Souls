@@ -6,20 +6,25 @@ using Unity.Services.Core.Analytics;
 
 public class Slime : Enemy
 {
-    public float scale = 1f;
+    public float scale = 2f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Slime collided");
         if (collision.collider.tag == "SlimeEnemy")
         {
-            Debug.Log("Is a slime");
+
             collision.collider.gameObject.SetActive(false);
+
             Vector2 position = gameObject.transform.position;
+
             gameObject.SetActive(false);
-            GameObject bigSlime = ObjectPools.SharedInstance.GetPooledObject("Slime");
+
+            GameObject bigSlime = ObjectPools.SharedInstance.GetPooledObject("SlimeEnemy");
+
             bigSlime.transform.localScale = new Vector2(scale, scale);
+
             var stats = bigSlime.GetComponent<Enemy>();
+
             stats.initialHP = 30;
             stats.damage = 30;
             bigSlime.transform.position = position;
@@ -55,8 +60,6 @@ public class Slime : Enemy
 
     public void Fusion()
     {
-        Debug.Log("fusion set dest. "+gameObject.activeInHierarchy);
-        //if (!gameObject.activeInHierarchy) return;
 
         Vector2 randomDir = GetRandomDir(ObjectPools.SharedInstance.GetActiveObjects("Slime"));
         agent.SetDestination(randomDir);
