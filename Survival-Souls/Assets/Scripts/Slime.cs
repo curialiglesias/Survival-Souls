@@ -10,8 +10,10 @@ public class Slime : Enemy
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag.Contains("Slime"))
+        Debug.Log("Slime collided");
+        if (collision.collider.tag == "SlimeEnemy")
         {
+            Debug.Log("Is a slime");
             collision.collider.gameObject.SetActive(false);
             Vector2 position = gameObject.transform.position;
             gameObject.SetActive(false);
@@ -24,10 +26,9 @@ public class Slime : Enemy
             bigSlime.SetActive(true);
         }
     }
-
+    
     public Vector2 GetRandomDir(List<Transform> actives)
     {
-        Debug.Log (actives.Count);
         int bestTarget = 0;
         float closestDistanceSqr = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
@@ -42,8 +43,8 @@ public class Slime : Enemy
             }
         }
 
-        //return new Vector2(actives[bestTarget].position.x, actives[bestTarget].position.y);
-        return new Vector2(1,1);
+        return new Vector2(actives[bestTarget].position.x, actives[bestTarget].position.y);
+
     }
 
     public override void Roam()
@@ -54,11 +55,18 @@ public class Slime : Enemy
 
     public void Fusion()
     {
+        Debug.Log("fusion set dest. "+gameObject.activeInHierarchy);
+        //if (!gameObject.activeInHierarchy) return;
+
         Vector2 randomDir = GetRandomDir(ObjectPools.SharedInstance.GetActiveObjects("Slime"));
         agent.SetDestination(randomDir);
         enemyAnimator.SetFloat("Horizontal", randomDir.x);
         enemyAnimator.SetFloat("Vertical", randomDir.y);
     }
 
+    private void OnDisable()
+    {
+        CancelInvoke("Fusion");
+    }
 
 }

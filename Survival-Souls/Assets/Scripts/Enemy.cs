@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] public NavMeshAgent agent;
     public bool canMove = true;
-    private Transform playerPosition;
+    public Transform playerPosition;
 
     //private RenderLine linecontroller;
     public int HP;
@@ -49,12 +49,10 @@ public class Enemy : MonoBehaviour
             {
                 Roam();
 
-            }else if (distanceToPlayer.magnitude < 2 && distanceToPlayer.magnitude > 1)
-            {
-                FloorSpikesOn(distanceToPlayer, playerPosition);
             }
             else
             {
+                Debug.Log("Update set dest. " + gameObject.activeInHierarchy);
                 agent.SetDestination(target.position);
                 enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
                 enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
@@ -65,20 +63,19 @@ public class Enemy : MonoBehaviour
 
     public virtual void Roam()
     {
+        Debug.Log("virtual void Roam set dest. " + gameObject.activeInHierarchy);
         InvokeRepeating("GetRandomDir", 0f, 5f);
         agent.SetDestination(randomDir);
         enemyAnimator.SetFloat("Horizontal", randomDir.x);
         enemyAnimator.SetFloat("Vertical", randomDir.y);
     }
 
-
-   public virtual void FloorSpikesOn(Vector2 distanceToPlayer, Transform playerPosition) {}
-
-
     public Vector2 GetRandomDir()
     {
         return new Vector2(UnityEngine.Random.Range(-1f,1f), UnityEngine.Random.Range(-1f,1f)).normalized;
     }
+
+
 
 
 
