@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    [SerializeField] public Transform target;
 
 
     [SerializeField] public NavMeshAgent agent;
@@ -48,9 +48,13 @@ public class Enemy : MonoBehaviour
             if (distanceToPlayer.magnitude > 2)
             {
                 Roam();
+<<<<<<< Updated upstream
 
             }
             else
+=======
+            }else
+>>>>>>> Stashed changes
             {
                 Debug.Log("Update set dest. " + gameObject.activeInHierarchy);
                 agent.SetDestination(target.position);

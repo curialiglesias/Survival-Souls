@@ -10,20 +10,63 @@ public class BlackGolem : Enemy
     private float x, y;
     private Vector2 distanceBetween, enemyPos;
     private int i = 1;
+<<<<<<< Updated upstream
+=======
+    private float spikeDelay = 0f;
+    public int spikeCounter = 0;
+    Quaternion enemyRot;
 
-    private IEnumerator FloorSpikes(float delay, Vector2 distanceBetween, Vector2 enemyPos)
+
+    void Update()
+    {
+        Vector2 distanceToPlayer = (playerPosition.transform.position - transform.position);
+
+        if (canMove)
+        {
+            if (distanceToPlayer.magnitude > 2)
+            {
+                Roam();
+            }else if (distanceToPlayer.magnitude < 2 && distanceToPlayer.magnitude < 1)
+            {
+                if(spikeCounter == 0)
+                {
+                    FloorSpikesOn(distanceToPlayer, playerPosition);
+                }
+            }
+            else
+            {
+                agent.SetDestination(target.position);
+                enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
+                enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
+                enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
+            }
+        }
+    }
+    public void FloorSpikesOn(Vector2 distanceToPlayer, Transform playerPosition)
+    {
+        //timeStart = Time.time;
+        spikeCounter = 5;
+
+        enemyPos = transform.position;
+        enemyRot = transform.rotation;
+        StartCoroutine(SpawnSpikes(delay, distanceBetween, enemyPos, enemyRot, spikeCounter));
+    }
+>>>>>>> Stashed changes
+
+    private IEnumerator SpawnSpikes(float delay, Vector2 distanceBetween, Vector2 enemyPos, Quaternion enemyRot, int spikeCounter)
     {
         GameObject spikes = ObjectPools.SharedInstance.GetPooledObject("EnemySpike");
-
-
+        
 
         if (spikes != null)
         {
-            yield return new WaitForSeconds(delay);
-            spikes.transform.position = new Vector3(enemyPos.x + (distanceBetween.x)/*+ (distanceBetween.x * i)*/, enemyPos.y + (distanceBetween.y)/*+ (distanceBetween.y * i)*/, 0);
+            spikes.transform.position = new Vector3(,, 0);
             spikes.SetActive(true);
             i++;
-            StartCoroutine(FloorSpikes(delay, distanceBetween, enemyPos));
+            spikeCounter--;
+            yield return new WaitForSeconds(spikeDelay);
+            spikes.SetActive(false);
+            StartCoroutine(SpawnSpikes(delay, distanceBetween, enemyPos, enemyRot, spikeCounter));
         }
     }
 }
