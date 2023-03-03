@@ -10,8 +10,7 @@ public class BlackGolem : Enemy
     private float x, y;
     private Vector2 distanceBetween, enemyPos;
     private int i = 1;
-<<<<<<< Updated upstream
-=======
+
     private float spikeDelay = 0f;
     public int spikeCounter = 0;
     Quaternion enemyRot;
@@ -44,15 +43,13 @@ public class BlackGolem : Enemy
     }
     public void FloorSpikesOn(Vector2 distanceToPlayer, Transform playerPosition)
     {
-        //timeStart = Time.time;
+
         spikeCounter = 5;
 
         enemyPos = transform.position;
         enemyRot = transform.rotation;
         StartCoroutine(SpawnSpikes(delay, distanceBetween, enemyPos, enemyRot, spikeCounter));
     }
->>>>>>> Stashed changes
-
     private IEnumerator SpawnSpikes(float delay, Vector2 distanceBetween, Vector2 enemyPos, Quaternion enemyRot, int spikeCounter)
     {
         GameObject spikes = ObjectPools.SharedInstance.GetPooledObject("EnemySpike");
@@ -60,7 +57,7 @@ public class BlackGolem : Enemy
 
         if (spikes != null)
         {
-            spikes.transform.position = new Vector3(,, 0);
+            spikes.transform.position = new Vector3(0, 0, 0);
             spikes.SetActive(true);
             i++;
             spikeCounter--;

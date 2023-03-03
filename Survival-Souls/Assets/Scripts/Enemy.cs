@@ -48,13 +48,7 @@ public class Enemy : MonoBehaviour
             if (distanceToPlayer.magnitude > 2)
             {
                 Roam();
-<<<<<<< Updated upstream
-
-            }
-            else
-=======
             }else
->>>>>>> Stashed changes
             {
                 Debug.Log("Update set dest. " + gameObject.activeInHierarchy);
                 agent.SetDestination(target.position);
@@ -67,7 +61,6 @@ public class Enemy : MonoBehaviour
 
     public virtual void Roam()
     {
-        Debug.Log("virtual void Roam set dest. " + gameObject.activeInHierarchy);
         InvokeRepeating("GetRandomDir", 0f, 5f);
         agent.SetDestination(randomDir);
         enemyAnimator.SetFloat("Horizontal", randomDir.x);
