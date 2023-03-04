@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1483931317932553936}
   - component: {fileID: 8694560082843907017}
   - component: {fileID: 7125772523129371501}
+  - component: {fileID: -6973312246721447343}
   - component: {fileID: 4843753635274073051}
   - component: {fileID: 2084206097100270581}
   - component: {fileID: 7146086491613319166}
@@ -34,7 +35,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295557799156033966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.35, y: 3.415, z: 0}
+  m_LocalPosition: {x: -3.846, y: 4.127, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -74,6 +75,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToDrop: {fileID: 1246377495219384934, guid: 179aed43d5856e841887699f4dd5bcee, type: 3}
   chance: 1
+--- !u!114 &-6973312246721447343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295557799156033966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faaf9fc8f98e08d4dbf2fac4de0393a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iceColliderPrefab: {fileID: 8881683834338010539, guid: 879e2fe6649c64d4ca7a833d2d2834cd, type: 3}
 --- !u!95 &4843753635274073051
 Animator:
   serializedVersion: 4
@@ -319,7 +333,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295557799156033966}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 10
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -394,7 +408,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -939,15 +953,15 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 5
+    type: 10
     angle: 23.71
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: -0.19, z: 0}
+    m_Position: {x: 0, y: -0.12, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.5, y: 0.22, z: 1}
+    m_Scale: {x: 0.5, y: 0.3, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -1026,7 +1040,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.7
       mode: 0
       spread: 0
       speed:

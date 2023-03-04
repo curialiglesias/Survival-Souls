@@ -12,6 +12,7 @@ TagManager:
   - GolemiceEnemy
   - GolemrockEnemy
   - EnemySpike
+  - IceCollider
   layers:
   - Default
   - TransparentFX
