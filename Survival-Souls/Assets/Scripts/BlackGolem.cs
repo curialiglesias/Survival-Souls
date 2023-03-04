@@ -11,49 +11,47 @@ public class BlackGolem : Enemy
     private Vector2 distanceBetween, enemyPos;
     private int i = 1;
 
-    private float spikeDelay = 0f;
+    private float spikeDelay = 1f;
     public int spikeCounter = 0;
+    private Vector2 positionIteration;
     Quaternion enemyRot;
 
 
     void Update()
     {
         Vector2 distanceToPlayer = (playerPosition.transform.position - transform.position);
-
         if (canMove)
         {
-            if (distanceToPlayer.magnitude > 2)
-            {
-                Roam();
-            }else if (distanceToPlayer.magnitude < 2 && distanceToPlayer.magnitude < 1)
+            if (distanceToPlayer.magnitude < 2 && distanceToPlayer.magnitude < 1)
             {
                 if(spikeCounter == 0)
                 {
-                    FloorSpikesOn(distanceToPlayer, playerPosition);
+                    spikeCounter = 5;
+                    StartCoroutine(SpawnSpikes(delay, distanceBetween, spikeCounter));
                 }
-            }
-            else
-            {
-                agent.SetDestination(target.position);
-                enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
-                enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
-                enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
             }
         }
     }
-    public void FloorSpikesOn(Vector2 distanceToPlayer, Transform playerPosition)
+    private IEnumerator SpawnSpikes(float delay, Vector2 distanceBetween, int spikeCounter)
     {
-
-        spikeCounter = 5;
+        GameObject spikes = ObjectPools.SharedInstance.GetPooledObject("EnemySpike");
+        Vector2 distanceToPlayer = (playerPosition.transform.position - transform.position);
 
         enemyPos = transform.position;
         enemyRot = transform.rotation;
-        StartCoroutine(SpawnSpikes(delay, distanceBetween, enemyPos, enemyRot, spikeCounter));
-    }
-    private IEnumerator SpawnSpikes(float delay, Vector2 distanceBetween, Vector2 enemyPos, Quaternion enemyRot, int spikeCounter)
-    {
-        GameObject spikes = ObjectPools.SharedInstance.GetPooledObject("EnemySpike");
-        
+
+        if (enemyRot.eulerAngles.x >= 30 && enemyRot.eulerAngles.x >= -30)
+        {
+
+        }else if (enemyRot.eulerAngles.x > 30 && enemyRot.eulerAngles.x >= -30)
+        {
+
+        }
+
+
+
+
+        positionIteration = distanceToPlayer / 5;
 
         if (spikes != null)
         {
@@ -63,7 +61,7 @@ public class BlackGolem : Enemy
             spikeCounter--;
             yield return new WaitForSeconds(spikeDelay);
             spikes.SetActive(false);
-            StartCoroutine(SpawnSpikes(delay, distanceBetween, enemyPos, enemyRot, spikeCounter));
+            StartCoroutine(SpawnSpikes(delay, distanceBetween, spikeCounter));
         }
     }
 }
