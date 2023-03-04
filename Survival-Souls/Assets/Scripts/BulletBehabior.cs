@@ -15,28 +15,30 @@ public class BulletBehabior : MonoBehaviour
         else
         {
             if (collider.tag.Contains("Enemy")){
-            
-                var enemy = collider.gameObject.GetComponent<Enemy>();
-                enemy.HP--;
 
-
-                if (enemy.HP <= 0)
+                if (!collider.tag.Contains("Spike"))
                 {
-                    DropOnDestroy drop = collider.gameObject.GetComponent<DropOnDestroy>();
-                    drop.Drop();
+                    var enemy = collider.gameObject.GetComponent<Enemy>();
+                    enemy.HP--;
 
-                    collider.gameObject.SetActive(false);
-
-                    enemy.HP = enemy.initialHP;
-
-                    if (collider.tag.Contains("Slime"))
+                    if (enemy.HP <= 0)
                     {
-                        Spawner.SharedInstance.creditGain(2);
-                    }
-                    else
-                    {
-                        Spawner.SharedInstance.creditGain(6);
+                        DropOnDestroy drop = collider.gameObject.GetComponent<DropOnDestroy>();
+                        drop.Drop();
 
+                        collider.gameObject.SetActive(false);
+
+                        enemy.HP = enemy.initialHP;
+
+                        if (collider.tag.Contains("Slime"))
+                        {
+                            Spawner.SharedInstance.creditGain(2);
+                        }
+                        else
+                        {
+                            Spawner.SharedInstance.creditGain(6);
+
+                        }
                     }
                 }
                 CameraShake.instance.StartShake(.2f, .1f);

@@ -13,6 +13,7 @@ TagManager:
   - GolemrockEnemy
   - EnemySpike
   - IceCollider
+  - spikeWarning
   layers:
   - Default
   - TransparentFX

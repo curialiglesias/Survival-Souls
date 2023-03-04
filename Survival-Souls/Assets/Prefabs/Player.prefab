@@ -338,8 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8314fa2343c6cc47a0688cdd1ff48f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canFreeze: 0
-  enemy: {fileID: 295557799156033966, guid: 7b602b7e469bc0f488f247e84fd64138, type: 3}
+  IceCollider: {fileID: 0}
 --- !u!114 &619980513
 MonoBehaviour:
   m_ObjectHideFlags: 0

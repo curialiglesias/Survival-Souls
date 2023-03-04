@@ -19,7 +19,6 @@ public class BlackGolem : Enemy
     public float Cooldown = 0;
     private float waitToStopTimer = 0;
 
-
     void Update()
     {
 
@@ -83,6 +82,7 @@ public class BlackGolem : Enemy
             yield break;
         }
         GameObject spikes = ObjectPools.SharedInstance.GetPooledObject("EnemySpike");
+        GameObject SpikeWarning = ObjectPools.SharedInstance.GetPooledObject("spikeWarning");
         /*Vector2 distanceToPlayer = (playerPosition.transform.position - transform.position);
 
         if (distanceToPlayer.x < 0)
@@ -158,8 +158,12 @@ public class BlackGolem : Enemy
 
         if (spikes != null)
         {
+
+            SpikeWarning.transform.position = new Vector3(x, y, 0);
+            SpikeWarning.SetActive(true);
             yield return new WaitForSeconds(spikeDelay);
             spikes.transform.position = new Vector3(x, y, 0);
+            SpikeWarning.SetActive(false);
             spikes.SetActive(true);
             spikeCounter = spikeCounter - 1;
             i++;
