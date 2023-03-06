@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     public float damage;
 
     private Vector2 randomDir;
+    public Vector2 distanceToPlayer;
 
 
     [SerializeField] public Animator enemyAnimator;
@@ -41,7 +42,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        Vector2 distanceToPlayer = (playerPosition.transform.position - transform.position);
+        distanceToPlayer = (playerPosition.transform.position - transform.position);
 
         if (canMove)
         {
@@ -50,11 +51,7 @@ public class Enemy : MonoBehaviour
                 Roam();
             }else
             {
-                Debug.Log("Update set dest. " + gameObject.activeInHierarchy);
-                agent.SetDestination(target.position);
-                enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
-                enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
-                enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
+                TrackPlayer();
             }
         }
     }
@@ -65,6 +62,14 @@ public class Enemy : MonoBehaviour
         agent.SetDestination(randomDir);
         enemyAnimator.SetFloat("Horizontal", randomDir.x);
         enemyAnimator.SetFloat("Vertical", randomDir.y);
+    }
+
+    public virtual void TrackPlayer()
+    {
+        agent.SetDestination(target.position);
+        enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
+        enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
+        enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
     }
 
     public Vector2 GetRandomDir()
