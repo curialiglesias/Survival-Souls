@@ -42,7 +42,7 @@ public class BulletBehavior : MonoBehaviour
                 }
                 else
                 {
-                    //Spawner.SharedInstance.creditGain(6);
+                    Spawner.SharedInstance.creditGain(6);
                 }
             }
 

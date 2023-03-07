@@ -56,7 +56,10 @@ public class IceColliderSpawner : MonoBehaviour
     {
         foreach (GameObject iceCollider in activeIceColliders)
         {
-            iceCollider.SetActive(false);
+            if (iceCollider != null)
+            {
+                iceCollider.SetActive(false);
+            }
         }
 
         activeIceColliders.Clear();
