@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -15,18 +14,19 @@ public class PlayerController : MonoBehaviour
     public float kbStunTime;
 
     private bool canMove;
-    private bool isMoving;
-    private bool playingFootsteps;
 
+    private FreezingController freezingController;
+
+    private AudioSource audioSource;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         canMove = true;
-        isMoving = false;
-        playingFootsteps = false;
-}
+        freezingController = GetComponent<FreezingController>();
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -47,30 +47,28 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         //Play sound when moving
-        if(moveInput != new Vector2(0,0))
+        if (!moveInput.Equals(Vector2.zero))
         {
-            isMoving = true;
-        } else {
-            isMoving = false;
-            playingFootsteps = false;
-            GetComponent<AudioSource>().Pause();
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
-
-        if (isMoving == true && playingFootsteps == false)
+        else
         {
-            GetComponent<AudioSource>().Play();
-            playingFootsteps = true;
+            audioSource.Pause();
         }
-
     }
+
     void FixedUpdate()
     {
         if (canMove)
         {
-            rb2d.MovePosition(rb2d.position + moveInput * speed * Time.fixedDeltaTime);
+            float currentSpeed = freezingController.isActive ? speed / 2f : speed;
+            rb2d.MovePosition(rb2d.position + moveInput * currentSpeed * Time.fixedDeltaTime);
+            audioSource.pitch = freezingController.isActive ? 1f : 1.3f;
         }
     }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

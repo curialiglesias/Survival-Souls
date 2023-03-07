@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
                 Roam();
             }else
             {
-                Debug.Log("Update set dest. " + gameObject.activeInHierarchy);
+                //Debug.Log("Update set dest. " + gameObject.activeInHierarchy);
                 agent.SetDestination(target.position);
                 enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
                 enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
