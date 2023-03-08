@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] public Transform target;
-
-
     [SerializeField] public NavMeshAgent agent;
+
     public bool canMove = true;
     public Transform playerPosition;
 
@@ -18,11 +18,12 @@ public class Enemy : MonoBehaviour
     public float damage;
 
     private Vector2 randomDir;
+    public Vector2 distanceToPlayer;
 
 
     [SerializeField] public Animator enemyAnimator;
 
-    void Start()
+    public virtual void Start()
     {
 
         agent = GetComponent<NavMeshAgent>();
@@ -41,7 +42,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        Vector2 distanceToPlayer = (playerPosition.transform.position - transform.position);
+        distanceToPlayer = (playerPosition.transform.position - transform.position);
+
 
         if (canMove)
         {
@@ -50,11 +52,7 @@ public class Enemy : MonoBehaviour
                 Roam();
             }else
             {
-                //Debug.Log("Update set dest. " + gameObject.activeInHierarchy);
-                agent.SetDestination(target.position);
-                enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
-                enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
-                enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
+                TrackPlayer();
             }
         }
     }
@@ -67,34 +65,21 @@ public class Enemy : MonoBehaviour
         enemyAnimator.SetFloat("Vertical", randomDir.y);
     }
 
+    public virtual void TrackPlayer()
+    {
+        agent.SetDestination(target.position);
+        enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
+        enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
+        enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
+    }
+
+
+
     public Vector2 GetRandomDir()
     {
         return new Vector2(UnityEngine.Random.Range(-1f,1f), UnityEngine.Random.Range(-1f,1f)).normalized;
     }
 
 
-
-
-
-
-
-    /*Collider2D[] hitColliders = Physics2D.OverlapCircleAll(gameObject.transform.position, 1.5f, 64);
-
-           List<Transform> enemyPositions = new List<Transform>();
-
-           for (int i = 0; i < hitColliders.Length; i++)
-           {
-               enemyPositions.Add(hitColliders[i].transform);
-           }
-           Debug.Log(enemyPositions.Count);
-
-           linecontroller = GameObject.FindGameObjectWithTag("RenderLine").GetComponent<RenderLine>();
-
-           for (int i = 0; i < enemyPositions.Count; i++)
-           {
-               Debug.Log(enemyPositions[i].transform);
-           }
-           linecontroller.setupLine(enemyPositions);
-   */
 
 }

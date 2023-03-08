@@ -305,8 +305,10 @@ MonoBehaviour:
   target: {fileID: 0}
   agent: {fileID: 0}
   canMove: 1
+  playerPosition: {fileID: 0}
   HP: 10
   initialHP: 10
   damage: 50
+  distanceToPlayer: {x: 0, y: 0}
   enemyAnimator: {fileID: 0}
-  delay: 10
+  spikeCounter: 0
