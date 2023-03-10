@@ -15,6 +15,7 @@ TagManager:
   - IceCollider
   - spikeWarning
   - EnemyRock
+  - SuperSlime
   layers:
   - Default
   - TransparentFX

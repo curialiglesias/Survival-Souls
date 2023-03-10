@@ -19,20 +19,15 @@ public class Slime : Enemy
 
             gameObject.SetActive(false);
 
-            GameObject bigSlime = ObjectPools.SharedInstance.GetPooledObject("SlimeEnemy");
+            GameObject bigSlime = ObjectPools.SharedInstance.GetPooledObject("SuperSlime");
 
             bigSlime.transform.localScale = new Vector2(scale, scale);
-
-            var stats = bigSlime.GetComponent<Enemy>();
-
-            stats.initialHP = 30;
-            stats.damage = 30;
             bigSlime.transform.position = position;
             bigSlime.SetActive(true);
         }
     }
     
-    public Vector2 GetRandomDir(List<Transform> actives)
+    public Vector2 GetClosestSlime(List<Transform> actives)
     {
         int bestTarget = 0;
         float closestDistanceSqr = Mathf.Infinity;
@@ -54,6 +49,7 @@ public class Slime : Enemy
 
     public override void Roam()
     {
+        base.Roam();
         InvokeRepeating("Fusion", 0f, 5f);
         
     }
@@ -61,7 +57,7 @@ public class Slime : Enemy
     public void Fusion()
     {
 
-        Vector2 randomDir = GetRandomDir(ObjectPools.SharedInstance.GetActiveObjects("Slime"));
+        Vector2 randomDir = GetClosestSlime(ObjectPools.SharedInstance.GetActiveObjects("Slime"));
         agent.SetDestination(randomDir);
         enemyAnimator.SetFloat("Horizontal", randomDir.x);
         enemyAnimator.SetFloat("Vertical", randomDir.y);

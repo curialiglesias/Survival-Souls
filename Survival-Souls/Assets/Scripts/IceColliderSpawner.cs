@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceColliderSpawner : MonoBehaviour
+public class IceColliderSpawner : Enemy
 {
     public GameObject iceColliderPrefab;
 

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1483931317932553936}
-  - component: {fileID: 8694560082843907017}
   - component: {fileID: 7125772523129371501}
   - component: {fileID: -6973312246721447343}
   - component: {fileID: 4843753635274073051}
@@ -42,25 +41,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8694560082843907017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295557799156033966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a49dc328d48f8a4485334818be4006b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  agent: {fileID: 0}
-  canMove: 1
-  HP: 10
-  initialHP: 10
-  damage: 50
-  enemyAnimator: {fileID: 0}
 --- !u!114 &7125772523129371501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +67,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faaf9fc8f98e08d4dbf2fac4de0393a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  agent: {fileID: 0}
+  canMove: 1
+  playerPosition: {fileID: 0}
+  HP: 0
+  initialHP: 0
+  damage: 0
+  distanceToPlayer: {x: 0, y: 0}
+  enemyAnimator: {fileID: 0}
   iceColliderPrefab: {fileID: 8881683834338010539, guid: 879e2fe6649c64d4ca7a833d2d2834cd, type: 3}
 --- !u!95 &4843753635274073051
 Animator:
