@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb2d;
-    private Animator playerAnimator;
-    private Vector2 moveInput;
-
     public float speed;
-
     public float kbforce = 20f;
     public float kbStunTime;
 
+    private Rigidbody2D rb2d;
+    private Animator playerAnimator;
+    private AudioSource audioSource;
+
+    private Vector2 moveInput;
     private bool canMove;
 
     private FreezingController freezingController;
-
-    private AudioSource audioSource;
+    private SimpleFlash simpleFlash;
 
     void Start()
     {
@@ -25,6 +24,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         canMove = true;
         freezingController = GetComponent<FreezingController>();
+        simpleFlash = GetComponent<SimpleFlash>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -90,6 +90,8 @@ public class PlayerController : MonoBehaviour
             enemy.GetComponent<AudioSource>().Play();
 
             StartCoroutine(KnockbackStunTime(kbStunTime, collision));
+
+            simpleFlash.Flash();
 
         }
     }
