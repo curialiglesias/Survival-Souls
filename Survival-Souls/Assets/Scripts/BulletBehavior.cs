@@ -24,7 +24,7 @@ public class BulletBehavior : MonoBehaviour
             return;
         }
 
-        if (collider.CompareTag("SlimeEnemy") || collider.CompareTag("GolemEnemy") || collider.CompareTag("GolemiceEnemy") || collider.CompareTag("GolemrockEnemy"))
+        if (collider.tag.Contains("Enemy"))
         {
             var enemy = collider.GetComponent<Enemy>();
             enemy.HP--;

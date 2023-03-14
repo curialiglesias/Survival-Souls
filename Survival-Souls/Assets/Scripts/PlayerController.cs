@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            float currentSpeed = freezingController.isActive ? speed / 2f : speed;
+            float currentSpeed = freezingController.isActive ? speed / 3f : speed;
             rb2d.MovePosition(rb2d.position + moveInput * currentSpeed * Time.fixedDeltaTime);
             audioSource.pitch = freezingController.isActive ? 1f : 1.3f;
         }
@@ -102,9 +102,9 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(cooldown);
         canMove = true;
-        
 
-        
+
+
         yield return new WaitForSeconds(cooldown + 3f);
         if (!collision.collider.tag.Contains("Spike"))
         {

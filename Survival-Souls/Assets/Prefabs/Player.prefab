@@ -133,8 +133,8 @@ GameObject:
   - component: {fileID: 2282083163135677593}
   - component: {fileID: 619980512}
   - component: {fileID: 6097809201188813812}
+  - component: {fileID: 4271408665738054550}
   - component: {fileID: 619980513}
-  - component: {fileID: 6014368497774200413}
   - component: {fileID: 619980514}
   - component: {fileID: 1548513170}
   m_Layer: 0
@@ -324,6 +324,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionTime: 0.5
+--- !u!114 &4271408665738054550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282083163135677568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d637c000eedae484ea736558d9a10820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 6f03d8e2705adf94581e0b3a58df2582, type: 2}
+  duration: 0.1
 --- !u!114 &619980513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,20 +352,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 1576647616}
   bulletSpeed: 5
---- !u!114 &6014368497774200413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2282083163135677568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d637c000eedae484ea736558d9a10820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashMaterial: {fileID: 2100000, guid: 6f03d8e2705adf94581e0b3a58df2582, type: 2}
-  duration: 0.15
 --- !u!114 &619980514
 MonoBehaviour:
   m_ObjectHideFlags: 0

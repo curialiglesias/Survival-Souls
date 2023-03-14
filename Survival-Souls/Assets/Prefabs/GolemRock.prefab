@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2222053458972119331}
-  - component: {fileID: 8280116570202035258}
   - component: {fileID: 7539727444603378846}
+  - component: {fileID: -8020135938801075866}
   - component: {fileID: 5294493968124396584}
   - component: {fileID: 1634028304620653574}
   - component: {fileID: 7595978002543945741}
@@ -39,23 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8280116570202035258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034598876869217885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a49dc328d48f8a4485334818be4006b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  canMove: 1
-  HP: 10
-  initialHP: 10
-  damage: 50
 --- !u!114 &7539727444603378846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +53,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToDrop: {fileID: 1246377495219384934, guid: 179aed43d5856e841887699f4dd5bcee, type: 3}
   chance: 1
+--- !u!114 &-8020135938801075866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034598876869217885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0629a70127759fe48895c6b22dba21be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  agent: {fileID: 0}
+  canMove: 1
+  playerPosition: {fileID: 0}
+  HP: 10
+  initialHP: 10
+  damage: 50
+  distanceToPlayer: {x: 0, y: 0}
+  enemyAnimator: {fileID: 0}
 --- !u!95 &5294493968124396584
 Animator:
   serializedVersion: 4

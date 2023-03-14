@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] public Animator enemyAnimator;
 
-    public virtual void Start()
+    protected virtual void Start()
     {
 
         agent = GetComponent<NavMeshAgent>();
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         agent.updateUpAxis = false;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         distanceToPlayer = (playerPosition.transform.position - transform.position);
 
@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public virtual void Roam()
+    protected virtual void Roam()
     {
         InvokeRepeating("GetRandomDir", 0f, 5f);
         agent.SetDestination(randomDir);
@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
         enemyAnimator.SetFloat("Vertical", randomDir.y);
     }
 
-    public virtual void TrackPlayer()
+    protected virtual void TrackPlayer()
     {
         agent.SetDestination(target.position);
         enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);

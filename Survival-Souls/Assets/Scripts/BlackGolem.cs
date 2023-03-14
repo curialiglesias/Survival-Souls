@@ -17,7 +17,7 @@ public class BlackGolem : Enemy
     public Cooldowns spikeCooldown = new(20);
 
 
-    public override void TrackPlayer()
+    protected override void TrackPlayer()
     {
         base.TrackPlayer();
         

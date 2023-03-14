@@ -19,7 +19,7 @@ public class Slime : Enemy
 
             gameObject.SetActive(false);
 
-            GameObject bigSlime = ObjectPools.SharedInstance.GetPooledObject("SuperSlime");
+            GameObject bigSlime = ObjectPools.SharedInstance.GetPooledObject("SuperSlimeEnemy");
 
             bigSlime.transform.localScale = new Vector2(scale, scale);
             bigSlime.transform.position = position;
@@ -47,7 +47,7 @@ public class Slime : Enemy
 
     }
 
-    public override void Roam()
+    protected override void Roam()
     {
         base.Roam();
         InvokeRepeating("Fusion", 0f, 5f);
