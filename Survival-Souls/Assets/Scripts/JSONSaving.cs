@@ -16,13 +16,12 @@ public class JSONSaving : MonoBehaviour
     }
     void Start()
     {
-        //CreatePlayerData();
         SetPath();
     }
 
     private void CreatePlayerData()
     {
-        playerData = new PlayerData(0, 1, 1, 1, 1, 1);
+        playerData = new PlayerData(0, 0, 0, 0, 0, 0, 0);
     }
 
     private void SetPath()

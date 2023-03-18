@@ -48,7 +48,7 @@ public class Clock : MonoBehaviour
 
         if (!System.IO.File.Exists(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json"))
         {
-            PlayerData player = new PlayerData((int)time, 1, 1, 1, 1, 1);
+            PlayerData player = new PlayerData((int)time, 0, 0, 0, 0, 0, 0);
             JSONSaving.SharedInstance.SaveData(player);
         }
         else

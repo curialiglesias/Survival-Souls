@@ -6,16 +6,18 @@ public class PlayerData
 {
     public int points;
     public int velocity;
-    public int attack;
+    public int damage;
+    public int defense;
     public int soulTime;
     public int decraseRate;
     public int bonusPoints;
 
-    public PlayerData(int points, int velocity, int attack, int soulTime, int decraseRate, int bonusPoints)
+    public PlayerData(int points, int velocity, int damage, int defense, int soulTime, int decraseRate, int bonusPoints)
     {
         this.points = points;
         this.velocity = velocity;
-        this.attack = attack;
+        this.damage = damage;
+        this.defense = defense;
         this.soulTime = soulTime;
         this.decraseRate = decraseRate;
         this.bonusPoints = bonusPoints;
