@@ -78,17 +78,24 @@ public class PlayerController : MonoBehaviour
             canMove = false;
             rb2d.AddForce(dir, ForceMode2D.Impulse);
             var enemy = collision.collider.gameObject;
-            if (!collision.collider.tag.Contains("Spike"))
+            if (enemy.GetComponent<Enemy>() != null)
             {
                 enemy.GetComponent<Enemy>().canMove = false;
                 GetComponent<PlayerLife>().HP -= enemy.GetComponent<Enemy>().damage;
             }
-            else
+            if (enemy.GetComponent<Spikes>() != null)
             {
                 GetComponent<PlayerLife>().HP -= enemy.GetComponent<Spikes>().damage;
             }
-            enemy.GetComponent<AudioSource>().Play();
-
+            if (enemy.GetComponent<RockBehavior>() != null)
+            {
+                GetComponent<PlayerLife>().HP -= enemy.GetComponent<RockBehavior>().damage;
+            }
+            if (enemy.GetComponent<AudioSource>() != null)
+            {
+                enemy.GetComponent<AudioSource>().Play();
+            }
+                
             StartCoroutine(KnockbackStunTime(kbStunTime, collision));
 
             simpleFlash.Flash();
@@ -103,10 +110,8 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         canMove = true;
 
-
-
         yield return new WaitForSeconds(cooldown + 3f);
-        if (!collision.collider.tag.Contains("Spike"))
+        if (enemy != null && enemy.TryGetComponent(out Enemy enemyComponent))
         {
             enemy.canMove = true;
         }

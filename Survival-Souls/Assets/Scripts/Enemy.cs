@@ -6,35 +6,24 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] public Transform target;
-    [SerializeField] public NavMeshAgent agent;
-
     public bool canMove = true;
-    public Transform playerPosition;
-
-    //private RenderLine linecontroller;
     public int HP;
     public int initialHP;
     public float damage;
-
-    private Vector2 randomDir;
     public Vector2 distanceToPlayer;
 
+    private Vector2 randomDir;
 
-    [SerializeField] public Animator enemyAnimator;
+    protected GameObject player;
+    protected NavMeshAgent agent;
+    protected Animator enemyAnimator;
 
     protected virtual void Start()
     {
-
-        agent = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
-        playerPosition = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player");
         randomDir = GetRandomDir();
 
-        if (target == null)
-        {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-        }
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -42,12 +31,11 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
-        distanceToPlayer = (playerPosition.transform.position - transform.position);
-
+        distanceToPlayer = (player.transform.position - transform.position);
 
         if (canMove)
         {
-            if (distanceToPlayer.magnitude > 2)
+            if (distanceToPlayer.magnitude > 5)
             {
                 Roam();
             }else
@@ -67,13 +55,11 @@ public class Enemy : MonoBehaviour
 
     protected virtual void TrackPlayer()
     {
-        agent.SetDestination(target.position);
+        agent.SetDestination(player.transform.position);
         enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
         enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
         enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
     }
-
-
 
     public Vector2 GetRandomDir()
     {

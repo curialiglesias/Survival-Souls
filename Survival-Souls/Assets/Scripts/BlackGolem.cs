@@ -7,9 +7,6 @@ using UnityEngine;
 public class BlackGolem : Enemy
 {
     private float x, y;
-
-
-
     private float spikeDelay = 1f;
     private float spikeInactive = 3f;
     private int spikeCounter = 5;
@@ -38,8 +35,8 @@ public class BlackGolem : Enemy
         GameObject spikes = ObjectPools.SharedInstance.GetPooledObject("EnemySpike");
         GameObject SpikeWarning = ObjectPools.SharedInstance.GetPooledObject("spikeWarning");
   
-        x = playerPosition.position.x;
-        y = playerPosition.position.y;
+        x = player.transform.position.x;
+        y = player.transform.position.y;
 
         if (spikes != null)
         {
