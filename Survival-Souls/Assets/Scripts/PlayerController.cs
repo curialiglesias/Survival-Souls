@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
             {
                 GetComponent<PlayerLife>().HP -= enemy.GetComponent<RockBehavior>().damage;
             }
-            if (enemy.GetComponent<AudioSource>() != null)
+            if (enemy.GetComponent<AudioSource>() != null && enemy.GetComponent<RockBehavior>() == null)
             {
                 enemy.GetComponent<AudioSource>().Play();
             }

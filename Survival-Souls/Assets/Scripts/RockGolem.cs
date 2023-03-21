@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class RockGolem : Enemy
 {
-    
     [SerializeField] private float bulletSpeed = 10f;
-    [SerializeField] private float shootingDistance = 10f;
-    [SerializeField] private float shootInterval = 4f;
+    [SerializeField] private float attackTime = 0.5f;
+    [SerializeField] private float shootingDistance = 2f;
+    [SerializeField] private float shootInterval = 2f;
 
     private List<GameObject> enemyRocks = new List<GameObject>();
     private Transform aim;
     private Transform firePoint;
     private float _lastShootTime;
+    private bool _isAttacking = false;
+    private float _attackTimer = 0f;
 
     protected override void Start()
     {
@@ -24,14 +26,41 @@ public class RockGolem : Enemy
     protected override void Update()
     {
         base.Update();
-        if (distanceToPlayer.magnitude <= shootingDistance && Time.time - _lastShootTime >= shootInterval)
+        if (!_isAttacking && distanceToPlayer.magnitude <= shootingDistance && (Time.time - _lastShootTime) >= shootInterval)
         {
             float angle = Mathf.Atan2(distanceToPlayer.y, distanceToPlayer.x) * Mathf.Rad2Deg;
             aim.rotation = Quaternion.Euler(0, 0, angle);
-            //firePoint.localRotation = Quaternion.identity;
             firePoint.rotation = Quaternion.Euler(0f, 0f, 0f);
-            Shoot();
-            _lastShootTime = Time.time;
+            _isAttacking = true;
+            _attackTimer = 0f;
+            enemyAnimator.SetBool("Attack", true);
+        }
+
+        if (_isAttacking)
+        {
+            _attackTimer += Time.deltaTime;
+            if (_attackTimer >= attackTime)
+            {
+                _isAttacking = false;
+                enemyAnimator.SetBool("Attack", false);
+                Shoot();
+                _lastShootTime = Time.time;
+            }
+        }
+    }
+
+    protected override void TrackPlayer()
+    {
+        enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
+        enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
+
+        if (distanceToPlayer.magnitude > shootingDistance)
+        {
+            agent.SetDestination(player.transform.position);
+        }
+        else
+        {
+            agent.SetDestination(transform.position);
         }
     }
 
@@ -45,6 +74,7 @@ public class RockGolem : Enemy
         enemyRocks.Add(rock);
         Rigidbody2D rb = rock.GetComponent<Rigidbody2D>();
         rb.AddForce(distanceToPlayer.normalized * bulletSpeed, ForceMode2D.Impulse);
+        //rock.GetComponent<AudioSource>().Play();
     }
 
     private void OnDisable()

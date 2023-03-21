@@ -72,8 +72,9 @@ MonoBehaviour:
   damage: 50
   distanceToPlayer: {x: 0, y: 0}
   bulletSpeed: 5
-  shootingDistance: 10
-  shootInterval: 5
+  attackTime: 0.5
+  shootingDistance: 2
+  shootInterval: 2
 --- !u!95 &5294493968124396584
 Animator:
   serializedVersion: 4

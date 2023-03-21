@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public int HP;
     public int initialHP;
     public float damage;
-    public Vector2 distanceToPlayer;
+    [HideInInspector] public Vector2 distanceToPlayer;
 
     private Vector2 randomDir;
 
@@ -65,7 +65,5 @@ public class Enemy : MonoBehaviour
     {
         return new Vector2(UnityEngine.Random.Range(-1f,1f), UnityEngine.Random.Range(-1f,1f)).normalized;
     }
-
-
 
 }
