@@ -43,7 +43,8 @@ public class Enemy : MonoBehaviour
                 {
                     Roam();
                 }
-            }else
+            }
+            else
             {
                 TrackPlayer();
             }
@@ -54,8 +55,6 @@ public class Enemy : MonoBehaviour
     {
         InvokeRepeating("GetRandomDir", 0f, 5f);
         agent.SetDestination(randomDir);
-        Debug.Log(transform.position);
-        Debug.Log(randomDir);
         enemyAnimator.SetFloat("Horizontal", randomDir.x);
         enemyAnimator.SetFloat("Vertical", randomDir.y);
     }

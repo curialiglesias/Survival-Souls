@@ -1,29 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
-//using Unity.Services.Analytics.Internal;
+using Unity.VisualScripting;
 using UnityEngine;
-//using Unity.Services.Core.Analytics;
+using UnityEngine.AI;
 
 public class Slime : Enemy
 {
     public float scale = 2f;
+    private static int numCollisions = 0;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "SlimeEnemy")
         {
+            if (numCollisions == 0)
+            {
+                numCollisions++;
+                collision.collider.gameObject.SetActive(false);
 
-            collision.collider.gameObject.SetActive(false);
+                Vector2 position = gameObject.transform.position;
 
-            Vector2 position = gameObject.transform.position;
+                gameObject.SetActive(false);
 
-            gameObject.SetActive(false);
+                GameObject bigSlime = ObjectPools.SharedInstance.GetPooledObject("SuperSlimeEnemy");
 
-            GameObject bigSlime = ObjectPools.SharedInstance.GetPooledObject("SuperSlimeEnemy");
-
-            bigSlime.transform.localScale = new Vector2(scale, scale);
-            bigSlime.transform.position = position;
-            bigSlime.SetActive(true);
+                bigSlime.transform.localScale = new Vector2(scale, scale);
+                bigSlime.transform.position = position;
+                bigSlime.SetActive(true);
+            }
+            else
+            {
+                numCollisions = 0;
+            }
         }
     }
     
@@ -34,7 +42,6 @@ public class Slime : Enemy
         Vector3 currentPosition = transform.position;
         for(int i = 0; i < actives.Count; i++)
         {
-
             float loopDistance = Vector3.Distance(transform.position, currentPosition);
             if(loopDistance  < closestDistanceSqr)
             {
@@ -51,12 +58,10 @@ public class Slime : Enemy
     {
         base.Roam();
         InvokeRepeating("Fusion", 0f, 5f);
-        
     }
 
     public void Fusion()
     {
-
         Vector2 randomDir = GetClosestSlime(ObjectPools.SharedInstance.GetActiveObjects("Slime"));
         agent.SetDestination(randomDir);
         enemyAnimator.SetFloat("Horizontal", randomDir.x);
@@ -67,5 +72,4 @@ public class Slime : Enemy
     {
         CancelInvoke("Fusion");
     }
-
 }

@@ -307,12 +307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a49dc328d48f8a4485334818be4006b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  agent: {fileID: 0}
   canMove: 1
-  playerPosition: {fileID: 0}
   HP: 10
   initialHP: 10
-  damage: 0
+  damage: 20
   distanceToPlayer: {x: 0, y: 0}
-  enemyAnimator: {fileID: 0}
