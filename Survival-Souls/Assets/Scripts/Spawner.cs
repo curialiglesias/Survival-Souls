@@ -15,7 +15,6 @@ public class Spawner : MonoBehaviour
     public float delay = 2f;
     private int MaxEnemies = 15;
 
-    public float timeStart;
     public int credit;
     private float x;
     private float y;
@@ -41,13 +40,49 @@ public class Spawner : MonoBehaviour
         }
     }
 
+
+    private void setActiveGolems(GameObject golem, GameObject golemIce, GameObject golemRock)
+    {
+        x = UnityEngine.Random.Range(-7.0f, 8.0f);
+        y = UnityEngine.Random.Range(-7.0f, 3.5f);
+        randomSpawn = UnityEngine.Random.Range(1, 4);
+
+        if (randomSpawn == 1)
+        {
+            golem.transform.position = new Vector3(x, y, 0);
+            golem.SetActive(true);
+            credit -= 5;
+        }
+        else if (randomSpawn == 2)
+        {
+            golemIce.transform.position = new Vector3(x, y, 0);
+            golemIce.SetActive(true);
+            credit -= 5;
+        }
+        else
+        {
+            golemRock.transform.position = new Vector3(x, y, 0);
+            golemRock.SetActive(true);
+            credit -= 5;
+        }
+    }
+
+
+    private void setActiveSlimes(GameObject slime)
+    {
+        x = UnityEngine.Random.Range(-7.0f, 8.0f);
+        y = UnityEngine.Random.Range(-7.0f, 3.5f);
+        slime.transform.position = new Vector3(x, y, 0);
+        slime.SetActive(true);
+        credit -= 1;
+    }
+
     private IEnumerator spawnEnemy(float delay)
     {
         GameObject slime = ObjectPools.SharedInstance.GetPooledObject("SlimeEnemy");
         GameObject golem = ObjectPools.SharedInstance.GetPooledObject("GolemEnemy");
         GameObject golemIce = ObjectPools.SharedInstance.GetPooledObject("GolemiceEnemy");
         GameObject golemRock = ObjectPools.SharedInstance.GetPooledObject("GolemrockEnemy");
-        timeStart = Time.time;
 
         if (slime != null && golem != null)
         {
@@ -57,79 +92,27 @@ public class Spawner : MonoBehaviour
                 yield return new WaitForSeconds(delay);
                 if (credit > 20)
                 {
-                    if (randomProbability > 0 && randomProbability < 3)
+                    if (randomProbability > 0 && randomProbability < 4)
                     {
-                        x = UnityEngine.Random.Range(-7.0f, 8.0f);
-                        y = UnityEngine.Random.Range(-7.0f, 3.5f);
-                        randomSpawn = UnityEngine.Random.Range(1, 4);
-
-                        if (randomSpawn == 1)
-                        {
-                            golem.transform.position = new Vector3(x, y, 0);
-                            golem.SetActive(true);
-                            credit -= 5;
-                        }
-                        else if (randomSpawn == 2)
-                        {
-                            golemIce.transform.position = new Vector3(x, y, 0);
-                            golemIce.SetActive(true);
-                            credit -= 5;
-                        }
-                        else
-                        {
-                            golemRock.transform.position = new Vector3(x, y, 0);
-                            golemRock.SetActive(true);
-                            credit -= 5;
-                        }
-
+                        setActiveGolems(golem, golemIce, golemRock);
                         StartCoroutine(spawnEnemy(delay));
                     }
                     else
                     {
-                        x = UnityEngine.Random.Range(-7.0f, 8.0f);
-                        y = UnityEngine.Random.Range(-7.0f, 3.5f);
-                        slime.transform.position = new Vector3(x, y, 0);
-                        slime.SetActive(true);
-                        credit -= 1;
+                        setActiveSlimes(slime);
                         StartCoroutine(spawnEnemy(delay));
                     }
                 }
                 else
                 {
-                    if (randomProbability > 0 && randomProbability < 2)
+                    if (randomProbability > 0 && randomProbability < 1)
                     {
-                        x = UnityEngine.Random.Range(-7.0f, 8.0f);
-                        y = UnityEngine.Random.Range(-7.0f, 3.5f);
-                        randomSpawn = UnityEngine.Random.Range(1, 4);
-
-                        if (randomSpawn == 1)
-                        {
-                            golem.transform.position = new Vector3(x, y, 0);
-                            golem.SetActive(true);
-                            credit -= 5;
-                        }
-                        else if (randomSpawn == 2)
-                        {
-                            golemIce.transform.position = new Vector3(x, y, 0);
-                            golemIce.SetActive(true);
-                            credit -= 5;
-                        }
-                        else
-                        {
-                            golemRock.transform.position = new Vector3(x, y, 0);
-                            golemRock.SetActive(true);
-                            credit -= 5;
-                        }
-
+                        setActiveGolems(golem, golemIce, golemRock);
                         StartCoroutine(spawnEnemy(delay));
                     }
                     else
                     {
-                        x = UnityEngine.Random.Range(-7.0f, 8.0f);
-                        y = UnityEngine.Random.Range(-7.0f, 3.5f);
-                        slime.transform.position = new Vector3(x, y, 0);
-                        slime.SetActive(true);
-                        credit -= 1;
+                        setActiveSlimes(slime);
                         StartCoroutine(spawnEnemy(delay));
                     }
                 }
