@@ -12,7 +12,8 @@ public class Enemy : MonoBehaviour
     public float damage;
     [HideInInspector] public Vector2 distanceToPlayer;
 
-    private Vector2 randomDir;
+    private Vector3 randomDir;
+    private Vector3 startPosition;
 
     protected GameObject player;
     protected NavMeshAgent agent;
@@ -22,7 +23,8 @@ public class Enemy : MonoBehaviour
     {
         enemyAnimator = GetComponent<Animator>();
         player = GameObject.Find("Player");
-        randomDir = GetRandomDir();
+        startPosition = transform.position;
+        GetRandomDir();
 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -35,9 +37,12 @@ public class Enemy : MonoBehaviour
 
         if (canMove)
         {
-            if (distanceToPlayer.magnitude > 5)
+            if (distanceToPlayer.magnitude > 3)
             {
-                Roam();
+                if(Vector3.Distance(startPosition, randomDir) < 1f)
+                {
+                    Roam();
+                }
             }else
             {
                 TrackPlayer();
@@ -49,6 +54,8 @@ public class Enemy : MonoBehaviour
     {
         InvokeRepeating("GetRandomDir", 0f, 5f);
         agent.SetDestination(randomDir);
+        Debug.Log(transform.position);
+        Debug.Log(randomDir);
         enemyAnimator.SetFloat("Horizontal", randomDir.x);
         enemyAnimator.SetFloat("Vertical", randomDir.y);
     }
@@ -61,9 +68,10 @@ public class Enemy : MonoBehaviour
         enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
     }
 
-    public Vector2 GetRandomDir()
+    public void GetRandomDir()
     {
-        return new Vector2(UnityEngine.Random.Range(-1f,1f), UnityEngine.Random.Range(-1f,1f)).normalized;
+        Vector3 aux = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
+        randomDir = startPosition + (aux * UnityEngine.Random.Range(-2f, 2f));
     }
 
 }
