@@ -14,11 +14,8 @@ public class Spawner : MonoBehaviour
 {
     public float delay = 2f;
     private int MaxEnemies = 15;
-    private float low_tier_time = 20f;
-    private float medium_tier_time = 120f;
-    private float high_tier_time = 450f;
-    private float boss_tier_time = 600f;
-    private float timeStart;
+
+    public float timeStart;
     public int credit;
     private float x;
     private float y;
@@ -33,7 +30,6 @@ public class Spawner : MonoBehaviour
     }
     void Start()
     {
-        //timeStart = Time.time;
         StartCoroutine(spawnEnemy(delay));
     }
 
@@ -43,7 +39,6 @@ public class Spawner : MonoBehaviour
         {
             credit += addedCredit;
         }
- 
     }
 
     private IEnumerator spawnEnemy(float delay)
@@ -52,45 +47,92 @@ public class Spawner : MonoBehaviour
         GameObject golem = ObjectPools.SharedInstance.GetPooledObject("GolemEnemy");
         GameObject golemIce = ObjectPools.SharedInstance.GetPooledObject("GolemiceEnemy");
         GameObject golemRock = ObjectPools.SharedInstance.GetPooledObject("GolemrockEnemy");
+        timeStart = Time.time;
 
         if (slime != null && golem != null)
         {
-            if (credit > 0 && credit <= 6)
+            if (credit > 0)
             {
+                int randomProbability = UnityEngine.Random.Range(1, 10);
                 yield return new WaitForSeconds(delay);
-                x = UnityEngine.Random.Range(-7.0f, 8.0f);
-                y = UnityEngine.Random.Range(-7.0f, 3.5f);
-                slime.transform.position = new Vector3(x, y, 0);
-                slime.SetActive(true);
-                credit -= 1;
-                StartCoroutine(spawnEnemy(delay));
-            }else if (credit > 6)
-            {
-                yield return new WaitForSeconds(delay);
-                x = UnityEngine.Random.Range(-7.0f, 8.0f);
-                y = UnityEngine.Random.Range(-7.0f, 3.5f);
-                randomSpawn = UnityEngine.Random.Range(1,4);
+                if (credit > 20)
+                {
+                    if (randomProbability > 0 && randomProbability < 3)
+                    {
+                        x = UnityEngine.Random.Range(-7.0f, 8.0f);
+                        y = UnityEngine.Random.Range(-7.0f, 3.5f);
+                        randomSpawn = UnityEngine.Random.Range(1, 4);
 
-                if (randomSpawn == 1)
-                {
-                    golem.transform.position = new Vector3(x, y, 0);
-                    golem.SetActive(true);
-                    credit -= 5;
-                }
-                else if (randomSpawn == 2)
-                {
-                    golemIce.transform.position = new Vector3(x, y, 0);
-                    golemIce.SetActive(true);
-                    credit -= 5;
+                        if (randomSpawn == 1)
+                        {
+                            golem.transform.position = new Vector3(x, y, 0);
+                            golem.SetActive(true);
+                            credit -= 5;
+                        }
+                        else if (randomSpawn == 2)
+                        {
+                            golemIce.transform.position = new Vector3(x, y, 0);
+                            golemIce.SetActive(true);
+                            credit -= 5;
+                        }
+                        else
+                        {
+                            golemRock.transform.position = new Vector3(x, y, 0);
+                            golemRock.SetActive(true);
+                            credit -= 5;
+                        }
+
+                        StartCoroutine(spawnEnemy(delay));
+                    }
+                    else
+                    {
+                        x = UnityEngine.Random.Range(-7.0f, 8.0f);
+                        y = UnityEngine.Random.Range(-7.0f, 3.5f);
+                        slime.transform.position = new Vector3(x, y, 0);
+                        slime.SetActive(true);
+                        credit -= 1;
+                        StartCoroutine(spawnEnemy(delay));
+                    }
                 }
                 else
                 {
-                    golemRock.transform.position = new Vector3(x, y, 0);
-                    golemRock.SetActive(true);
-                    credit -= 5;
-                }
+                    if (randomProbability > 0 && randomProbability < 2)
+                    {
+                        x = UnityEngine.Random.Range(-7.0f, 8.0f);
+                        y = UnityEngine.Random.Range(-7.0f, 3.5f);
+                        randomSpawn = UnityEngine.Random.Range(1, 4);
 
-                StartCoroutine(spawnEnemy(delay));
+                        if (randomSpawn == 1)
+                        {
+                            golem.transform.position = new Vector3(x, y, 0);
+                            golem.SetActive(true);
+                            credit -= 5;
+                        }
+                        else if (randomSpawn == 2)
+                        {
+                            golemIce.transform.position = new Vector3(x, y, 0);
+                            golemIce.SetActive(true);
+                            credit -= 5;
+                        }
+                        else
+                        {
+                            golemRock.transform.position = new Vector3(x, y, 0);
+                            golemRock.SetActive(true);
+                            credit -= 5;
+                        }
+
+                        StartCoroutine(spawnEnemy(delay));
+                    }
+                    else
+                    {
+                        x = UnityEngine.Random.Range(-7.0f, 8.0f);
+                        y = UnityEngine.Random.Range(-7.0f, 3.5f);
+                        slime.transform.position = new Vector3(x, y, 0);
+                        slime.SetActive(true);
+                        credit -= 1;
+                        StartCoroutine(spawnEnemy(delay));
+                    }
+                }
             }
             else
             {
