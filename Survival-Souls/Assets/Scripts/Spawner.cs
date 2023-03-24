@@ -1,26 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
-using Unity.VisualScripting;
-using UnityEngine.AI;
-//using UnityEngine.Random;
-
-[System.Serializable]
 
 
 
 public class Spawner : MonoBehaviour
 {
     public float delay = 2f;
-    private int MaxEnemies = 15;
 
     public int credit;
     private float x;
     private float y;
     private int randomSpawn;
-    private NavMeshTriangulation navMeshTriangulation;
-    Vector3 playerPos;
     public static Spawner SharedInstance;
 
     void Awake()
@@ -70,8 +60,8 @@ public class Spawner : MonoBehaviour
 
     private void setActiveSlimes(GameObject slime)
     {
-        x = UnityEngine.Random.Range(-7.0f, 8.0f);
-        y = UnityEngine.Random.Range(-7.0f, 3.5f);
+        x = Random.Range(-7.0f, 8.0f);
+        y = Random.Range(-7.0f, 3.5f);
         slime.transform.position = new Vector3(x, y, 0);
         slime.SetActive(true);
         credit -= 1;
@@ -88,7 +78,7 @@ public class Spawner : MonoBehaviour
         {
             if (credit > 0)
             {
-                int randomProbability = UnityEngine.Random.Range(1, 10);
+                int randomProbability = Random.Range(1, 10);
                 yield return new WaitForSeconds(delay);
                 if (credit > 20)
                 {
