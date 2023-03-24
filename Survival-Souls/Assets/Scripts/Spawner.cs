@@ -1,4 +1,4 @@
-using System.Collections;
+   using System.Collections;
 using UnityEngine;
 
 
@@ -93,9 +93,9 @@ public class Spawner : MonoBehaviour
                         StartCoroutine(spawnEnemy(delay));
                     }
                 }
-                else
+                else if(credit > 50)
                 {
-                    if (randomProbability > 0 && randomProbability < 1)
+                    if (randomProbability > 0 && randomProbability < 9)
                     {
                         setActiveGolems(golem, golemIce, golemRock);
                         StartCoroutine(spawnEnemy(delay));
@@ -105,6 +105,11 @@ public class Spawner : MonoBehaviour
                         setActiveSlimes(slime);
                         StartCoroutine(spawnEnemy(delay));
                     }
+                }
+                else
+                {
+                    setActiveSlimes(slime);
+                    StartCoroutine(spawnEnemy(delay));
                 }
             }
             else

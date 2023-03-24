@@ -8,8 +8,8 @@ using UnityEngine.Rendering.Universal;
 
 public class PlayerLife : MonoBehaviour
 {
-    public float HP;
-    public float HPDecraseRate = 5;
+    public float HP = 200;
+    private float HPDecraseRate = 3;
     public GameObject gameOverPanel;
 
     private float maxHP;
@@ -28,7 +28,7 @@ public class PlayerLife : MonoBehaviour
         InvokeRepeating("Subtract", 1f, 1f);
         maxHP = HP;
         maxRadius = gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius;
-        minRadius = 0.25f;
+        minRadius = 0.90f;
 
     }
 

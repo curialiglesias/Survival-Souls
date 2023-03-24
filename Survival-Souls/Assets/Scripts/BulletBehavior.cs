@@ -44,11 +44,11 @@ public class BulletBehavior : MonoBehaviour
 
                 if (collider.CompareTag("SlimeEnemy"))
                 {
-                    Spawner.SharedInstance.creditGain(2);
+                    Spawner.SharedInstance.creditGain(3);
                 }
                 else
                 {
-                    Spawner.SharedInstance.creditGain(6);
+                    Spawner.SharedInstance.creditGain(8);
                 }
             }
 
