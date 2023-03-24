@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerData
 {
-    public int points;
-    public int velocity;
-    public int damage;
-    public int defense;
-    public int soulTime;
-    public int decraseRate;
-    public int bonusPoints;
+    public float points;
+    public float velocity;
+    public float damage;
+    public float defense;
+    public float soulTime;
+    public float decraseRate;
+    public float bonusPoints;
 
-    public PlayerData(int points, int velocity, int damage, int defense, int soulTime, int decraseRate, int bonusPoints)
+    public PlayerData(float points, float velocity, float damage, float defense, float soulTime, float decraseRate, float bonusPoints)
     {
         this.points = points;
         this.velocity = velocity;
