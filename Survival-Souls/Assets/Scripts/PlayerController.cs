@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
             if (enemy.GetComponent<AudioSource>() != null && enemy.GetComponent<RockBehavior>() == null)
             {
                 int randomSound = Random.Range(1, 10);
-                if (randomSound > 0 && randomSound < 5)
+                if (randomSound > 0 && randomSound < 8)
                 {
                     enemy.GetComponent<AudioSource>().Play();
                 }
