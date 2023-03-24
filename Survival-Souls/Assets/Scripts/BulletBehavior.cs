@@ -17,7 +17,7 @@ public class BulletBehavior : MonoBehaviour
     }
     private void Start()
     {
-        damage = 1;
+        damage = 2;
         damage = damage * (1 + (JSONSaving.SharedInstance.playerData.damage * 0.25f));
     }
 

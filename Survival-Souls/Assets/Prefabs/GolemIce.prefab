@@ -68,9 +68,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  HP: 10
-  initialHP: 10
-  damage: 50
+  HP: 25
+  initialHP: 25
+  damage: 30
   distanceToPlayer: {x: 0, y: 0}
   iceColliderPrefab: {fileID: 8881683834338010539, guid: 879e2fe6649c64d4ca7a833d2d2834cd, type: 3}
 --- !u!95 &4843753635274073051

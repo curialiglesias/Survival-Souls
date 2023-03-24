@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4582775578960642574}
   - component: {fileID: 5977609721163513626}
   - component: {fileID: 5018004353242721649}
+  - component: {fileID: 5084097620100153896}
   m_Layer: 0
   m_Name: Rock_big
   m_TagString: EnemyRock
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  damage: 100
+  damage: 10
 --- !u!82 &5018004353242721649
 AudioSource:
   m_ObjectHideFlags: 0
@@ -235,3 +236,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5084097620100153896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093308741979104960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99dc56f8057a682419a8875b2053c597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 3

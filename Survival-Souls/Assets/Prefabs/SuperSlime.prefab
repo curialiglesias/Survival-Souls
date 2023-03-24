@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  HP: 10
-  initialHP: 10
+  HP: 15
+  initialHP: 15
   damage: 20
   distanceToPlayer: {x: 0, y: 0}
