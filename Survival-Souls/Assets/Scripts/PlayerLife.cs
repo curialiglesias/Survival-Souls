@@ -8,7 +8,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PlayerLife : MonoBehaviour
 {
-    public float HP = 500;
+    public float HP;
     public float HPDecraseRate = 5;
     public GameObject gameOverPanel;
 
@@ -20,14 +20,19 @@ public class PlayerLife : MonoBehaviour
     private Boolean stop = false;
 
     // Start is called before the first frame update
-
     void Start()
     {
+
+        HPDecraseRate = HPDecraseRate / (1 + JSONSaving.SharedInstance.playerData.decraseRate * 0.25f);
+        HP = HP + (JSONSaving.SharedInstance.playerData.soulTime * 25);
         InvokeRepeating("Subtract", 1f, 1f);
         maxHP = HP;
         maxRadius = gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius;
         minRadius = 0.25f;
+
     }
+
+
 
     void Subtract()
     {
@@ -65,7 +70,7 @@ public class PlayerLife : MonoBehaviour
         Clock.SharedInstance.StopClock();
     }
 
-    public void Heal(int amount)
+    public void Heal(float amount)
     {
         if (HP >= 0)
         {

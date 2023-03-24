@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     public bool canMove = true;
-    public int HP;
+    public float HP;
     public int initialHP;
     public float damage;
     [HideInInspector] public Vector2 distanceToPlayer;
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("Player");
         startPosition = transform.position;
         GetRandomDir();
-
+        damage = damage / (1 + (JSONSaving.SharedInstance.playerData.defense * 0.25f));
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;

@@ -6,6 +6,7 @@ public class BulletBehavior : MonoBehaviour
     private float timer;
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
+    public float damage;
 
     private Coroutine deactivateArrowCoroutine;
 
@@ -13,6 +14,11 @@ public class BulletBehavior : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
+    }
+    private void Start()
+    {
+        damage = 1;
+        damage = damage * (1 + (JSONSaving.SharedInstance.playerData.damage * 0.25f));
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -27,7 +33,7 @@ public class BulletBehavior : MonoBehaviour
         if (collider.tag.Contains("Enemy"))
         {
             var enemy = collider.GetComponent<Enemy>();
-            enemy.HP--;
+            enemy.HP  -= (damage);
 
             if (enemy.HP <= 0)
             {

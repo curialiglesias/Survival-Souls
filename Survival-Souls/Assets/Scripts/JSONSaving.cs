@@ -6,23 +6,18 @@ using System.IO;
 public class JSONSaving : MonoBehaviour
 {
     public static JSONSaving SharedInstance;
-    private PlayerData playerData;
+    public PlayerData playerData;
     private string path;
     private string persistentPath;
 
     void Awake()
     {
         SharedInstance = this;
-    }
-    void Start()
-    {
         SetPath();
+        LoadPreLoadData();
     }
+  
 
-    private void CreatePlayerData()
-    {
-        playerData = new PlayerData(0, 0, 0, 0, 0, 0, 0);
-    }
 
     private void SetPath()
     {
@@ -52,18 +47,27 @@ public class JSONSaving : MonoBehaviour
         using StreamReader reader = new StreamReader(persistentPath);
         string json = reader.ReadToEnd();
 
-        PlayerData data = JsonUtility.FromJson<PlayerData>(json);
+        playerData = JsonUtility.FromJson<PlayerData>(json);
 
-        return data;
+        return playerData;
+    }
+
+    private void LoadPreLoadData()
+    {
+        using StreamReader reader = new StreamReader(persistentPath);
+        string json = reader.ReadToEnd();
+
+        playerData = JsonUtility.FromJson<PlayerData>(json);
+
     }
     public PlayerData LoadDataFromPath(string persistentPath)
     {
         using StreamReader reader = new StreamReader(persistentPath);
         string json = reader.ReadToEnd();
 
-        PlayerData data = JsonUtility.FromJson<PlayerData>(json);
+        playerData = JsonUtility.FromJson<PlayerData>(json);
 
-        return data;
+        return playerData;
     }
 
 }

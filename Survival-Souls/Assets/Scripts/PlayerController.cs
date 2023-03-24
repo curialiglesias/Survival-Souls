@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour
         freezingController = GetComponent<FreezingController>();
         simpleFlash = GetComponent<SimpleFlash>();
         audioSource = GetComponent<AudioSource>();
+        speed = speed * (1 + JSONSaving.SharedInstance.playerData.velocity * 0.25f);
     }
+
 
     void Update()
     {

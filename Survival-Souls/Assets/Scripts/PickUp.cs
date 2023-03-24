@@ -5,12 +5,13 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     private GameObject player;
-    public int healAmount;
+    public float healAmount;
 
     void Start()
     {
         //float HP = GameObject.Find("Player").GetComponent<PlayerLife>().HP;
         //playerLife = GameObject.Find("Player").GetComponent<PlayerLife>().HP;
+        healAmount = healAmount  * (1 + JSONSaving.SharedInstance.playerData.bonusPoints * 0.25f);
         player = GameObject.Find("Player");
     }
 
