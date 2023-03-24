@@ -5,15 +5,15 @@ using UnityEngine;
 public class DropOnDestroy : MonoBehaviour
 {
     public GameObject itemToDrop;
-    [Range(0f, 1f)]
-    public float chance = 1f;
 
     public void Drop()
     {
-        if (Random.value <= chance)
+        int randomProbability = Random.Range(1, 10);
+        if (randomProbability > 0 && randomProbability < 6)
         {
             GameObject drop = ObjectPools.SharedInstance.GetPooledObject(itemToDrop.name);
 
+           
 
             if (drop != null)
             {
