@@ -93,7 +93,11 @@ public class PlayerController : MonoBehaviour
             }
             if (enemy.GetComponent<AudioSource>() != null && enemy.GetComponent<RockBehavior>() == null)
             {
-                enemy.GetComponent<AudioSource>().Play();
+                int randomSound = Random.Range(1, 10);
+                if (randomSound > 0 && randomSound < 5)
+                {
+                    enemy.GetComponent<AudioSource>().Play();
+                }
             }
                 
             StartCoroutine(KnockbackStunTime(kbStunTime, collision));
