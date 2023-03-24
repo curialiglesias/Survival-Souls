@@ -54,10 +54,19 @@ public class JSONSaving : MonoBehaviour
 
     private void LoadPreLoadData()
     {
-        using StreamReader reader = new StreamReader(persistentPath);
-        string json = reader.ReadToEnd();
+        if (!System.IO.File.Exists(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json"))
+        {
+            playerData = new PlayerData(0, 0, 0, 0, 0, 0, 0);
+            SaveData(playerData);
+        }
+        else
+        {
+            using StreamReader reader = new StreamReader(persistentPath);
+            string json = reader.ReadToEnd();
 
-        playerData = JsonUtility.FromJson<PlayerData>(json);
+            playerData = JsonUtility.FromJson<PlayerData>(json);
+        }
+
 
     }
     public PlayerData LoadDataFromPath(string persistentPath)
