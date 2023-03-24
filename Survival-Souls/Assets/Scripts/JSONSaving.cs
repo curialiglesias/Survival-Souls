@@ -34,9 +34,9 @@ public class JSONSaving : MonoBehaviour
     {
         string savePath = persistentPath;
 
-        Debug.Log("Saving Data at " + savePath);
+
         string json = JsonUtility.ToJson(playerData);
-        Debug.Log(json);
+
 
         using StreamWriter writer = new StreamWriter(savePath);
         writer.Write(json);
