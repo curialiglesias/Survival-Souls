@@ -67,15 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faaf9fc8f98e08d4dbf2fac4de0393a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  agent: {fileID: 0}
   canMove: 1
-  playerPosition: {fileID: 0}
   HP: 10
   initialHP: 10
   damage: 50
   distanceToPlayer: {x: 0, y: 0}
-  enemyAnimator: {fileID: 0}
   iceColliderPrefab: {fileID: 8881683834338010539, guid: 879e2fe6649c64d4ca7a833d2d2834cd, type: 3}
 --- !u!95 &4843753635274073051
 Animator:
@@ -228,7 +224,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: deda003199fddde42a74d7af02847f47, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d0aabcce628a0b4458b29990b05ba2ba, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

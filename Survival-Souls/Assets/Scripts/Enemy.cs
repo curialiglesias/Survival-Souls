@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         {
             if (distanceToPlayer.magnitude > 3)
             {
-                if(Vector3.Distance(startPosition, randomDir) < 1f)
+                if(Vector3.Distance(transform.position, randomDir) < 1f)
                 {
                     Roam();
                 }
