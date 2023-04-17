@@ -13,7 +13,8 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public Vector2 distanceToPlayer;
 
     private Vector3 randomDir;
-    private Vector3 startPosition;
+    public Vector3 startPosition;
+    public Vector3 aux;
 
     protected GameObject player;
     protected NavMeshAgent agent;
@@ -69,7 +70,7 @@ public class Enemy : MonoBehaviour
 
     public void GetRandomDir()
     {
-        Vector3 aux = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
+        aux = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
         randomDir = startPosition + (aux * UnityEngine.Random.Range(-2f, 2f));
     }
 
