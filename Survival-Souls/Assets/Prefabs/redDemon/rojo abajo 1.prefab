@@ -2390,10 +2390,9 @@ GameObject:
   - component: {fileID: 5235250622056281234}
   - component: {fileID: 6100251230983989148}
   - component: {fileID: 9070298294558289204}
-  - component: {fileID: 8694193521712194262}
   m_Layer: 0
   m_Name: rojo abajo 1
-  m_TagString: Untagged
+  m_TagString: EnemyRedDemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2504,25 +2503,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8694193521712194262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8358229718849973083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d02073538edd44aa21eb261d884ba6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canMove: 1
-  HP: 0
-  initialHP: 0
-  damage: 0
-  distanceToPlayer: {x: 0, y: 0}
-  startPosition: {x: 0, y: 0, z: 0}
-  aux: {x: 0, y: 0, z: 0}
 --- !u!1 &8732088008648031674
 GameObject:
   m_ObjectHideFlags: 0

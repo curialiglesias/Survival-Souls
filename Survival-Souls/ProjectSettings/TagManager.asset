@@ -16,6 +16,7 @@ TagManager:
   - spikeWarning
   - EnemyRock
   - SuperSlimeEnemy
+  - EnemyRedDemon
   layers:
   - Default
   - TransparentFX
