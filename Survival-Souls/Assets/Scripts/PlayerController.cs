@@ -18,6 +18,13 @@ public class PlayerController : MonoBehaviour
     private FreezingController freezingController;
     private SimpleFlash simpleFlash;
 
+    private bool isDashing = false;
+    public float dashDuration = 0.001f;
+    public float dashCooldown = 0.01f;
+
+    private float dashCounter;
+    private float dashCoolCounter;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -49,7 +56,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         //Play sound when moving
-        if (!moveInput.Equals(Vector2.zero))
+        if (!moveInput.Equals(Vector2.zero) && !isDashing)
         {
             if (!audioSource.isPlaying)
             {
@@ -60,6 +67,37 @@ public class PlayerController : MonoBehaviour
         {
             audioSource.Pause();
         }
+
+        // Dash controller
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (!isDashing && dashCoolCounter <= 0)
+            {
+                isDashing = true;
+                dashCoolCounter = dashCooldown;
+                dashCounter = dashDuration;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+        } else {
+            if (isDashing) {
+                isDashing = false;
+            }
+        }
+    }
+
+    IEnumerator DisableDashAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        
     }
 
     void FixedUpdate()
@@ -67,6 +105,12 @@ public class PlayerController : MonoBehaviour
         if (canMove)
         {
             float currentSpeed = freezingController.isActive ? speed / 3f : speed;
+
+            if (isDashing)
+            {
+                currentSpeed *= 5f;
+            }
+
             rb2d.MovePosition(rb2d.position + moveInput * currentSpeed * Time.fixedDeltaTime);
             audioSource.pitch = freezingController.isActive ? 1f : 1.3f;
         }

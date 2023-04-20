@@ -55,7 +55,7 @@ public class Clock : MonoBehaviour
         {
             PlayerData check = JSONSaving.SharedInstance.LoadData();
             time = time * (1 + (JSONSaving.SharedInstance.playerData.bonusPoints * 0.25f));
-            check.points += time;
+            check.points += (int)time;
             JSONSaving.SharedInstance.SaveData(check);
             
         }
