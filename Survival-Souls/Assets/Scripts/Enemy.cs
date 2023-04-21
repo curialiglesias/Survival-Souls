@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     public float damage;
     [HideInInspector] public Vector2 distanceToPlayer;
 
-    private Vector3 randomDir;
+    public Vector3 randomDir;
     public Vector3 startPosition;
     public Vector3 aux;
 
