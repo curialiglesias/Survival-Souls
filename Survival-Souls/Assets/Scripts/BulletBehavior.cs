@@ -33,6 +33,7 @@ public class BulletBehavior : MonoBehaviour
         if (collider.tag.Contains("Enemy"))
         {
             var enemy = collider.GetComponent<Enemy>();
+            Debug.Log(enemy);
             enemy.HP  -= (damage);
 
             if (enemy.HP <= 0)
@@ -42,9 +43,12 @@ public class BulletBehavior : MonoBehaviour
                 collider.gameObject.SetActive(false);
                 enemy.HP = enemy.initialHP;
 
-                if (collider.CompareTag("SlimeEnemy"))
+                if (collider.CompareTag("SlimeEnemy") || collider.CompareTag("Head"))
                 {
                     Spawner.SharedInstance.creditGain(3);
+                }else if (collider.CompareTag("Demon"))
+                {
+                    Spawner.SharedInstance.creditGain(5);
                 }
                 else
                 {

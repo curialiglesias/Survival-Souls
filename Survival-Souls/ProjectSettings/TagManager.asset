@@ -17,6 +17,7 @@ TagManager:
   - EnemyRock
   - SuperSlimeEnemy
   - EnemyRedDemon
+  - HeadEnemy
   layers:
   - Default
   - TransparentFX

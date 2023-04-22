@@ -12,14 +12,15 @@ public class Enemy : MonoBehaviour
     public float damage;
     [HideInInspector] public Vector2 distanceToPlayer;
 
-    public Vector3 randomDir;
-    public Vector3 startPosition;
-    public Vector3 aux;
+    protected Vector3 randomDir;
+    protected Vector3 startPosition;
+    protected Vector3 aux;
 
     protected GameObject player;
     protected NavMeshAgent agent;
     protected Animator enemyAnimator;
-
+    protected Collider2D actualCollider;
+    
     protected virtual void Start()
     {
         enemyAnimator = GetComponent<Animator>();
@@ -56,16 +57,31 @@ public class Enemy : MonoBehaviour
     {
         InvokeRepeating("GetRandomDir", 0f, 5f);
         agent.SetDestination(randomDir);
-        enemyAnimator.SetFloat("Horizontal", randomDir.x);
-        enemyAnimator.SetFloat("Vertical", randomDir.y);
+        if (this.tag.Contains("Demon"))
+        {
+            enemyAnimator.SetBool("Move", canMove);
+        }
+        else
+        {
+            enemyAnimator.SetFloat("Horizontal", randomDir.x);
+            enemyAnimator.SetFloat("Vertical", randomDir.y);
+        }
     }
 
     protected virtual void TrackPlayer()
     {
         agent.SetDestination(player.transform.position);
-        enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
-        enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
-        enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
+        if (this.tag.Contains("Demon")) {
+            enemyAnimator.SetBool("Move", canMove);
+            enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
+        }
+        else
+        {
+            enemyAnimator.SetFloat("Horizontal", distanceToPlayer.normalized.x);
+            enemyAnimator.SetFloat("Vertical", distanceToPlayer.normalized.y);
+            enemyAnimator.SetBool("Attack", distanceToPlayer.magnitude < 1);
+
+        }
     }
 
     public void GetRandomDir()
