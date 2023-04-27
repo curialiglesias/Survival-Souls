@@ -53,7 +53,6 @@ public class UpgradeMenu : MonoBehaviour
         upgrade4.text = "lvl: " + (1 + PlayerData.soulTime);
         upgrade5.text = "lvl: " + (1 + PlayerData.decraseRate);
         upgrade6.text = "lvl: " + (1 + PlayerData.bonusPoints);
-        Debug.Log(PlayerData.velocity);
         UpdateSoul();
     }
 

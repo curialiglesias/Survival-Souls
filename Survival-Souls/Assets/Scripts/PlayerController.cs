@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator playerAnimator;
     private AudioSource audioSource;
+    private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer bowSpriteRenderer;
+    private CapsuleCollider2D capsuleCollider2D;
 
     private Vector2 moveInput;
     private bool canMove;
@@ -19,11 +22,13 @@ public class PlayerController : MonoBehaviour
     private SimpleFlash simpleFlash;
 
     private bool isDashing = false;
-    public float dashDuration = 0.001f;
-    public float dashCooldown = 0.01f;
+    private float dashDuration = 0.2f;
+    private float dashCooldown = 1f;
 
-    private float dashCounter;
-    private float dashCoolCounter;
+    private float dashCounter = 0f;
+    private float dashCoolCounter = 0f;
+
+    private bool dashUnlocked = false;
 
     void Start()
     {
@@ -33,7 +38,10 @@ public class PlayerController : MonoBehaviour
         freezingController = GetComponent<FreezingController>();
         simpleFlash = GetComponent<SimpleFlash>();
         audioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         speed = speed * (1 + JSONSaving.SharedInstance.playerData.velocity * 0.25f);
+        //dashUnlocked = JSONSaving.SharedInstance.LoadData().dash;
     }
 
 
@@ -69,13 +77,16 @@ public class PlayerController : MonoBehaviour
         }
 
         // Dash controller
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !dashUnlocked)
         {
             if (!isDashing && dashCoolCounter <= 0)
             {
                 isDashing = true;
                 dashCoolCounter = dashCooldown;
                 dashCounter = dashDuration;
+                spriteRenderer.color = new Color(1f, 1f, 1f, 0.2f);
+                capsuleCollider2D.enabled = false;
+                bowSpriteRenderer.enabled = false;
             }
         }
 
@@ -90,14 +101,11 @@ public class PlayerController : MonoBehaviour
         } else {
             if (isDashing) {
                 isDashing = false;
+                spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+                capsuleCollider2D.enabled = true;
+                bowSpriteRenderer.enabled = true;
             }
         }
-    }
-
-    IEnumerator DisableDashAfterTime(float time)
-    {
-        yield return new WaitForSeconds(time);
-        
     }
 
     void FixedUpdate()

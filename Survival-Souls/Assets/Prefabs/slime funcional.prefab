@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToDrop: {fileID: 1246377495219384934, guid: 179aed43d5856e841887699f4dd5bcee, type: 3}
-  chance: 1
+  chance: 0.2
 --- !u!82 &-760115520040860330
 AudioSource:
   m_ObjectHideFlags: 0
