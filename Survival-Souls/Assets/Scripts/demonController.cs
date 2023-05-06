@@ -6,14 +6,8 @@ using UnityEngine.AI;
 
 public class demonController : Enemy
 {
-    /*private Vector3 checkOrientation;
-    private Vector3 checkPosition;
-    private Vector3 randomDir;*/
-    private UnityEngine.Vector2 moveInput;
-
     Animator enemyAnimatorRight, enemyAnimatorLeft, enemyAnimatorUp, enemyAnimatorDown;
 
-    NavMeshAgent agentUp, agentDown, agentRight, agentLeft;
     GameObject up, down, right, left;
     protected override void Start()
     {
@@ -27,25 +21,14 @@ public class demonController : Enemy
         enemyAnimatorLeft = left.GetComponent<Animator>();
         enemyAnimatorUp = up.GetComponent<Animator>();
         enemyAnimatorDown = down.GetComponent<Animator>();
+        GetRandomDir();
 
         damage = damage / (1 + (JSONSaving.SharedInstance.playerData.defense * 0.25f));
 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        /*agentUp = up.GetComponent<NavMeshAgent>();
-        agentDown = down.GetComponent<NavMeshAgent>();
-        agentRight = right.GetComponent<NavMeshAgent>();
-        agentLeft = left.GetComponent<NavMeshAgent>();
 
-        agentUp.updateRotation = false;
-        agentUp.updateUpAxis = false;
-        agentDown.updateRotation = false;
-        agentDown.updateUpAxis = false;
-        agentRight.updateRotation = false;
-        agentRight.updateUpAxis = false;
-        agentLeft.updateRotation = false;
-        agentLeft.updateUpAxis = false;*/
     }
     protected override void Update()
     {
@@ -55,17 +38,17 @@ public class demonController : Enemy
 
     protected override void Roam()
     {
-        InvokeRepeating("GetRandomDir", 0f, 5f);
-        agent.SetDestination(randomDir);
+        Debug.Log("estoy en roam");
+        InvokeRepeating("animationIdle", 0f, 5f);
     }
 
-
-    protected override void TrackPlayer()
+    public void animationIdle()
     {
-        agent.SetDestination(player.transform.position);
-        Debug.Log("entro");
+        enemyAnimator.SetBool("Move", false);
+        enemyAnimator.SetBool("MoveFast", false);
+        enemyAnimator.SetBool("Attack", false);
+        enemyAnimator.SetBool("AttackFast", false);
     }
-
 
     void decideDemonPrefab()
     {
@@ -82,8 +65,6 @@ public class demonController : Enemy
             {
                 up.SetActive(true);
                 enemyAnimator = enemyAnimatorUp;
-
-                
             }
             else
             {
@@ -101,7 +82,7 @@ public class demonController : Enemy
             else
             {
                 right.SetActive(true);
-                enemyAnimator = enemyAnimatorDown;
+                enemyAnimator = enemyAnimatorRight;
             }
         }
     }

@@ -90,6 +90,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
   - name: Arm_1 copia 3
@@ -407,7 +408,8 @@ ScriptedImporter:
     - {x: 24, y: 25}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -558, y: -555}
+    uvTransform: {x: 507, y: 876}
+    spritePosition: {x: 1065, y: 1431}
   - name: <Grupo>
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -855,7 +857,8 @@ ScriptedImporter:
     - {x: 36, y: 37}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1039, y: 357}
+    uvTransform: {x: 4, y: 1804}
+    spritePosition: {x: 1043, y: 1447}
   - name: "<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1270,7 +1273,8 @@ ScriptedImporter:
     - {x: 33, y: 34}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1028, y: -138}
+    uvTransform: {x: 4, y: 1298}
+    spritePosition: {x: 1032, y: 1436}
   - name: Orejas copia 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1608,7 +1612,8 @@ ScriptedImporter:
     - {x: 26, y: 27}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -422, y: -1755}
+    uvTransform: {x: 507, y: 4}
+    spritePosition: {x: 929, y: 1759}
   - name: Pecas copia 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1935,7 +1940,8 @@ ScriptedImporter:
     - {x: 25, y: 26}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -730, y: -651}
+    uvTransform: {x: 507, y: 1233}
+    spritePosition: {x: 1237, y: 1884}
   - name: Ojo copia 6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2383,7 +2389,8 @@ ScriptedImporter:
     - {x: 36, y: 37}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -845, y: -688}
+    uvTransform: {x: 507, y: 1096}
+    spritePosition: {x: 1352, y: 1784}
   - name: Ojo copia 6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2831,7 +2838,8 @@ ScriptedImporter:
     - {x: 36, y: 37}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -440, y: -1605}
+    uvTransform: {x: 671, y: 179}
+    spritePosition: {x: 1111, y: 1784}
   - name: "<Trazado>\_+\_<Trazado>"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3290,7 +3298,8 @@ ScriptedImporter:
     - {x: 37, y: 38}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -967, y: -86}
+    uvTransform: {x: 405, y: 1689}
+    spritePosition: {x: 1372, y: 1775}
   - name: Arrugas copia 5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3639,7 +3648,8 @@ ScriptedImporter:
     - {x: 27, y: 28}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -870, y: -94}
+    uvTransform: {x: 404, y: 1804}
+    spritePosition: {x: 1274, y: 1898}
   - name: <Grupo>
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3988,7 +3998,8 @@ ScriptedImporter:
     - {x: 27, y: 28}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -759, y: -315}
+    uvTransform: {x: 507, y: 1378}
+    spritePosition: {x: 1266, y: 1693}
   - name: <Trazado>
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4403,7 +4414,8 @@ ScriptedImporter:
     - {x: 33, y: 34}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -747, y: -362}
+    uvTransform: {x: 507, y: 1308}
+    spritePosition: {x: 1254, y: 1670}
   - name: Nariz copia 5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4774,7 +4786,8 @@ ScriptedImporter:
     - {x: 29, y: 30}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -379, y: -1628}
+    uvTransform: {x: 920, y: 130}
+    spritePosition: {x: 1299, y: 1758}
   - name: Cuerno copia 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -5882,7 +5895,8 @@ ScriptedImporter:
     - {x: 96, y: 97}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1039, y: -1359}
+    uvTransform: {x: 4, y: 599}
+    spritePosition: {x: 1043, y: 1958}
   - name: "<Trazado>\_+\_<Trazado>"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -6264,7 +6278,8 @@ ScriptedImporter:
     - {x: 30, y: 31}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -980, y: -1589}
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 984, y: 1593}
   - name: Orejas copia 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -6602,7 +6617,8 @@ ScriptedImporter:
     - {x: 26, y: 27}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -879, y: -1442}
+    uvTransform: {x: 507, y: 330}
+    spritePosition: {x: 1386, y: 1772}
   - name: Arm_2 copia 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -6929,7 +6945,8 @@ ScriptedImporter:
     - {x: 25, y: 26}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -830, y: -775}
+    uvTransform: {x: 507, y: 656}
+    spritePosition: {x: 1337, y: 1431}
   - name: Chest copia 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -7278,7 +7295,8 @@ ScriptedImporter:
     - {x: 27, y: 28}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -480, y: -1465}
+    uvTransform: {x: 671, y: 4}
+    spritePosition: {x: 1151, y: 1469}
   - name: Leg_1 copia 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -7605,7 +7623,8 @@ ScriptedImporter:
     - {x: 25, y: 26}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -759, y: 175}
+    uvTransform: {x: 405, y: 1562}
+    spritePosition: {x: 1164, y: 1387}
   - name: Leg_2 copia 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -7921,7 +7940,8 @@ ScriptedImporter:
     - {x: 24, y: 25}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -371, y: -1377}
+    uvTransform: {x: 920, y: 4}
+    spritePosition: {x: 1291, y: 1381}
   - name: <Grupo>
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -8369,7 +8389,8 @@ ScriptedImporter:
     - {x: 36, y: 37}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1360, y: 121}
+    uvTransform: {x: 4, y: 1562}
+    spritePosition: {x: 1364, y: 1441}
   - name: "<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -8784,7 +8805,8 @@ ScriptedImporter:
     - {x: 33, y: 34}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1350, y: -396}
+    uvTransform: {x: 4, y: 1033}
+    spritePosition: {x: 1354, y: 1429}
   characterData:
     bones:
     - name: red_demon_right
