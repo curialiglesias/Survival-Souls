@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ef9a346bc72114798523ec4bff2ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemToDrop: {fileID: 1246377495219384934, guid: 179aed43d5856e841887699f4dd5bcee, type: 3}
+  itemToDrop: {fileID: 2707915308074144296, guid: 179aed43d5856e841887699f4dd5bcee, type: 3}
   chance: 1
 --- !u!114 &-8020135938801075866
 MonoBehaviour:

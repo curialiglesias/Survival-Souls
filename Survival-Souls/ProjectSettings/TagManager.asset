@@ -18,6 +18,7 @@ TagManager:
   - SuperSlimeEnemy
   - EnemyRedDemon
   - HeadEnemy
+  - DropLowLife
   layers:
   - Default
   - TransparentFX
