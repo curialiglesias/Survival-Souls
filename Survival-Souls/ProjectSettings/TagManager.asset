@@ -55,3 +55,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Invisible
+    uniqueID: 2560709467
+    locked: 0
+  - name: Player
+    uniqueID: 3006892039
+    locked: 0
