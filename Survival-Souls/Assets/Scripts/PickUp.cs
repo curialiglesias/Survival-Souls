@@ -9,8 +9,6 @@ public class PickUp : MonoBehaviour
 
     void Start()
     {
-        //float HP = GameObject.Find("Player").GetComponent<PlayerLife>().HP;
-        //playerLife = GameObject.Find("Player").GetComponent<PlayerLife>().HP;
         healAmount = healAmount  * (1 + JSONSaving.SharedInstance.playerData.bonusPoints * 0.25f);
         player = GameObject.Find("Player");
     }

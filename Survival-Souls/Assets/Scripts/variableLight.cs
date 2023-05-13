@@ -44,7 +44,6 @@ public class variableLight : MonoBehaviour
             gameObject.GetComponentInChildren<Light2D>().pointLightInnerRadius = gameObject.GetComponentInChildren<Light2D>().pointLightInnerRadius - 0.0025f;
 
         }
-        Debug.Log(gameObject.GetComponentInChildren<Light2D>().pointLightInnerRadius);
 
     }
 }
