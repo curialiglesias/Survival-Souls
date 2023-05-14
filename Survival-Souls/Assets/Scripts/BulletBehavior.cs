@@ -23,6 +23,7 @@ public class BulletBehavior : MonoBehaviour
     {
         damage = 2;
         damage = damage * (1 + (JSONSaving.SharedInstance.playerData.damage * 0.25f));
+        //deathParticle = GameObject.Find("pufParticles").GetComponent<ParticleSystem>();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -52,11 +53,14 @@ public class BulletBehavior : MonoBehaviour
                     collider.GetComponent<SpriteRenderer>().enabled = false;
                     collider.GetComponent<BoxCollider2D>().enabled = false;
                     collider.GetComponent<NavMeshAgent>().enabled = false;
+                    Instantiate(Resources.Load<GameObject>("pufParticles"), collider.transform.position, Quaternion.identity);
                     InvokeRepeating("icePerdure",1f,4f);
                 }
                 else
                 {
+                    Instantiate(Resources.Load<GameObject>("pufParticles"), collider.transform.position, Quaternion.identity);
                     collider.gameObject.SetActive(false);
+
                 }
 
                 if (collider.CompareTag("SlimeEnemy"))
