@@ -12,6 +12,8 @@ public class Spawner : MonoBehaviour
     private float y;
     private int randomSpawn;
     public static Spawner SharedInstance;
+    private float time;
+
 
     void Awake()
     {
@@ -19,7 +21,13 @@ public class Spawner : MonoBehaviour
     }
     void Start()
     {
+        time = GameObject.Find("Clock").GetComponent<Clock>().time;
         StartCoroutine(spawnEnemy(delay));
+    }
+
+    void Update()
+    {
+        time = GameObject.Find("Clock").GetComponent<Clock>().time;
     }
 
     //String enemyTag
@@ -74,42 +82,117 @@ public class Spawner : MonoBehaviour
         GameObject golemIce = ObjectPools.SharedInstance.GetPooledObject("GolemiceEnemy");
         GameObject golemRock = ObjectPools.SharedInstance.GetPooledObject("GolemrockEnemy");
 
-        if (slime != null && golem != null)
+        if (slime != null && golem != null && golemIce != null && golemRock != null)
         {
             if (credit > 0)
             {
-                int randomProbability = Random.Range(1, 10);
-                yield return new WaitForSeconds(delay);
-                if (credit > 20)
+                if (time < 120)
                 {
-                    if (randomProbability > 0 && randomProbability < 4)
+                    int randomProbability = Random.Range(1, 10);
+                    yield return new WaitForSeconds(delay);
+                    if (credit > 20 && credit < 40)
                     {
-                        setActiveGolems(golem, golemIce, golemRock);
-                        StartCoroutine(spawnEnemy(delay));
+                        if (randomProbability > 0 && randomProbability < 2)
+                        {
+                            setActiveGolems(golem, golemIce, golemRock);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
+                        else
+                        {
+                            setActiveSlimes(slime);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
+                    }
+                    else if (credit > 40)
+                    {
+                        if (randomProbability > 0 && randomProbability < 4)
+                        {
+                            setActiveGolems(golem, golemIce, golemRock);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
+                        else
+                        {
+                            setActiveSlimes(slime);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
                     }
                     else
                     {
                         setActiveSlimes(slime);
                         StartCoroutine(spawnEnemy(delay));
                     }
-                }
-                else if(credit > 50)
+                }else if(time < 240 && time >= 120)
                 {
-                    if (randomProbability > 0 && randomProbability < 9)
+                    int randomProbability = Random.Range(1, 10);
+                    yield return new WaitForSeconds(delay);
+                    if (credit > 10 && credit < 50)
                     {
-                        setActiveGolems(golem, golemIce, golemRock);
-                        StartCoroutine(spawnEnemy(delay));
+                        if (randomProbability > 0 && randomProbability < 5)
+                        {
+                            setActiveGolems(golem, golemIce, golemRock);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
+                        else
+                        {
+                            setActiveSlimes(slime);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
+                    }
+                    else if (credit > 50)
+                    {
+                        if (randomProbability > 0 && randomProbability < 7)
+                        {
+                            setActiveGolems(golem, golemIce, golemRock);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
+                        else
+                        {
+                            setActiveSlimes(slime);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
                     }
                     else
                     {
                         setActiveSlimes(slime);
                         StartCoroutine(spawnEnemy(delay));
                     }
+
                 }
                 else
                 {
-                    setActiveSlimes(slime);
-                    StartCoroutine(spawnEnemy(delay));
+                    int randomProbability = Random.Range(1, 10);
+                    yield return new WaitForSeconds(delay);
+                    if (credit > 5 && credit < 50)
+                    {
+                        if (randomProbability > 0 && randomProbability < 7)
+                        {
+                            setActiveGolems(golem, golemIce, golemRock);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
+                        else
+                        {
+                            setActiveSlimes(slime);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
+                    }
+                    else if (credit > 50)
+                    {
+                        if (randomProbability > 0 && randomProbability < 10)
+                        {
+                            setActiveGolems(golem, golemIce, golemRock);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
+                        else
+                        {
+                            setActiveSlimes(slime);
+                            StartCoroutine(spawnEnemy(delay));
+                        }
+                    }
+                    else
+                    {
+                        setActiveSlimes(slime);
+                        StartCoroutine(spawnEnemy(delay));
+                    }
                 }
             }
             else

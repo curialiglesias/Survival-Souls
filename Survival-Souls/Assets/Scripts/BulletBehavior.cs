@@ -1,5 +1,8 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Rendering.Universal;
 
 public class BulletBehavior : MonoBehaviour
 {
@@ -7,7 +10,8 @@ public class BulletBehavior : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
     public float damage;
-
+    private float time;
+    private Collider2D enemyCollided;
     private Coroutine deactivateArrowCoroutine;
 
     private void Awake()
@@ -33,26 +37,49 @@ public class BulletBehavior : MonoBehaviour
         if (collider.tag.Contains("Enemy"))
         {
             var enemy = collider.GetComponent<Enemy>();
-            Debug.Log(enemy);
             enemy.HP  -= (damage);
+            enemyCollided = collider;
 
             if (enemy.HP <= 0)
             {
                 var drop = collider.GetComponent<DropOnDestroy>();
                 drop.Drop();
-                collider.gameObject.SetActive(false);
                 enemy.HP = enemy.initialHP;
+                time = GameObject.Find("Clock").GetComponent<Clock>().time;
 
-                if (collider.CompareTag("SlimeEnemy") || collider.CompareTag("Head"))
+                if (collider.CompareTag("GolemiceEnemy"))
                 {
-                    Spawner.SharedInstance.creditGain(3);
-                }else if (collider.CompareTag("Demon"))
-                {
-                    Spawner.SharedInstance.creditGain(5);
+                    collider.GetComponent<SpriteRenderer>().enabled = false;
+                    collider.GetComponent<BoxCollider2D>().enabled = false;
+                    collider.GetComponent<NavMeshAgent>().enabled = false;
+                    InvokeRepeating("icePerdure",1f,4f);
                 }
                 else
                 {
-                    Spawner.SharedInstance.creditGain(8);
+                    collider.gameObject.SetActive(false);
+                }
+
+                if (collider.CompareTag("SlimeEnemy"))
+                {
+                    if (time < 180)
+                    {
+                        Spawner.SharedInstance.creditGain(3);
+                    }
+                    else
+                    {
+                        Spawner.SharedInstance.creditGain(5);
+                    }
+                }
+                else
+                {
+                    if (time < 180)
+                    {
+                        Spawner.SharedInstance.creditGain(8);
+                    }
+                    else
+                    {
+                        Spawner.SharedInstance.creditGain(10);
+                    }
                 }
             }
 
@@ -96,6 +123,20 @@ public class BulletBehavior : MonoBehaviour
         {
             deactivateArrowCoroutine = StartCoroutine(DeactivateArrow(0.5f));
             timer = 0f;
+        }
+    }
+
+
+    private void icePerdure()
+    {
+        int particles = enemyCollided.GetComponent<ParticleSystem>().maxParticles;
+
+        if (particles - 500 < 0){
+            enemyCollided.GetComponent<ParticleSystem>().maxParticles = 0;
+        }
+        else{
+            enemyCollided.GetComponent<ParticleSystem>().maxParticles = particles - 500;
+
         }
     }
 }

@@ -21,13 +21,18 @@ public class lowLifeSoul : MonoBehaviour
     void Update()
     {
         playerLife = GameObject.Find("Player").GetComponent<PlayerLife>().HP;
-        Debug.Log(playerLife);
         if (playerLife <= 80)
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
             gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
             gameObject.GetComponent<Light2D>().enabled = true;
 
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            gameObject.GetComponent<Light2D>().enabled = false;
         }
 
     }
