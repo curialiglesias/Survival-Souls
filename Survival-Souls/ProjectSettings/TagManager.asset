@@ -19,6 +19,7 @@ TagManager:
   - EnemyRedDemon
   - HeadEnemy
   - DropLowLife
+  - SceneCollider
   layers:
   - Default
   - TransparentFX

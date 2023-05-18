@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private float dashCounter = 0f;
     private float dashCoolCounter = 0f;
 
-    private bool dashUnlocked = false;
+    private bool dashUnlocked = true;
 
     void Start()
     {
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Dash controller
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !dashUnlocked)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashUnlocked)
         {
             if (!isDashing && dashCoolCounter <= 0)
             {
@@ -85,25 +85,8 @@ public class PlayerController : MonoBehaviour
                 dashCoolCounter = dashCooldown;
                 dashCounter = dashDuration;
                 spriteRenderer.color = new Color(1f, 1f, 1f, 0.2f);
-                capsuleCollider2D.enabled = false;
                 bowSpriteRenderer.enabled = false;
-            }
-        }
-
-        if (dashCoolCounter > 0)
-        {
-            dashCoolCounter -= Time.deltaTime;
-        }
-
-        if (dashCounter > 0)
-        {
-            dashCounter -= Time.deltaTime;
-        } else {
-            if (isDashing) {
-                isDashing = false;
-                spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
-                capsuleCollider2D.enabled = true;
-                bowSpriteRenderer.enabled = true;
+                Physics2D.IgnoreLayerCollision(0, 0, true);
             }
         }
     }
@@ -121,6 +104,26 @@ public class PlayerController : MonoBehaviour
 
             rb2d.MovePosition(rb2d.position + moveInput * currentSpeed * Time.fixedDeltaTime);
             audioSource.pitch = freezingController.isActive ? 1f : 1.3f;
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+        }
+        else
+        {
+            if (isDashing)
+            {
+                isDashing = false;
+                spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+                bowSpriteRenderer.enabled = true;
+                Physics2D.IgnoreLayerCollision(0, 0, false);
+            }
         }
     }
 
@@ -153,7 +156,7 @@ public class PlayerController : MonoBehaviour
                     enemy.GetComponent<AudioSource>().Play();
                 }
             }
-                
+
             StartCoroutine(KnockbackStunTime(kbStunTime, collision));
 
             simpleFlash.Flash();
