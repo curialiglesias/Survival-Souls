@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
                 spriteRenderer.color = new Color(1f, 1f, 1f, 0.2f);
                 bowSpriteRenderer.enabled = false;
                 Physics2D.IgnoreLayerCollision(0, 0, true);
+                GameObject.Find("Dash").GetComponent<AudioSource>().Play();
             }
         }
     }
