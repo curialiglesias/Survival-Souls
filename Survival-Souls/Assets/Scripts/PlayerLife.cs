@@ -24,7 +24,7 @@ public class PlayerLife : MonoBehaviour
     {
 
         HPDecraseRate = HPDecraseRate / (1 + JSONSaving.SharedInstance.playerData.decraseRate * 0.25f);
-        HP = HP + (JSONSaving.SharedInstance.playerData.soulTime * 25);
+        HP = HP + (JSONSaving.SharedInstance.playerData.soulTime * 75);
         InvokeRepeating("Subtract", 1f, 1f);
         maxHP = HP;
         maxRadius = gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius;

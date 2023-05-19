@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
-        speed = speed * (1 + JSONSaving.SharedInstance.playerData.velocity * 0.25f);
+        speed = speed * (1 + JSONSaving.SharedInstance.playerData.velocity * 0.125f);
         dashUnlocked = JSONSaving.SharedInstance.LoadData().dash;
     }
 

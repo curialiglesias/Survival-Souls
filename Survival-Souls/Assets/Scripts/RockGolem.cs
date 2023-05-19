@@ -81,9 +81,12 @@ public class RockGolem : Enemy
     {
         foreach (GameObject rock in enemyRocks)
         {
-            rock.SetActive(false);
-            rock.GetComponent<RockBehavior>().rb.isKinematic = false;
-            rock.GetComponent<RockBehavior>().rb.gravityScale = 0f;
+            if (rock != null)
+            {
+                rock.SetActive(false);
+                rock.GetComponent<RockBehavior>().rb.isKinematic = false;
+                rock.GetComponent<RockBehavior>().rb.gravityScale = 0f;
+            }
         }
         enemyRocks.Clear();
     }

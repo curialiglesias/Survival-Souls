@@ -177,16 +177,8 @@ public class Spawner : MonoBehaviour
                     }
                     else if (credit > 50)
                     {
-                        if (randomProbability > 0 && randomProbability < 10)
-                        {
-                            setActiveGolems(golem, golemIce, golemRock);
-                            StartCoroutine(spawnEnemy(delay));
-                        }
-                        else
-                        {
-                            setActiveSlimes(slime);
-                            StartCoroutine(spawnEnemy(delay));
-                        }
+                        setActiveGolems(golem, golemIce, golemRock);
+                        StartCoroutine(spawnEnemy(delay));
                     }
                     else
                     {

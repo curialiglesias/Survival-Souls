@@ -42,7 +42,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         PlayerData = JSONSaving.SharedInstance.LoadDataFromPath(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json");
         moneyValue = PlayerData.points;
-        text1.text = "Speed: " + (1 + PlayerData.velocity * 0.25) + "X";
+        text1.text = "Speed: " + (1 + PlayerData.velocity * 0.125) + "X";
         text2.text = "Damage: " + (1 + PlayerData.damage * 0.25) + "X";
         text3.text = "Defense: " + (1 + PlayerData.defense * 0.25) + "X";
         text4.text = "SoulTime: " + (200 + PlayerData.soulTime * 25) + "s";
@@ -72,7 +72,7 @@ public class UpgradeMenu : MonoBehaviour
     public void UpdateStats()
     {
         float.TryParse(Regex.Match(upgrade1.text, @"\d+").Value, out float value1);
-        text1.text = "Speed: " + (1 + (value1 - 1) * 0.25) + "X";
+        text1.text = "Speed: " + (1 + (value1 - 1) * 0.125) + "X";
         cost1.text = "Cost: " + (50 + 50 * Mathf.Pow(value1 - 1,2));
 
         float.TryParse(Regex.Match(upgrade2.text, @"\d+").Value, out float value2);

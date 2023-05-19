@@ -23,11 +23,8 @@ public class BlackGolem : Enemy
         base.TrackPlayer();
         
         if (spikeCooldown.Wait()){
-
             spikeCounter = 5;
             StartCoroutine(SpawnSpikes());
-            
-
         }
         
     }

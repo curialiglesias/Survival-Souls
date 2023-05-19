@@ -9,13 +9,14 @@ public class Enemy : MonoBehaviour
 {
     public bool canMove = true;
     public float HP;
-    public int initialHP;
+    public float initialHP;
     public float damage;
     private float level;
     private float defense;
     private float decreaseRate;
     private float bonusPoints;
     private float velocity;
+    private float soulTime;
 
     private Boolean dash;
     private Boolean doubleShoot;
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour
         decreaseRate = JSONSaving.SharedInstance.playerData.decraseRate;
         bonusPoints = JSONSaving.SharedInstance.playerData.bonusPoints;
         velocity = JSONSaving.SharedInstance.playerData.velocity;
+        soulTime = JSONSaving.SharedInstance.playerData.soulTime;
 
         dash = JSONSaving.SharedInstance;
         doubleShoot = JSONSaving.SharedInstance;
@@ -49,7 +51,7 @@ public class Enemy : MonoBehaviour
 
         if (dash)
         {
-            auxAbilities += 5;
+            auxAbilities += 6;
         }
         if (doubleShoot)
         {
@@ -59,12 +61,12 @@ public class Enemy : MonoBehaviour
         {
             auxAbilities += 5;
         }
-        level = 3;
 
-        //level = (float)(6.0 + auxAbilities + defense + damage + decreaseRate + bonusPoints + velocity);
-        level = level / 3;
+        level = (float)(auxAbilities + defense + damage + decreaseRate + bonusPoints + velocity + soulTime);
+        level = level / 16;
 
-        initialHP = initialHP * (int)level;
+        initialHP = initialHP * level;
+        HP = initialHP;
         enemyAnimator = GetComponent<Animator>();
         player = GameObject.Find("Player");
         GetRandomDir();
@@ -76,6 +78,9 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        Debug.Log("hola");
+        Debug.Log(player.transform.position);
+        Debug.Log(transform.rotation);
         distanceToPlayer = (player.transform.position - transform.position);
         if (canMove)
         {
