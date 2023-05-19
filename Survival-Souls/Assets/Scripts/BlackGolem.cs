@@ -7,12 +7,16 @@ using UnityEngine;
 public class BlackGolem : Enemy
 {
     private float x, y;
-    private float spikeDelay = 1f;
+    private float spikeDelay = 2f;
     private float spikeInactive = 3f;
     private int spikeCounter = 5;
 
     public Cooldowns spikeCooldown = new(20);
 
+    private void Awake()
+    {
+        
+    }
 
     protected override void TrackPlayer()
     {
@@ -22,6 +26,8 @@ public class BlackGolem : Enemy
 
             spikeCounter = 5;
             StartCoroutine(SpawnSpikes());
+            
+
         }
         
     }
@@ -37,7 +43,6 @@ public class BlackGolem : Enemy
   
         x = player.transform.position.x;
         y = player.transform.position.y;
-
         if (spikes != null)
         {
 
@@ -51,6 +56,8 @@ public class BlackGolem : Enemy
             StartCoroutine(SpawnSpikes());
             yield return new WaitForSeconds(spikeInactive);
             spikes.SetActive(false);
+
         }
+        
     }
 }

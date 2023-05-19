@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,6 +11,18 @@ public class Enemy : MonoBehaviour
     public float HP;
     public int initialHP;
     public float damage;
+    private float level;
+    private float defense;
+    private float decreaseRate;
+    private float bonusPoints;
+    private float velocity;
+
+    private Boolean dash;
+    private Boolean doubleShoot;
+    private Boolean tripleShoot;
+
+    private float auxAbilities;
+
     [HideInInspector] public Vector2 distanceToPlayer;
 
     protected Vector3 randomDir;
@@ -22,10 +35,40 @@ public class Enemy : MonoBehaviour
     
     protected virtual void Start()
     {
+
+        level = 0;
+        defense = JSONSaving.SharedInstance.playerData.defense;
+        damage = JSONSaving.SharedInstance.playerData.damage;
+        decreaseRate = JSONSaving.SharedInstance.playerData.decraseRate;
+        bonusPoints = JSONSaving.SharedInstance.playerData.bonusPoints;
+        velocity = JSONSaving.SharedInstance.playerData.velocity;
+
+        dash = JSONSaving.SharedInstance;
+        doubleShoot = JSONSaving.SharedInstance;
+        tripleShoot = JSONSaving.SharedInstance;
+
+        if (dash)
+        {
+            auxAbilities += 5;
+        }
+        if (doubleShoot)
+        {
+            auxAbilities += 5;
+        }
+        if (tripleShoot)
+        {
+            auxAbilities += 5;
+        }
+        level = 3;
+
+        //level = (float)(6.0 + auxAbilities + defense + damage + decreaseRate + bonusPoints + velocity);
+        level = level / 3;
+
+        initialHP = initialHP * (int)level;
         enemyAnimator = GetComponent<Animator>();
         player = GameObject.Find("Player");
         GetRandomDir();
-        damage = damage / (1 + (JSONSaving.SharedInstance.playerData.defense * 0.25f));
+        damage = damage * level / (1 + (JSONSaving.SharedInstance.playerData.defense * 0.25f));
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
