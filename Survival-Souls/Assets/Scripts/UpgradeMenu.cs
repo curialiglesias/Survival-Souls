@@ -10,6 +10,7 @@ using static UnityEngine.Rendering.DebugUI;
 public class UpgradeMenu : MonoBehaviour
 {
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI moneyText2;
     public float moneyValue;
     PlayerData PlayerData;
     public TextMeshProUGUI text1;
@@ -18,6 +19,9 @@ public class UpgradeMenu : MonoBehaviour
     public TextMeshProUGUI text4;
     public TextMeshProUGUI text5;
     public TextMeshProUGUI text6;
+    public TextMeshProUGUI text7;
+    public TextMeshProUGUI text8;
+    public TextMeshProUGUI text9;
     public TextMeshProUGUI upgrade1;
     public TextMeshProUGUI upgrade2;
     public TextMeshProUGUI upgrade3;
@@ -30,6 +34,9 @@ public class UpgradeMenu : MonoBehaviour
     public TextMeshProUGUI cost4;
     public TextMeshProUGUI cost5;
     public TextMeshProUGUI cost6;
+    public TextMeshProUGUI cost7;
+    public TextMeshProUGUI cost8;
+    public TextMeshProUGUI cost9;
 
     void Start()
     {
@@ -59,7 +66,8 @@ public class UpgradeMenu : MonoBehaviour
     public void UpdateSoul()
     {
         moneyText.text = "SoulPoints: " + moneyValue.ToString();
-        
+        moneyText2.text = "SoulPoints: " + moneyValue.ToString();
+
     }
     public void UpdateStats()
     {
