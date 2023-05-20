@@ -78,9 +78,6 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
-        Debug.Log("hola");
-        Debug.Log(player.transform.position);
-        Debug.Log(transform.rotation);
         distanceToPlayer = (player.transform.position - transform.position);
         if (canMove)
         {

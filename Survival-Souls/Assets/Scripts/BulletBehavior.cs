@@ -38,7 +38,7 @@ public class BulletBehavior : MonoBehaviour
         if (collider.tag.Contains("Enemy"))
         {
             var enemy = collider.GetComponent<Enemy>();
-            enemy.HP  -= (damage);
+            enemy.HP -= (damage);
             enemyCollided = collider;
 
             if (enemy.HP <= 0)
@@ -54,7 +54,13 @@ public class BulletBehavior : MonoBehaviour
                     collider.GetComponent<BoxCollider2D>().enabled = false;
                     collider.GetComponent<NavMeshAgent>().enabled = false;
                     Instantiate(Resources.Load<GameObject>("pufParticles"), collider.transform.position, Quaternion.identity);
-                    InvokeRepeating("icePerdure",1f,4f);
+
+                    // Desactivamos la generación de particulas de hielo
+                    ParticleSystem iceParticles = enemyCollided.GetComponent<ParticleSystem>();
+                    ParticleSystem.EmissionModule emissionModule = iceParticles.emission;
+                    emissionModule.enabled = false;
+                    IceGolem iceGolemScript = enemyCollided.gameObject.GetComponent<IceGolem>();
+                    StartCoroutine(iceGolemScript.DeactivateAllIceColliders());
                 }
                 else
                 {
@@ -127,20 +133,6 @@ public class BulletBehavior : MonoBehaviour
         {
             deactivateArrowCoroutine = StartCoroutine(DeactivateArrow(0.5f));
             timer = 0f;
-        }
-    }
-
-
-    private void icePerdure()
-    {
-        int particles = enemyCollided.GetComponent<ParticleSystem>().maxParticles;
-
-        if (particles - 500 < 0){
-            enemyCollided.GetComponent<ParticleSystem>().maxParticles = 0;
-        }
-        else{
-            enemyCollided.GetComponent<ParticleSystem>().maxParticles = particles - 500;
-
         }
     }
 }

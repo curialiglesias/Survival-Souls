@@ -7,8 +7,9 @@ public class IceGolem : Enemy
     public GameObject iceColliderPrefab;
 
     private float spawnRate = 0.5f;
-    private float despawnTime = 8f;
+    private float despawnTime = 4f;
     private float spawnTimer = 0f;
+    private bool canSpawn = true;
 
     private List<GameObject> activeIceColliders = new List<GameObject>();
 
@@ -18,7 +19,7 @@ public class IceGolem : Enemy
         base.Update();
         spawnTimer += Time.deltaTime;
 
-        if (spawnTimer >= spawnRate)
+        if (spawnTimer >= spawnRate && canSpawn)
         {
             SpawnIceCollider();
             spawnTimer = 0f;
@@ -49,13 +50,10 @@ public class IceGolem : Enemy
         iceCollider.SetActive(false);
     }
 
-    void OnDisable()
+    public IEnumerator DeactivateAllIceColliders()
     {
-        DeactivateAllIceColliders();
-    }
-
-    void DeactivateAllIceColliders()
-    {
+        canSpawn = false;
+        yield return new WaitForSeconds(despawnTime);
         foreach (GameObject iceCollider in activeIceColliders)
         {
             if (iceCollider != null)
@@ -65,5 +63,6 @@ public class IceGolem : Enemy
         }
 
         activeIceColliders.Clear();
+        gameObject.SetActive(false);
     }
 }
