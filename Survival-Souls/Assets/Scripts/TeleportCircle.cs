@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 public class TeleportCircle : MonoBehaviour
 {
-
+    public Boolean isTutorial;
     public TextMeshProUGUI pressE;
     private Vector2 initialPosition = new Vector2(0.097f, 7.75f);
 
@@ -20,6 +21,10 @@ public class TeleportCircle : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            if (!isTutorial)
+            {
+                HallManager.SharedInstance.LightNextRoom();
+            }
             collision.attachedRigidbody.transform.position = initialPosition;
         }
     }
