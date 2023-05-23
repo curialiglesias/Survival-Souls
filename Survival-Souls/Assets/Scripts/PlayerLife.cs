@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -22,8 +23,17 @@ public class PlayerLife : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
 
-        HPDecraseRate = HPDecraseRate / (1 + JSONSaving.SharedInstance.playerData.decraseRate * 0.25f);
+        if(sceneName == "Map2")
+        {
+            HPDecraseRate = 0;
+        }
+        else{
+            HPDecraseRate = HPDecraseRate / (1 + JSONSaving.SharedInstance.playerData.decraseRate * 0.25f);
+        }
+
         HP = HP + (JSONSaving.SharedInstance.playerData.soulTime * 75);
         InvokeRepeating("Subtract", 1f, 1f);
         maxHP = HP;

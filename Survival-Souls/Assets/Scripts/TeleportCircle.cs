@@ -21,10 +21,14 @@ public class TeleportCircle : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            collision.gameObject.GetComponent<PlayerLife>().HP = 200;
+
             if (!isTutorial)
             {
                 HallManager.SharedInstance.LightNextRoom();
+                HallManager.SharedInstance.OpenNextDoor();
             }
+
             collision.attachedRigidbody.transform.position = initialPosition;
         }
     }
