@@ -32,10 +32,11 @@ public class HallManager : MonoBehaviour
         
         public void OpenNextDoor()
     {
-        if(Door != 5)
+        if(Door == 5)
         {
-            gameObject.transform.GetChild(Door).gameObject.GetComponent<OpenDoors>().DoorAction();
+            gameObject.SetActive(true);
         }
+        gameObject.transform.GetChild(Door).gameObject.GetComponent<OpenDoors>().DoorAction();
         Door++;
         gameObject.transform.GetChild(Door).gameObject.GetComponent<OpenDoors>().DoorAction();
     }
