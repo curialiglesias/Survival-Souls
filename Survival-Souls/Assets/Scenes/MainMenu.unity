@@ -2768,12 +2768,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 981667145}
         m_TargetAssemblyTypeName: UpgradeMenu, Assembly-CSharp
-        m_MethodName: purchase
+        m_MethodName: purchaseSkill
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1983213454}
           m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -3276,12 +3276,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 981667145}
         m_TargetAssemblyTypeName: UpgradeMenu, Assembly-CSharp
-        m_MethodName: purchase
+        m_MethodName: purchaseSkill
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1083860657}
           m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -4792,12 +4792,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 981667145}
         m_TargetAssemblyTypeName: UpgradeMenu, Assembly-CSharp
-        m_MethodName: purchase
+        m_MethodName: purchaseSkill
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 106433026}
           m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
           m_IntArgument: 0
           m_FloatArgument: 0

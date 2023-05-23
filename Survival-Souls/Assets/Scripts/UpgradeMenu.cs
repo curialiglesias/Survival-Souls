@@ -9,10 +9,10 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class UpgradeMenu : MonoBehaviour
 {
+    PlayerData PlayerData;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI moneyText2;
     public float moneyValue;
-    PlayerData PlayerData;
     public TextMeshProUGUI text1;
     public TextMeshProUGUI text2;
     public TextMeshProUGUI text3;
@@ -38,8 +38,13 @@ public class UpgradeMenu : MonoBehaviour
     public TextMeshProUGUI cost8;
     public TextMeshProUGUI cost9;
 
+    private int dashCost = 1000;
+    private int doubleShotCost = 2000;
+    private int chargedShotCost = 5000;
+
     void Start()
     {
+        //Upgrades
         PlayerData = JSONSaving.SharedInstance.LoadDataFromPath(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json");
         moneyValue = PlayerData.points;
         text1.text = "Speed: " + (1 + PlayerData.velocity * 0.125) + "X";
@@ -60,6 +65,15 @@ public class UpgradeMenu : MonoBehaviour
         upgrade4.text = "lvl: " + (1 + PlayerData.soulTime);
         upgrade5.text = "lvl: " + (1 + PlayerData.decraseRate);
         upgrade6.text = "lvl: " + (1 + PlayerData.bonusPoints);
+
+        //Skills
+        text7.text = PlayerData.dash ? "Dash: Activated" : "Dash: Not Purchased";
+        text8.text = PlayerData.doubleShot ? "Double Shot: Activated" : "Double Shot: Not Purchased";
+        text9.text = PlayerData.chargedShot ? "Charged Shot: Activated" : "Charged Shot: Not Purchased";
+        cost7.text = PlayerData.dash ? "" : "Cost: " + dashCost;
+        cost8.text = PlayerData.doubleShot ? "" : "Cost: " + doubleShotCost;
+        cost9.text = PlayerData.chargedShot ? "" : "Cost: " + chargedShotCost;
+
         UpdateSoul();
     }
 
@@ -99,11 +113,9 @@ public class UpgradeMenu : MonoBehaviour
 
     public void purchase(TextMeshProUGUI upgrade)
     {
-
         int.TryParse(Regex.Match(upgrade.text, @"\d+").Value, out int value);
         if(moneyValue >= (50 + 50 * Mathf.Pow(value - 1, 2)) && value < 5)
         {
-            
             if(value == 5)
             {
                 upgrade.text = "lvl MAX";
@@ -120,6 +132,47 @@ public class UpgradeMenu : MonoBehaviour
         }
         
         UpdateStats();
+    }
+
+    public void purchaseSkill(TextMeshProUGUI skill)
+    {
+        switch (skill.text)
+        {
+            case "Dash: Not Purchased":
+                if (moneyValue >= dashCost)
+                {
+                    moneyValue -= dashCost;
+                    text7.text = "Dash: Activated";
+                    cost7.text = "";
+                    PlayerData.dash = true;
+                }
+                break;
+
+            case "Double Shot: Not Purchased":
+                if (moneyValue >= doubleShotCost)
+                {
+                    moneyValue -= doubleShotCost;
+                    text8.text = "Double Shot: Activated";
+                    cost8.text = "";
+                    PlayerData.doubleShot = true;
+                }
+                break;
+
+            case "Charged Shot: Not Purchased":
+                if (moneyValue >= chargedShotCost)
+                {
+                    moneyValue -= chargedShotCost;
+                    text9.text = "Charged Shot: Activated";
+                    cost9.text = "";
+                    PlayerData.dash = true;
+                }
+                break;
+
+            default:
+                break;
+        }
+
+        UpdateSoul();
     }
 
     public void Save()
