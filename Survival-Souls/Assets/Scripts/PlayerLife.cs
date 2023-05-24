@@ -14,8 +14,10 @@ public class PlayerLife : MonoBehaviour
     public GameObject gameOverPanel;
 
     private float maxHP;
-    private float radius;
-    private float maxRadius;
+    private float outerRadius;
+    private float innerRadius;
+    private float maxOuterRadius;
+    private float maxInnerRadius;
     private float minRadius;
 
     private Boolean stop = false;
@@ -37,12 +39,11 @@ public class PlayerLife : MonoBehaviour
         HP = HP + (JSONSaving.SharedInstance.playerData.soulTime * 75);
         InvokeRepeating("Subtract", 1f, 1f);
         maxHP = HP;
-        maxRadius = gameObject.GetComponentInChildren<Light2D>().pointLightOuterRadius;
-        minRadius = 0.90f;
+        maxOuterRadius = gameObject.GetComponent<Light2D>().pointLightOuterRadius;
+        maxInnerRadius = gameObject.GetComponent<Light2D>().pointLightInnerRadius;
+        minRadius = 0.5f;
 
     }
-
-
 
     void Subtract()
     {
@@ -53,10 +54,13 @@ public class PlayerLife : MonoBehaviour
     {
         if (!stop)
         {
-            radius = (HP / maxHP) * maxRadius;
-            if (radius > minRadius)
+            outerRadius = Mathf.Lerp(maxOuterRadius, minRadius, 1 - (HP / maxHP));
+            innerRadius = Mathf.Lerp(maxInnerRadius, 0, 1 - (HP / maxHP));
+
+            if (outerRadius > minRadius)
             {
-                GetComponentInChildren<Light2D>().pointLightOuterRadius = radius;
+                GetComponent<Light2D>().pointLightOuterRadius = outerRadius;
+                GetComponent<Light2D>().pointLightInnerRadius = innerRadius;
             }
 
             if (HP <= 0)

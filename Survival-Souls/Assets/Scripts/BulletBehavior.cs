@@ -52,7 +52,6 @@ public class BulletBehavior : MonoBehaviour
                 {
                     collider.GetComponent<SpriteRenderer>().enabled = false;
                     collider.GetComponent<BoxCollider2D>().enabled = false;
-                    collider.GetComponent<NavMeshAgent>().enabled = false;
                     Instantiate(Resources.Load<GameObject>("pufParticles"), collider.transform.position, Quaternion.identity);
 
                     // Desactivamos la generación de particulas de hielo

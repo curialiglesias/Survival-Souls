@@ -81,7 +81,7 @@ public class Enemy : MonoBehaviour
         distanceToPlayer = (player.transform.position - transform.position);
         if (canMove)
         {
-            if (distanceToPlayer.magnitude > 3)
+            if (distanceToPlayer.magnitude > 4)
             {
                 if (Vector3.Distance(transform.position, randomDir) < 1f)
                 {

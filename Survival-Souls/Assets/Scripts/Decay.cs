@@ -15,8 +15,11 @@ public class Decay : MonoBehaviour
     public void Despawn()
     {
         gameObject.SetActive(false);
-        gameObject.GetComponent<RockBehavior>().rb.isKinematic = false;
-        gameObject.GetComponent<RockBehavior>().rb.gravityScale = 0f;
+        if (gameObject.GetComponent<RockBehavior>() != null)
+        {
+            gameObject.GetComponent<RockBehavior>().rb.isKinematic = false;
+            gameObject.GetComponent<RockBehavior>().rb.gravityScale = 0f;
+        }
         time = 0;
     }
 }
