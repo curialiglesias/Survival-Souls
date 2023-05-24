@@ -6,23 +6,31 @@ using UnityEngine.Rendering.Universal;
 
 public class BulletBehavior : MonoBehaviour
 {
-    private float timer;
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
     public float damage;
     private float time;
     private Collider2D enemyCollided;
-    private Coroutine deactivateArrowCoroutine;
+
+    private bool charged = false;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
+
     private void Start()
     {
         damage = damage * (1 + (JSONSaving.SharedInstance.playerData.damage * 0.25f));
-        //deathParticle = GameObject.Find("pufParticles").GetComponent<ParticleSystem>();
+        if (CompareTag("chargedArrow"))
+        {
+            charged = true;
+            damage *= 10;
+            StartCoroutine(DeactivateChargedArrow(10f));
+        } else {
+            StartCoroutine(DeactivateArrowCooldown(3f));
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -36,11 +44,11 @@ public class BulletBehavior : MonoBehaviour
 
         if (collider.tag.Contains("SceneCollider") || collider.CompareTag("EnemySpike") || collider.CompareTag("EnemyRock"))
         {
-            if (gameObject.activeInHierarchy)
+            if (!charged)
             {
-                gameObject.SetActive(false);
-                return;
+                StartCoroutine(DeactivateArrow(0.5f));
             }
+            return;
         }
 
         if (collider.tag.Contains("Enemy"))
@@ -103,16 +111,19 @@ public class BulletBehavior : MonoBehaviour
             }
 
             CameraShake.instance.StartShake(.2f, .1f);
-
-            if (deactivateArrowCoroutine != null)
+            if (!charged)
             {
-                StopCoroutine(deactivateArrowCoroutine);
+                StartCoroutine(DeactivateArrow(0.5f));
             }
+        }
+    }
 
-            if (gameObject.activeInHierarchy)
-            {
-                deactivateArrowCoroutine = StartCoroutine(DeactivateArrow(0.5f));
-            }
+    private IEnumerator DeactivateChargedArrow(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (gameObject.activeInHierarchy)
+        {
+            gameObject.SetActive(false);
         }
     }
 
@@ -129,19 +140,11 @@ public class BulletBehavior : MonoBehaviour
 
         spriteRenderer.enabled = true;
         boxCollider.enabled = true;
-        deactivateArrowCoroutine = null;
     }
 
-    private void Update()
+    private IEnumerator DeactivateArrowCooldown(float delay)
     {
-        if (!gameObject.activeInHierarchy) return;
-
-        timer += Time.deltaTime;
-
-        if (timer > 3f && deactivateArrowCoroutine == null)
-        {
-            deactivateArrowCoroutine = StartCoroutine(DeactivateArrow(0.5f));
-            timer = 0f;
-        }
+        yield return new WaitForSeconds(delay);
+        StartCoroutine(DeactivateArrow(0.5f));
     }
 }

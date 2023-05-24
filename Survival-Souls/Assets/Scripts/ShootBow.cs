@@ -7,6 +7,13 @@ public class ShootBow : MonoBehaviour
     public Transform FirePoint;
     public float bulletSpeed = 5f;
 
+    private SpriteRenderer spriteRenderer;
+    private Color chargedColor = new Color(1f, 0.7f, 0f, 1.0f);
+
+    private bool shotCharged = false;
+    private float chargeTime = 0f;
+    private float chargeDuration = 3f;
+
     private bool doubleShotUnlocked = false;
     private bool chargedShotUnlocked = false;
 
@@ -14,22 +21,44 @@ public class ShootBow : MonoBehaviour
     {
         doubleShotUnlocked = JSONSaving.SharedInstance.LoadData().doubleShot;
         chargedShotUnlocked = JSONSaving.SharedInstance.LoadData().chargedShot;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-
-        if (Input.GetButtonUp("Fire1"))
+        if (chargedShotUnlocked)
         {
-            shot();
-            if (doubleShotUnlocked) {
-                Invoke("shot", 0.1f);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                chargeTime = 0f;
+            }
+
+            if (Input.GetButton("Fire1"))
+            {
+                chargeTime += Time.deltaTime;
+                spriteRenderer.color = Color.Lerp(Color.white, chargedColor, chargeTime / chargeDuration);
+
+                if (chargeTime >= chargeDuration)
+                {
+                    shotCharged = true;
+                }
             }
         }
-
-        if (Input.GetButtonUp("Special"))
+        
+        if (Input.GetButtonUp("Fire1"))
         {
-            chargedShot();
+            if (shotCharged)
+            {
+                shotCharged = false;
+                spriteRenderer.color = Color.white;
+                chargedShot();
+            } else {
+                shot();
+                if (doubleShotUnlocked)
+                {
+                    Invoke("shot", 0.1f);
+                }
+            }
         }
     }
 
@@ -58,27 +87,8 @@ public class ShootBow : MonoBehaviour
             chargedArrow.transform.position = FirePoint.position;
             chargedArrow.transform.rotation = FirePoint.rotation;
             Rigidbody2D rb = chargedArrow.GetComponent<Rigidbody2D>();
-            rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
+            rb.AddForce(FirePoint.right * bulletSpeed / 2, ForceMode2D.Impulse);
             chargedArrow.GetComponent<AudioSource>().Play();
         }
     }
-
-        /*void chargeShot()
-        {
-            GameObject bullet = Instantiate(Bullet, FirePoint.position, FirePoint.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(FirePoint.right * bulletSpeed * 2, ForceMode2D.Impulse);
-            bullet.transform.localScale = bullet.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
-        }
-
-        /*void supershot()
-        {
-            GameObject superbullet = Instantiate(SuperBullet, FirePoint.position, FirePoint.rotation);
-            Rigidbody2D rb = superbullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
-        }
-        */
-
 }
-
-

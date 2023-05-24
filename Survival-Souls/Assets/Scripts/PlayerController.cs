@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private SpriteRenderer bowSpriteRenderer;
-    private CapsuleCollider2D capsuleCollider2D;
 
     private Vector2 moveInput;
     private bool canMove;
@@ -39,7 +38,6 @@ public class PlayerController : MonoBehaviour
         simpleFlash = GetComponent<SimpleFlash>();
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         speed = speed * (1 + JSONSaving.SharedInstance.playerData.velocity * 0.125f);
         dashUnlocked = JSONSaving.SharedInstance.LoadData().dash;
     }

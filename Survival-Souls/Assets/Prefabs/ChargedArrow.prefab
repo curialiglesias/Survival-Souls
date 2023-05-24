@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 434774755533846293}
-  - component: {fileID: 434774755533846294}
   - component: {fileID: 434774755533846295}
+  - component: {fileID: 434774755533846294}
   - component: {fileID: 7961733357095640666}
   m_Layer: 0
   m_Name: ChargedArrow
@@ -37,6 +37,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434774755533846295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434774755533846288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3822e675176a84cba371baa429f66f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
 --- !u!82 &434774755533846294
 AudioSource:
   m_ObjectHideFlags: 0
@@ -133,19 +146,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &434774755533846295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434774755533846288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b3822e675176a84cba371baa429f66f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
 --- !u!50 &7961733357095640666
 Rigidbody2D:
   serializedVersion: 4
@@ -174,6 +174,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 434774755533846293}
     m_Modifications:
+    - target: {fileID: -437722302127339142, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
+      propertyPath: m_Size.x
+      value: 0.25283018
+      objectReference: {fileID: 0}
+    - target: {fileID: -437722302127339142, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.014277447
+      objectReference: {fileID: 0}
     - target: {fileID: 4672002943666498013, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
       propertyPath: m_Name
       value: subArrow center
@@ -255,6 +263,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 434774755533846293}
     m_Modifications:
+    - target: {fileID: -437722302127339142, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
+      propertyPath: m_Size.x
+      value: 0.19914408
+      objectReference: {fileID: 0}
+    - target: {fileID: -437722302127339142, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.041120492
+      objectReference: {fileID: 0}
     - target: {fileID: 4672002943666498013, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
       propertyPath: m_Name
       value: subArrow superior
@@ -340,6 +356,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 434774755533846293}
     m_Modifications:
+    - target: {fileID: -437722302127339142, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
+      propertyPath: m_Size.x
+      value: 0.19914408
+      objectReference: {fileID: 0}
+    - target: {fileID: -437722302127339142, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.041120492
+      objectReference: {fileID: 0}
     - target: {fileID: 4672002943666498013, guid: 798cff1c9b212e9409ed770971c50009, type: 3}
       propertyPath: m_Name
       value: subArrow inferior
