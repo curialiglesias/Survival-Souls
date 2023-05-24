@@ -18,7 +18,15 @@ public class PickUp : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             player.GetComponent<PlayerLife>().Heal(healAmount);
-            GetComponent<AudioSource>().Play();
+            if(this.transform.localScale.x == 0.5f)
+            {
+                GameObject.Find("BigSoulSound").GetComponent<AudioSource>().Play();
+            }
+            else
+            {
+                GameObject.Find("LittleSoulSound").GetComponent<AudioSource>().Play();
+            }
+            //GetComponent<AudioSource>().Play();
             gameObject.SetActive(false);
         }
     }

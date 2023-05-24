@@ -7,16 +7,11 @@ using UnityEngine;
 public class BlackGolem : Enemy
 {
     private float x, y;
-    private float spikeDelay = 2f;
+    private float spikeDelay = 1f;
     private float spikeInactive = 3f;
     private int spikeCounter = 5;
 
     public Cooldowns spikeCooldown = new(20);
-
-    private void Awake()
-    {
-        
-    }
 
     protected override void TrackPlayer()
     {
