@@ -74,7 +74,6 @@ public class RockGolem : Enemy
         enemyRocks.Add(rock);
         Rigidbody2D rb = rock.GetComponent<Rigidbody2D>();
         rb.AddForce(distanceToPlayer.normalized * bulletSpeed, ForceMode2D.Impulse);
-        //rock.GetComponent<AudioSource>().Play();
     }
 
     private void OnDisable()
