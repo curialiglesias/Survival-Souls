@@ -75,4 +75,21 @@ public class ObjectPools : MonoBehaviour
 
         return actives;
     }
+
+    public void DeactivateAllObjects()
+    {
+        foreach (ObjectPoolItem item in itemsToPool)
+        {
+            for (int i = 0; i < item.amount; i++)
+            {
+                foreach (GameObject obj in pooledObjects)
+                {
+                    if (obj.activeInHierarchy)
+                    {
+                        obj.SetActive(false);
+                    }
+                }
+            }
+        }
+    }
 }
