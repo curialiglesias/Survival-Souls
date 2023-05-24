@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 174048226019765838}
   m_Layer: 0
   m_Name: Rock_huge
-  m_TagString: EnemyRock
+  m_TagString: EnemyRockHuge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,4 +248,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99dc56f8057a682419a8875b2053c597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 3
+  time: 5

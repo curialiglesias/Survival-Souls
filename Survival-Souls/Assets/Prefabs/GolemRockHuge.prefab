@@ -41,8 +41,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4451310298821016364}
-  - component: {fileID: 3720723312731444073}
   - component: {fileID: 7667863037695847975}
+  - component: {fileID: 3720723312731444073}
   - component: {fileID: 3872346830623516169}
   - component: {fileID: 5366671481967575554}
   - component: {fileID: 5674598356674944344}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 2526637007702479876}
   m_Layer: 0
   m_Name: GolemRockHuge
-  m_TagString: GolemrockEnemy
+  m_TagString: GolemHugeEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,28 +72,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3720723312731444073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3263923127074907218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0629a70127759fe48895c6b22dba21be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canMove: 0
-  HP: 1000
-  initialHP: 1000
-  damage: 30
-  level: 0
-  distanceToPlayer: {x: 0, y: 0}
-  bulletSpeed: 5
-  attackTime: 0.5
-  shootingDistance: 2
-  shootInterval: 2
 --- !u!95 &7667863037695847975
 Animator:
   serializedVersion: 4
@@ -114,6 +92,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3720723312731444073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263923127074907218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0629a70127759fe48895c6b22dba21be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 0
+  HP: 1000
+  initialHP: 1000
+  damage: 30
+  level: 0
+  distanceToPlayer: {x: 0, y: 0}
+  bulletSpeed: 5
+  attackTime: 0.5
+  shootingDistance: 10
+  shootInterval: 2
 --- !u!212 &3872346830623516169
 SpriteRenderer:
   m_ObjectHideFlags: 0
