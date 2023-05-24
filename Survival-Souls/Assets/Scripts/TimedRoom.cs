@@ -141,11 +141,8 @@ public class TimedRoom : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player" && done)
         {
             collision.gameObject.GetComponent<PlayerLife>().HP = 200;
-
-                HallManager.SharedInstance.LightNextRoom();
-                HallManager.SharedInstance.OpenNextDoor();
-
             collision.attachedRigidbody.transform.position = initialPosition;
+            HallManager.SharedInstance.LightNextRoom();
         }
     }
 

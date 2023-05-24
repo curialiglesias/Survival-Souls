@@ -12,7 +12,7 @@ public class UnlockNextRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GetComponentsInChildren<Transform>().GetLength(0));
+
 
         if ( GetComponentsInChildren<Transform>().GetLength(0) == condition && !stop)
         {
