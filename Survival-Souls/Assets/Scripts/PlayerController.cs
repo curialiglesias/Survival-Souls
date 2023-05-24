@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour
     private float dashCoolCounter = 0f;
 
     private bool dashUnlocked = false;
-    private bool doubleShotUnlocked = false;
-    private bool chargedShotUnlocked = false;
 
     void Start()
     {
@@ -44,8 +42,6 @@ public class PlayerController : MonoBehaviour
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         speed = speed * (1 + JSONSaving.SharedInstance.playerData.velocity * 0.125f);
         dashUnlocked = JSONSaving.SharedInstance.LoadData().dash;
-        doubleShotUnlocked = JSONSaving.SharedInstance.LoadData().doubleShot;
-        chargedShotUnlocked = JSONSaving.SharedInstance.LoadData().chargedShot;
     }
 
     void Update()

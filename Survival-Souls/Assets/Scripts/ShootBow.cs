@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class ShootBow : MonoBehaviour
 {
-
     public Transform FirePoint;
-    public float bulletSpeed = 20f;
+    public float bulletSpeed = 5f;
 
-    // Update is called once per frame
+    private bool doubleShotUnlocked = false;
+    private bool chargedShotUnlocked = false;
+
+    void Start()
+    {
+        doubleShotUnlocked = JSONSaving.SharedInstance.LoadData().doubleShot;
+        chargedShotUnlocked = JSONSaving.SharedInstance.LoadData().chargedShot;
+    }
 
     void Update()
     {
@@ -16,6 +22,9 @@ public class ShootBow : MonoBehaviour
         if (Input.GetButtonUp("Fire1"))
         {
             shot();
+            if (doubleShotUnlocked) {
+                Invoke("shot", 0.1f);
+            }
         }
     }
 
