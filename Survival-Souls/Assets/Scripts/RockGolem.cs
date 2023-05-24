@@ -6,7 +6,7 @@ public class RockGolem : Enemy
 {
     [SerializeField] private float bulletSpeed = 10f;
     [SerializeField] private float attackTime = 0.5f;
-    [SerializeField] private float shootingDistance = 2f;
+    public float shootingDistance = 2f;
     [SerializeField] private float shootInterval = 2f;
 
     private List<GameObject> enemyRocks = new List<GameObject>();
@@ -66,7 +66,14 @@ public class RockGolem : Enemy
 
     private void Shoot()
     {
-        GameObject rock = ObjectPools.SharedInstance.GetPooledObject("EnemyRock");
+        GameObject rock;
+        if (CompareTag("GolemHugeEnemy"))
+        {
+            rock = ObjectPools.SharedInstance.GetPooledObject("EnemyRockHuge");
+        } else {
+            rock = ObjectPools.SharedInstance.GetPooledObject("EnemyRock");
+        }
+
         if (rock == null) return;
         rock.transform.position = firePoint.position;
         rock.transform.rotation = firePoint.rotation;
