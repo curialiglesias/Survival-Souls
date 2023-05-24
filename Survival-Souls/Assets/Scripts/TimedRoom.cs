@@ -15,8 +15,8 @@ public class TimedRoom : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("TickLight", 10, 30);
         StartCoroutine(spawnEnemy(delay));
+        InvokeRepeating("TickLight", 10, 30);
     }
 
     // Update is called once per frame
