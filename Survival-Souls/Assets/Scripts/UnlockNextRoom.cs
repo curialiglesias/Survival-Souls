@@ -18,6 +18,7 @@ public class UnlockNextRoom : MonoBehaviour
         {
             stop = true;
             door1.SetActive(false);
+            this.enabled = false;
         }
     }
 }
