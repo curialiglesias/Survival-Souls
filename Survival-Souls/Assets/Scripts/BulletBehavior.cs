@@ -26,7 +26,7 @@ public class BulletBehavior : MonoBehaviour
         if (CompareTag("chargedArrow"))
         {
             charged = true;
-            damage *= 10;
+            damage *= 5;
             StartCoroutine(DeactivateChargedArrow(10f));
         } else {
             StartCoroutine(DeactivateArrowCooldown(3f));
@@ -42,7 +42,7 @@ public class BulletBehavior : MonoBehaviour
             return;
         }
 
-        if (collider.tag.Contains("SceneCollider") || collider.CompareTag("EnemySpike") || collider.CompareTag("EnemyRock"))
+        if (collider.tag.Contains("SceneCollider") || collider.CompareTag("EnemySpike") || collider.CompareTag("EnemyRock") || collider.CompareTag("EnemyRockHuge"))
         {
             if (!charged)
             {
@@ -56,6 +56,7 @@ public class BulletBehavior : MonoBehaviour
             GameObject.Find("CollisionSound").GetComponent<AudioSource>().Play();
 
             var enemy = collider.GetComponent<Enemy>();
+            Debug.Log(enemy);
             enemy.HP -= (damage);
             enemyCollided = collider;
 
