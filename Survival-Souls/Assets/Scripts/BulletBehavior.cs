@@ -29,14 +29,23 @@ public class BulletBehavior : MonoBehaviour
     {
         if (!gameObject.activeInHierarchy) return;
 
-        if (collider.CompareTag("Drop") || collider.CompareTag("EnemySpike") || collider.CompareTag("EnemyRock"))
+        if (collider.tag.Contains("Drop") || collider.tag.Contains("iceCollider"))
         {
             return;
         }
 
+        if (collider.tag.Contains("SceneCollider") || collider.CompareTag("EnemySpike") || collider.CompareTag("EnemyRock"))
+        {
+            if (gameObject.activeInHierarchy)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
+        }
+
         if (collider.tag.Contains("Enemy"))
         {
-            this.gameObject.GetComponent<AudioSource>().Play();
+            GameObject.Find("CollisionSound").GetComponent<AudioSource>().Play();
 
             var enemy = collider.GetComponent<Enemy>();
             enemy.HP -= (damage);
