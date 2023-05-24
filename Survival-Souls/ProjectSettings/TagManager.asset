@@ -21,6 +21,7 @@ TagManager:
   - DropLowLife
   - SceneCollider
   - chargedArrow
+  - EnemyRockHuge
   layers:
   - Default
   - TransparentFX
