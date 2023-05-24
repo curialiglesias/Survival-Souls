@@ -1,7 +1,6 @@
-   using System.Collections;
+using System.Collections;
 using UnityEngine;
-
-
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
@@ -21,14 +20,20 @@ public class Spawner : MonoBehaviour
     }
     void Start()
     {
-        time = GameObject.Find("Clock").GetComponent<Clock>().time;
-        StartCoroutine(spawnEnemy(delay));
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        time = Clock.SharedInstance.time;
+
+        if (sceneName != "Map2")
+        {
+            StartCoroutine(spawnEnemy(delay));
+        }
+
+
     }
 
-    void Update()
-    {
-        time = GameObject.Find("Clock").GetComponent<Clock>().time;
-    }
+
 
     //String enemyTag
     public void creditGain(int addedCredit)
@@ -44,6 +49,8 @@ public class Spawner : MonoBehaviour
         x = UnityEngine.Random.Range(-7.0f, 8.0f);
         y = UnityEngine.Random.Range(-7.0f, 3.5f);
         randomSpawn = UnityEngine.Random.Range(1, 4);
+
+        
 
         if (randomSpawn == 1)
         {
@@ -81,6 +88,8 @@ public class Spawner : MonoBehaviour
         GameObject golem = ObjectPools.SharedInstance.GetPooledObject("GolemEnemy");
         GameObject golemIce = ObjectPools.SharedInstance.GetPooledObject("GolemiceEnemy");
         GameObject golemRock = ObjectPools.SharedInstance.GetPooledObject("GolemrockEnemy");
+
+        time = Clock.SharedInstance.time;
 
         if (slime != null && golem != null && golemIce != null && golemRock != null)
         {

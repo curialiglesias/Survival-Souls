@@ -46,7 +46,7 @@ public class BulletBehavior : MonoBehaviour
                 var drop = collider.GetComponent<DropOnDestroy>();
                 drop.Drop();
                 enemy.HP = enemy.initialHP;
-                time = GameObject.Find("Clock").GetComponent<Clock>().time;
+                time = Clock.SharedInstance.time;
 
                 if (collider.CompareTag("GolemiceEnemy"))
                 {

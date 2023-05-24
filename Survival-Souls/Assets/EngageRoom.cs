@@ -6,7 +6,6 @@ using UnityEngine;
 public class EngageRoom : MonoBehaviour
 {
     public GameObject ScriptHolder;
-    public TimedRoom timedroom;
     private Boolean checkonce = false;
 
     private void OnTriggerEnter2D(Collider2D collision)

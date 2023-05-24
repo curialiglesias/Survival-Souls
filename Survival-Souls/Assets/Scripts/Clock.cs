@@ -14,7 +14,7 @@ public class Clock : MonoBehaviour
     public static Clock SharedInstance;
     public float time = 0;
     public TextMeshProUGUI clockText;
-    Boolean stop = false;
+    public Boolean stop = false;
 
 
     void Awake()
@@ -30,7 +30,7 @@ public class Clock : MonoBehaviour
             Display();
         }
     }
-    
+
     public void Display()
     {
         float minutes = Mathf.FloorToInt(time / 60);
