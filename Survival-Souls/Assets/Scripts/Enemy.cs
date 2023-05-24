@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ public class Enemy : MonoBehaviour
     public float HP;
     public float initialHP;
     public float damage;
-    private float level;
+    public float level;
     private float defense;
     private float decreaseRate;
     private float bonusPoints;
@@ -65,7 +66,9 @@ public class Enemy : MonoBehaviour
         level = (float)(auxAbilities + defense + damage + decreaseRate + bonusPoints + velocity + soulTime);
         level = level / 16;
 
+
         initialHP = initialHP * level;
+
         HP = initialHP;
         enemyAnimator = GetComponent<Animator>();
         player = GameObject.Find("Player");
