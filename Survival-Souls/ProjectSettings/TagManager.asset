@@ -20,6 +20,7 @@ TagManager:
   - HeadEnemy
   - DropLowLife
   - SceneCollider
+  - chargedArrow
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,6 @@ public class BulletBehavior : MonoBehaviour
     }
     private void Start()
     {
-        damage = 2;
         damage = damage * (1 + (JSONSaving.SharedInstance.playerData.damage * 0.25f));
         //deathParticle = GameObject.Find("pufParticles").GetComponent<ParticleSystem>();
     }

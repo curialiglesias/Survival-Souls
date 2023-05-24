@@ -26,6 +26,11 @@ public class ShootBow : MonoBehaviour
                 Invoke("shot", 0.1f);
             }
         }
+
+        if (Input.GetButtonUp("Fire2"))
+        {
+            chargedShot();
+        }
     }
 
     void shot()
@@ -41,7 +46,21 @@ public class ShootBow : MonoBehaviour
             rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
             arrow.GetComponent<AudioSource>().Play();
         }
-        
+    }
+
+    void chargedShot()
+    {
+        GameObject chargedArrow = ObjectPools.SharedInstance.GetPooledObject("chargedArrow");
+
+        if (chargedArrow != null)
+        {
+            chargedArrow.SetActive(true);
+            chargedArrow.transform.position = FirePoint.position;
+            chargedArrow.transform.rotation = FirePoint.rotation;
+            Rigidbody2D rb = chargedArrow.GetComponent<Rigidbody2D>();
+            rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
+            chargedArrow.GetComponent<AudioSource>().Play();
+        }
     }
 
         /*void chargeShot()
