@@ -36,6 +36,8 @@ public class BulletBehavior : MonoBehaviour
 
         if (collider.tag.Contains("Enemy"))
         {
+            this.gameObject.GetComponent<AudioSource>().Play();
+
             var enemy = collider.GetComponent<Enemy>();
             enemy.HP -= (damage);
             enemyCollided = collider;

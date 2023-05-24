@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,7 +45,7 @@ public class ShootBow : MonoBehaviour
             arrow.transform.rotation = FirePoint.rotation;
             Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
             rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
-            arrow.GetComponent<AudioSource>().Play();
+            this.transform.GetChild(0).GetChild(0).GetComponent<AudioSource>().Play();
         }
     }
 
@@ -59,7 +60,7 @@ public class ShootBow : MonoBehaviour
             chargedArrow.transform.rotation = FirePoint.rotation;
             Rigidbody2D rb = chargedArrow.GetComponent<Rigidbody2D>();
             rb.AddForce(FirePoint.right * bulletSpeed, ForceMode2D.Impulse);
-            chargedArrow.GetComponent<AudioSource>().Play();
+            this.transform.GetChild(0).GetChild(0).GetComponent<AudioSource>().Play();
         }
     }
 
