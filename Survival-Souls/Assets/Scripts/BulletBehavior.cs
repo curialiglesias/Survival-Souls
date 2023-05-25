@@ -56,7 +56,6 @@ public class BulletBehavior : MonoBehaviour
             GameObject.Find("CollisionSound").GetComponent<AudioSource>().Play();
 
             var enemy = collider.GetComponent<Enemy>();
-            Debug.Log(enemy);
             enemy.HP -= (damage);
             enemyCollided = collider;
 

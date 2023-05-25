@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class LightPath : MonoBehaviour
 {
-    private Light2D light;
+    private new Light2D light;
     private SpriteRenderer spriterenderer;
     private void Start()
     {
@@ -18,7 +18,6 @@ public class LightPath : MonoBehaviour
         if( GetComponentsInChildren<Transform>().GetLength(0) == 1)
         {
             LightPathOn();
-            Debug.Log("is lit");
             this.enabled = false;
         }
     }
