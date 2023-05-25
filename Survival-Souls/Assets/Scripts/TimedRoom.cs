@@ -22,7 +22,7 @@ public class TimedRoom : MonoBehaviour
     void Start()
     {
         StartCoroutine(spawnEnemy(delay));
-        InvokeRepeating("TickLight", 1, 1);
+        InvokeRepeating("TickLight", 1, 30);
 
     }
 

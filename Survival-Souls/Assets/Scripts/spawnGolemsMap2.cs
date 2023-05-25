@@ -6,10 +6,11 @@ using UnityEngine;
 public class spawnGolemsMap2 : MonoBehaviour
 {
     private float delay = 2;
-    private float x, y;
+    private float x, y, HP;
     private float i = 0;
     private int randomSpawn;
     public static Spawner SharedInstance;
+    public GameObject enemy;
 
 
     void Start()
@@ -137,11 +138,23 @@ public class spawnGolemsMap2 : MonoBehaviour
         GameObject golemIce = ObjectPools.SharedInstance.GetPooledObject("GolemiceEnemy");
         GameObject golemRock = ObjectPools.SharedInstance.GetPooledObject("GolemrockEnemy");
 
+        HP = enemy.GetComponent<Enemy>().HP;
+
+
 
         if (golem != null && golemIce != null && golemRock != null)
         {
+            if (HP > 500)
+            {
+                yield return new WaitForSeconds(4f);
+
+            }
+            else
+            {
+                yield return new WaitForSeconds(2f);
+
+            }
             setActiveGolems(golem, golemIce, golemRock);
-            yield return new WaitForSeconds(4f);
             StartCoroutine(spawnEnemy(delay));
 
         }

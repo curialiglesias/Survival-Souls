@@ -11,13 +11,17 @@ public class RIPGreyoll : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         HP = enemy.GetComponent<Enemy>().HP;
-        if (collision.tag.Contains("Enemy")) {
-            Debug.Log(HP);
-            Debug.Log("ENTRO");
+        if (collision.tag.Contains("Golem")) {
             enemy.GetComponent<Enemy>().HP = HP - 100;
-            Debug.Log(HP);
-            Debug.Log(enemy.GetComponent<Enemy>().HP);
+        }
+    }
 
+    private void Update()
+    {
+        HP = enemy.GetComponent<Enemy>().HP;
+        if(HP <= 0)
+        {
+            enemy.SetActive(false);
         }
     }
 

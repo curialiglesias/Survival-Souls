@@ -1,0 +1,875 @@
+fileFormatVersion: 2
+guid: 03cffc2b332eea44f85aee3fbc1fe1ac
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Arm_1 copia 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 506
+      y: 656
+      width: 140
+      height: 212
+    spriteID: 20a9503448a3edb41b1d000cfe6f5d1d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 506, y: 656}
+    spritePosition: {x: 1386, y: 1303}
+  - name: <Grupo>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1806
+      width: 392
+      height: 234
+    spriteID: 968596f8cd45e9c4682da88d8ba5909e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1806}
+    spritePosition: {x: 1157, y: 1319}
+  - name: "<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1033
+      width: 420
+      height: 257
+    spriteID: d85c5ce1ee5512d47bfbc212237e2c2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1033}
+    spritePosition: {x: 1139, y: 1307}
+  - name: Orejas copia 12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 506
+      y: 4
+      width: 155
+      height: 318
+    spriteID: 39d02014038c6a541a9ac5ba7f3da648
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 506, y: 4}
+    spritePosition: {x: 1507, y: 1631}
+  - name: Pecas copia 9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 506
+      y: 1233
+      width: 155
+      height: 68
+    spriteID: 8300c8216f6508547857ec4ac49ba2ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 506, y: 1233}
+    spritePosition: {x: 1199, y: 1755}
+  - name: Ojo copia 12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 506
+      y: 1096
+      width: 115
+      height: 129
+    spriteID: 1f58f001345415b4fbac25b342e2a5ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 506, y: 1096}
+    spritePosition: {x: 1124, y: 1656}
+  - name: Ojo copia 12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 669
+      y: 180
+      width: 185
+      height: 161
+    spriteID: bcd995f75cbc1324e8ec7699e0b15ff4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 669, y: 180}
+    spritePosition: {x: 1296, y: 1655}
+  - name: "<Trazado>\_+\_<Trazado>"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 404
+      y: 1690
+      width: 92
+      height: 88
+    spriteID: e47d01dc57201844a80e09526c22a63f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 404, y: 1690}
+    spritePosition: {x: 1127, y: 1647}
+  - name: Arrugas copia 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 404
+      y: 1806
+      width: 94
+      height: 78
+    spriteID: 4f44e10eedcd0294ca203d4635bbc9e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 404, y: 1806}
+    spritePosition: {x: 1224, y: 1770}
+  - name: <Grupo>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 506
+      y: 1379
+      width: 116
+      height: 32
+    spriteID: c31bc5bec72f8d747b9f5818a0c27d7d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 506, y: 1379}
+    spritePosition: {x: 1209, y: 1565}
+  - name: <Trazado>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 506
+      y: 1309
+      width: 142
+      height: 62
+    spriteID: e90387e5a66e48348a4237ed10007a9e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 506, y: 1309}
+    spritePosition: {x: 1195, y: 1542}
+  - name: Nariz copia 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 918
+      y: 130
+      width: 53
+      height: 30
+    spriteID: 2605375f5fa896442b40dcc452768baf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 918, y: 130}
+    spritePosition: {x: 1239, y: 1630}
+  - name: Cuerno copia 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 599
+      width: 453
+      height: 426
+    spriteID: bf52b861d724b9540ac7184f2dac289f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 599}
+    spritePosition: {x: 1095, y: 1830}
+  - name: "<Trazado>\_+\_<Trazado>"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 494
+      height: 587
+    spriteID: 658db78aa1370444daee082d359512b0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 1113, y: 1465}
+  - name: Orejas copia 12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 506
+      y: 330
+      width: 155
+      height: 318
+    spriteID: 0a8148512d0d13c47a0a237026fd5e60
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 506, y: 330}
+    spritePosition: {x: 1050, y: 1644}
+  - name: Arm_2 copia 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 506
+      y: 876
+      width: 140
+      height: 212
+    spriteID: e803d1e1e7116c344b8746d1f0ada17a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 506, y: 876}
+    spritePosition: {x: 1114, y: 1303}
+  - name: Chest copia 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 669
+      y: 4
+      width: 241
+      height: 168
+    spriteID: 1bdda60eb3f90b54fb6a5d3c12b2c729
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 669, y: 4}
+    spritePosition: {x: 1200, y: 1340}
+  - name: Leg_1 copia 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 404
+      y: 1563
+      width: 91
+      height: 119
+    spriteID: 983df5108ad5f5642b44cca16944d3d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 404, y: 1563}
+    spritePosition: {x: 1336, y: 1259}
+  - name: Leg_2 copia 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 918
+      y: 4
+      width: 95
+      height: 118
+    spriteID: 33b2e510ddca5e949a29100d9d8648f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 918, y: 4}
+    spritePosition: {x: 1206, y: 1253}
+  - name: <Grupo>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1563
+      width: 392
+      height: 235
+    spriteID: 9934582e23491ee40b952d65c1ec408c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1563}
+    spritePosition: {x: 835, y: 1312}
+  - name: "<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1298
+      width: 420
+      height: 257
+    spriteID: 78d649b620fd4fa41a29a3f1003aabef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1298}
+    spritePosition: {x: 817, y: 1301}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: LEFT
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 2a3b01ed8b80b4a42b29c774f70b1511
+    layerID: 36
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_1 copia 11
+    spriteName: Arm_1 copia 11
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 20a9503448a3edb41b1d000cfe6f5d1d
+    layerID: 35
+    mosaicPosition: {x: 506, y: 656}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Martillo copia 12
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 2b248e8c2d0d2f545a1b0cab9210ac98
+    layerID: 34
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: <Grupo>
+    spriteName: <Grupo>
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 968596f8cd45e9c4682da88d8ba5909e
+    layerID: 33
+    mosaicPosition: {x: 4, y: 1806}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>"
+    spriteName: "<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>"
+    isGroup: 0
+    parentIndex: 2
+    spriteID: d85c5ce1ee5512d47bfbc212237e2c2b
+    layerID: 32
+    mosaicPosition: {x: 4, y: 1033}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Head copia 9
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: b911f1d01a99e0844bf13fddb784397e
+    layerID: 30
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Orejas copia 12
+    spriteName: Orejas copia 12
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 39d02014038c6a541a9ac5ba7f3da648
+    layerID: 29
+    mosaicPosition: {x: 506, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pecas copia 9
+    spriteName: Pecas copia 9
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 8300c8216f6508547857ec4ac49ba2ae
+    layerID: 28
+    mosaicPosition: {x: 506, y: 1233}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ojos copia 11
+    spriteName: 
+    isGroup: 1
+    parentIndex: 5
+    spriteID: 386e785ac7686774fa0ff46dfee4a9f8
+    layerID: 27
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Ojo copia 12
+    spriteName: Ojo copia 12
+    isGroup: 0
+    parentIndex: 8
+    spriteID: 1f58f001345415b4fbac25b342e2a5ad
+    layerID: 26
+    mosaicPosition: {x: 506, y: 1096}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ojo copia 12
+    spriteName: Ojo copia 12
+    isGroup: 0
+    parentIndex: 8
+    spriteID: bcd995f75cbc1324e8ec7699e0b15ff4
+    layerID: 25
+    mosaicPosition: {x: 669, y: 180}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "<Trazado>\_+\_<Trazado>"
+    spriteName: "<Trazado>\_+\_<Trazado>"
+    isGroup: 0
+    parentIndex: 8
+    spriteID: e47d01dc57201844a80e09526c22a63f
+    layerID: 24
+    mosaicPosition: {x: 404, y: 1690}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Arrugas copia 11
+    spriteName: Arrugas copia 11
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 4f44e10eedcd0294ca203d4635bbc9e9
+    layerID: 22
+    mosaicPosition: {x: 404, y: 1806}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Boca copia 11
+    spriteName: 
+    isGroup: 1
+    parentIndex: 5
+    spriteID: 391f2597c2c007346b89abfebc41541c
+    layerID: 21
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: <Grupo>
+    spriteName: <Grupo>
+    isGroup: 0
+    parentIndex: 13
+    spriteID: c31bc5bec72f8d747b9f5818a0c27d7d
+    layerID: 20
+    mosaicPosition: {x: 506, y: 1379}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: <Trazado>
+    spriteName: <Trazado>
+    isGroup: 0
+    parentIndex: 13
+    spriteID: e90387e5a66e48348a4237ed10007a9e
+    layerID: 19
+    mosaicPosition: {x: 506, y: 1309}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Nariz copia 11
+    spriteName: Nariz copia 11
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 2605375f5fa896442b40dcc452768baf
+    layerID: 17
+    mosaicPosition: {x: 918, y: 130}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cuerno copia 5
+    spriteName: Cuerno copia 5
+    isGroup: 0
+    parentIndex: 5
+    spriteID: bf52b861d724b9540ac7184f2dac289f
+    layerID: 16
+    mosaicPosition: {x: 4, y: 599}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "<Trazado>\_+\_<Trazado>"
+    spriteName: "<Trazado>\_+\_<Trazado>"
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 658db78aa1370444daee082d359512b0
+    layerID: 15
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Orejas copia 12
+    spriteName: Orejas copia 12
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 0a8148512d0d13c47a0a237026fd5e60
+    layerID: 14
+    mosaicPosition: {x: 506, y: 330}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Body copia 9
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 7bcea39c388fc5e4782d4599bd422dbf
+    layerID: 12
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_2 copia 11
+    spriteName: Arm_2 copia 11
+    isGroup: 0
+    parentIndex: 20
+    spriteID: e803d1e1e7116c344b8746d1f0ada17a
+    layerID: 11
+    mosaicPosition: {x: 506, y: 876}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Chest copia 11
+    spriteName: Chest copia 11
+    isGroup: 0
+    parentIndex: 20
+    spriteID: 1bdda60eb3f90b54fb6a5d3c12b2c729
+    layerID: 10
+    mosaicPosition: {x: 669, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Leg_1 copia 11
+    spriteName: Leg_1 copia 11
+    isGroup: 0
+    parentIndex: 20
+    spriteID: 983df5108ad5f5642b44cca16944d3d9
+    layerID: 9
+    mosaicPosition: {x: 404, y: 1563}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Leg_2 copia 11
+    spriteName: Leg_2 copia 11
+    isGroup: 0
+    parentIndex: 20
+    spriteID: 33b2e510ddca5e949a29100d9d8648f7
+    layerID: 8
+    mosaicPosition: {x: 918, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Martillo copia 12
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 88924375c1d9a3e4885c359e98665dc7
+    layerID: 6
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: <Grupo>
+    spriteName: <Grupo>
+    isGroup: 0
+    parentIndex: 25
+    spriteID: 9934582e23491ee40b952d65c1ec408c
+    layerID: 5
+    mosaicPosition: {x: 4, y: 1563}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>"
+    spriteName: "<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Rect\xE1ngulo>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Rect\xE1ngulo>"
+    isGroup: 0
+    parentIndex: 25
+    spriteID: 78d649b620fd4fa41a29a3f1003aabef
+    layerID: 4
+    mosaicPosition: {x: 4, y: 1298}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

@@ -1,0 +1,907 @@
+fileFormatVersion: 2
+guid: 6fe8fcdc6c18b9e41a220ecd4d771e78
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Arm_1 copia 17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 670
+      y: 498
+      width: 140
+      height: 211
+    spriteID: 72a146f925631db4b8a6917cd75fca21
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 670, y: 498}
+    spritePosition: {x: 1368, y: 1427}
+  - name: Sword copia 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 952
+      width: 431
+      height: 292
+    spriteID: a54e0efe6ad2032469817595ab4f86dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 952}
+    spritePosition: {x: 1050, y: 1446}
+  - name: <Trazado>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 980
+      y: 280
+      width: 34
+      height: 41
+    spriteID: b37424d5cad66a8478fdd64b68859530
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 980, y: 280}
+    spritePosition: {x: 1123, y: 1752}
+  - name: Orejas copia 18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 226
+      y: 1691
+      width: 156
+      height: 318
+    spriteID: ee9854e3226117e479a3c02c3ef07576
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 226, y: 1691}
+    spritePosition: {x: 1488, y: 1754}
+  - name: Pecas copia 15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1950
+      width: 155
+      height: 67
+    spriteID: a1f807f3d0804b44eaef6386061db7d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1950}
+    spritePosition: {x: 1181, y: 1879}
+  - name: Ojo copia 16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 885
+      y: 4
+      width: 116
+      height: 129
+    spriteID: f4554b6a9382d8f49a62c6bd1e474a14
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 885, y: 4}
+    spritePosition: {x: 1105, y: 1779}
+  - name: Ojo copia 16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 670
+      y: 330
+      width: 185
+      height: 160
+    spriteID: a6a9f3a81b1ac2d42b5c6a5a567a8ca3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 670, y: 330}
+    spritePosition: {x: 1277, y: 1779}
+  - name: <Trazado>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 670
+      y: 717
+      width: 124
+      height: 115
+    spriteID: f1a3712ccb036f9409ba566cfeaba529
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 670, y: 717}
+    spritePosition: {x: 1313, y: 1761}
+  - name: Arrugas copia 15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 405
+      y: 725
+      width: 93
+      height: 78
+    spriteID: e3136b576e418bb43bc9c76c3a306818
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 405, y: 725}
+    spritePosition: {x: 1206, y: 1893}
+  - name: <Grupo>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 670
+      y: 911
+      width: 117
+      height: 33
+    spriteID: ede5ae99098bc30429a835c240624a55
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 670, y: 911}
+    spritePosition: {x: 1190, y: 1688}
+  - name: <Trazado>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 670
+      y: 840
+      width: 143
+      height: 63
+    spriteID: 8996b827f21834e4eb5fddde0979f9b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 670, y: 840}
+    spritePosition: {x: 1176, y: 1665}
+  - name: Nariz copia 15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 919
+      y: 280
+      width: 53
+      height: 29
+    spriteID: ba2a1310224ce4745bb1c20089953616
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 919, y: 280}
+    spritePosition: {x: 1221, y: 1754}
+  - name: 2 copia
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1252
+      width: 214
+      height: 471
+    spriteID: d8cada5a25e76e64e8272cea0a3a8f7c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1252}
+    spritePosition: {x: 1265, y: 1983}
+  - name: 1 copia
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 226
+      y: 1252
+      width: 196
+      height: 431
+    spriteID: cde5491b64c2e7447a3983c1e19dff71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 226, y: 1252}
+    spritePosition: {x: 1031, y: 1965}
+  - name: "<Trazado>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Trazado>"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 507
+      y: 4
+      width: 370
+      height: 142
+    spriteID: 7cab5a90c456ac94c947f19f6fd00d56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 507, y: 4}
+    spritePosition: {x: 1131, y: 1950}
+  - name: "<Trazado>\_+\_<Trazado>"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 495
+      height: 586
+    spriteID: 8513397b35d1f5d4ab7d167e5ca5e3e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 1094, y: 1589}
+  - name: Orejas copia 18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 507
+      y: 154
+      width: 155
+      height: 318
+    spriteID: df9467d9a2bd25e4eb8cbbde0dac6385
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 507, y: 154}
+    spritePosition: {x: 1032, y: 1767}
+  - name: Arm_2 copia 17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1731
+      width: 141
+      height: 211
+    spriteID: 20ecd22fb8bd46046833f211094fb3c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1731}
+    spritePosition: {x: 1095, y: 1427}
+  - name: Chest copia 17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 670
+      y: 154
+      width: 241
+      height: 168
+    spriteID: c4a4f2f2c379bd34f9ef4cb9c28d42f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 670, y: 154}
+    spritePosition: {x: 1181, y: 1464}
+  - name: Leg_1 copia 17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 405
+      y: 598
+      width: 91
+      height: 119
+    spriteID: 0381ea3d6f20bd945afb0c17c1c41195
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 405, y: 598}
+    spritePosition: {x: 1318, y: 1382}
+  - name: Leg_2 copia 17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 919
+      y: 154
+      width: 94
+      height: 118
+    spriteID: f5fca0d59b933c84f8674914f5a454e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 919, y: 154}
+    spritePosition: {x: 1188, y: 1377}
+  - name: Sword copia 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 598
+      width: 393
+      height: 346
+    spriteID: fc3f35e272f7e6f468ce9aad93725341
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 598}
+    spritePosition: {x: 788, y: 1443}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: LEFT
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: a4b5340338f18ea4595b117ea24f0a76
+    layerID: 35
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_1 copia 17
+    spriteName: Arm_1 copia 17
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 72a146f925631db4b8a6917cd75fca21
+    layerID: 34
+    mosaicPosition: {x: 670, y: 498}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Sword copia 7
+    spriteName: Sword copia 7
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a54e0efe6ad2032469817595ab4f86dd
+    layerID: 33
+    mosaicPosition: {x: 4, y: 952}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Head copia 15
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 6a7cf419330ac1a4cacbfc84990adbbe
+    layerID: 32
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: <Trazado>
+    spriteName: <Trazado>
+    isGroup: 0
+    parentIndex: 3
+    spriteID: b37424d5cad66a8478fdd64b68859530
+    layerID: 31
+    mosaicPosition: {x: 980, y: 280}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Orejas copia 18
+    spriteName: Orejas copia 18
+    isGroup: 0
+    parentIndex: 3
+    spriteID: ee9854e3226117e479a3c02c3ef07576
+    layerID: 30
+    mosaicPosition: {x: 226, y: 1691}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pecas copia 15
+    spriteName: Pecas copia 15
+    isGroup: 0
+    parentIndex: 3
+    spriteID: a1f807f3d0804b44eaef6386061db7d5
+    layerID: 29
+    mosaicPosition: {x: 4, y: 1950}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ojos copia 15
+    spriteName: 
+    isGroup: 1
+    parentIndex: 3
+    spriteID: 6801b7c2d0bf946458ee8658f4d247de
+    layerID: 28
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Ojo copia 16
+    spriteName: Ojo copia 16
+    isGroup: 0
+    parentIndex: 7
+    spriteID: f4554b6a9382d8f49a62c6bd1e474a14
+    layerID: 27
+    mosaicPosition: {x: 885, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ojo copia 16
+    spriteName: Ojo copia 16
+    isGroup: 0
+    parentIndex: 7
+    spriteID: a6a9f3a81b1ac2d42b5c6a5a567a8ca3
+    layerID: 26
+    mosaicPosition: {x: 670, y: 330}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: <Trazado>
+    spriteName: <Trazado>
+    isGroup: 0
+    parentIndex: 3
+    spriteID: f1a3712ccb036f9409ba566cfeaba529
+    layerID: 24
+    mosaicPosition: {x: 670, y: 717}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Arrugas copia 15
+    spriteName: Arrugas copia 15
+    isGroup: 0
+    parentIndex: 3
+    spriteID: e3136b576e418bb43bc9c76c3a306818
+    layerID: 23
+    mosaicPosition: {x: 405, y: 725}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Boca copia 15
+    spriteName: 
+    isGroup: 1
+    parentIndex: 3
+    spriteID: 33982ae094f221f429e0381956ee9418
+    layerID: 22
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: <Grupo>
+    spriteName: <Grupo>
+    isGroup: 0
+    parentIndex: 12
+    spriteID: ede5ae99098bc30429a835c240624a55
+    layerID: 21
+    mosaicPosition: {x: 670, y: 911}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: <Trazado>
+    spriteName: <Trazado>
+    isGroup: 0
+    parentIndex: 12
+    spriteID: 8996b827f21834e4eb5fddde0979f9b7
+    layerID: 20
+    mosaicPosition: {x: 670, y: 840}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Nariz copia 15
+    spriteName: Nariz copia 15
+    isGroup: 0
+    parentIndex: 3
+    spriteID: ba2a1310224ce4745bb1c20089953616
+    layerID: 18
+    mosaicPosition: {x: 919, y: 280}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cuerno copia 11
+    spriteName: 
+    isGroup: 1
+    parentIndex: 3
+    spriteID: e7b5fb0ccdcb05b458eec4dafb21d59c
+    layerID: 17
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: 2 copia
+    spriteName: 2 copia
+    isGroup: 0
+    parentIndex: 16
+    spriteID: d8cada5a25e76e64e8272cea0a3a8f7c
+    layerID: 16
+    mosaicPosition: {x: 4, y: 1252}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 1 copia
+    spriteName: 1 copia
+    isGroup: 0
+    parentIndex: 16
+    spriteID: cde5491b64c2e7447a3983c1e19dff71
+    layerID: 15
+    mosaicPosition: {x: 226, y: 1252}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "<Trazado>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Trazado>"
+    spriteName: "<Trazado>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Trazado>\_+\_<Trazado>"
+    isGroup: 0
+    parentIndex: 16
+    spriteID: 7cab5a90c456ac94c947f19f6fd00d56
+    layerID: 14
+    mosaicPosition: {x: 507, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "<Trazado>\_+\_<Trazado>"
+    spriteName: "<Trazado>\_+\_<Trazado>"
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 8513397b35d1f5d4ab7d167e5ca5e3e4
+    layerID: 12
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Orejas copia 18
+    spriteName: Orejas copia 18
+    isGroup: 0
+    parentIndex: 3
+    spriteID: df9467d9a2bd25e4eb8cbbde0dac6385
+    layerID: 11
+    mosaicPosition: {x: 507, y: 154}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Body copia 15
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 49d3a636065691943b72ff62f92b8336
+    layerID: 9
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arm_2 copia 17
+    spriteName: Arm_2 copia 17
+    isGroup: 0
+    parentIndex: 22
+    spriteID: 20ecd22fb8bd46046833f211094fb3c6
+    layerID: 8
+    mosaicPosition: {x: 4, y: 1731}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Chest copia 17
+    spriteName: Chest copia 17
+    isGroup: 0
+    parentIndex: 22
+    spriteID: c4a4f2f2c379bd34f9ef4cb9c28d42f9
+    layerID: 7
+    mosaicPosition: {x: 670, y: 154}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Leg_1 copia 17
+    spriteName: Leg_1 copia 17
+    isGroup: 0
+    parentIndex: 22
+    spriteID: 0381ea3d6f20bd945afb0c17c1c41195
+    layerID: 6
+    mosaicPosition: {x: 405, y: 598}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Leg_2 copia 17
+    spriteName: Leg_2 copia 17
+    isGroup: 0
+    parentIndex: 22
+    spriteID: f5fca0d59b933c84f8674914f5a454e8
+    layerID: 5
+    mosaicPosition: {x: 919, y: 154}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Sword copia 7
+    spriteName: Sword copia 7
+    isGroup: 0
+    parentIndex: 0
+    spriteID: fc3f35e272f7e6f468ce9aad93725341
+    layerID: 3
+    mosaicPosition: {x: 4, y: 598}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Fondo
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9e34f5f9398eaac4a9d57f1808fcde3d
+    layerID: 1
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
