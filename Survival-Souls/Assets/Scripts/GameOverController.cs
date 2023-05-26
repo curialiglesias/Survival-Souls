@@ -13,8 +13,11 @@ public class GameOverController : MonoBehaviour
 
     private void Start()
     {
-        TimeSurvivedText.text = "Time Survived: " + (int)Clock.SharedInstance.time + "s";
-        SoulPointsText.text = "SoulPoints: " + (int)(Clock.SharedInstance.time * (1 + (JSONSaving.SharedInstance.playerData.bonusPoints * 0.25f)));
+        if (SceneManager.GetActiveScene().name  == "SampleScene")
+        {
+            TimeSurvivedText.text = "Time Survived: " + (int)Clock.SharedInstance.time + "s";
+            SoulPointsText.text = "SoulPoints: " + (int)(Clock.SharedInstance.time * (1 + (JSONSaving.SharedInstance.playerData.bonusPoints * 0.25f)));
+        }
     }
     public void ReturnToMenu()
     {
