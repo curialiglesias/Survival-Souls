@@ -90,6 +90,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
   - name: Chest copia 15
@@ -112,7 +113,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -554, y: -510}
+    uvTransform: {x: 584, y: 990}
+    spritePosition: {x: 1138, y: 1500}
   - name: Arm_1 copia 15
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +135,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -656, y: -134}
+    uvTransform: {x: 396, y: 1329}
+    spritePosition: {x: 1052, y: 1463}
   - name: Arm_2 copia 15
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -154,7 +157,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -491, y: -473}
+    uvTransform: {x: 833, y: 990}
+    spritePosition: {x: 1324, y: 1463}
   - name: Leg_1 copia 15
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -175,7 +179,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -255, y: -1042}
+    uvTransform: {x: 891, y: 371}
+    spritePosition: {x: 1146, y: 1413}
   - name: Leg_2 copia 15
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -196,7 +201,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -694, y: -247}
+    uvTransform: {x: 584, y: 1166}
+    spritePosition: {x: 1278, y: 1413}
   - name: Pecas copia 13
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -217,7 +223,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -570, y: -1562}
+    uvTransform: {x: 497, y: 371}
+    spritePosition: {x: 1067, y: 1933}
   - name: Cresta copia
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -238,7 +245,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -440, y: -1359}
+    uvTransform: {x: 693, y: 591}
+    spritePosition: {x: 1133, y: 1950}
   - name: Cara copia 11
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -259,7 +267,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1012, y: -1625}
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 1016, y: 1629}
   - name: Orejas copia 16
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -280,7 +289,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -967, y: -841}
+    uvTransform: {x: 4, y: 990}
+    spritePosition: {x: 971, y: 1831}
   - name: Cuerno copia 9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -301,7 +311,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -911, y: -1420}
+    uvTransform: {x: 4, y: 591}
+    spritePosition: {x: 915, y: 2011}
   - name: Hacha copia 13
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -322,7 +333,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -282, y: -1442}
+    uvTransform: {x: 497, y: 4}
+    spritePosition: {x: 779, y: 1446}
   - name: Hacha copia 14
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -343,7 +355,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1349, y: -120}
+    uvTransform: {x: 4, y: 1329}
+    spritePosition: {x: 1353, y: 1449}
   characterData:
     bones: []
     parts: []
