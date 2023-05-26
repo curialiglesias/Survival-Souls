@@ -34,7 +34,7 @@ public class MapMenu : MonoBehaviour
         {
             mapUnlocked = false;
         }
-        map2Text.text = "Map 2";
+        map2Text.text = "Soul Trials";
         adviceText.color = Color.clear;
     }
 
@@ -70,7 +70,7 @@ public class MapMenu : MonoBehaviour
             adviceText.color = Color.Lerp(Color.white, Color.clear, timer / fadeDuration);
             yield return null;
         }
-        map2Text.text = "Map 2";
+        map2Text.text = "Soul Trials";
     }
 
     public void StartMap1()
