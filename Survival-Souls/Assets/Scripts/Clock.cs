@@ -61,6 +61,7 @@ public class Clock : MonoBehaviour
             if (time >= (minutesToUnlockMap2 * 60))
             {
                 check.map2unlocked = true;
+                Debug.Log("Map2 unlocked!");
             }
 
             JSONSaving.SharedInstance.SaveData(check);
