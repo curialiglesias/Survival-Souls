@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.IO;
+
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartMap1()
+    public GameObject mapMenu;
+    public GameObject upgradesMenu;
+    public GameObject upgradesButton;
+
+    void Start()
     {
-        SceneManager.LoadScene("SampleScene");
+        if (!System.IO.File.Exists(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json"))
+        {
+            upgradesButton.SetActive(false);
+        }
     }
 
-    public void StartMap2()
+    public void StartGame()
     {
-        SceneManager.LoadScene("Map2");
+        // Nonsense fix for a problem I don't understand about JSONSaving
+        if (System.IO.File.Exists(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json"))
+        {
+            upgradesMenu.SetActive(true);
+            upgradesMenu.SetActive(false);
+        }
+        mapMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void QuitApplication()
@@ -20,4 +35,5 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Exit game");
         Application.Quit();
     }
+ 
 }

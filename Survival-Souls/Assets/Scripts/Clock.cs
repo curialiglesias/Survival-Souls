@@ -15,6 +15,7 @@ public class Clock : MonoBehaviour
     public float time = 0;
     public TextMeshProUGUI clockText;
     public Boolean stop = false;
+    public int minutesToUnlockMap2 = 15;
 
 
     void Awake()
@@ -48,7 +49,7 @@ public class Clock : MonoBehaviour
 
         if (!System.IO.File.Exists(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json"))
         {
-            PlayerData player = new PlayerData(8, 0, 0, 8, 2, 0, 0, false, false, false);
+            PlayerData player = new PlayerData(8, 0, 0, 8, 2, 0, 0, false, false, false, false);
             JSONSaving.SharedInstance.SaveData(player);
         }
         else
@@ -56,6 +57,12 @@ public class Clock : MonoBehaviour
             PlayerData check = JSONSaving.SharedInstance.LoadData();
             time = time * (1 + (JSONSaving.SharedInstance.playerData.bonusPoints * 0.25f));
             check.points += (int)time;
+
+            if (time >= (minutesToUnlockMap2 * 60))
+            {
+                check.map2unlocked = true;
+            }
+
             JSONSaving.SharedInstance.SaveData(check);
             
         }

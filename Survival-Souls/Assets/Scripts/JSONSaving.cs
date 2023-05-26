@@ -56,7 +56,7 @@ public class JSONSaving : MonoBehaviour
     {
         if (!System.IO.File.Exists(Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json"))
         {
-            playerData = new PlayerData(0, 0, 0, 0, 0, 0, 0, false, false, false);
+            playerData = new PlayerData(0, 0, 0, 0, 0, 0, 0, false, false, false, false);
             SaveData(playerData);
         }
         else

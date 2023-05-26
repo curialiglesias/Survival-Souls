@@ -14,8 +14,9 @@ public class PlayerData
     public bool dash;
     public bool doubleShot;
     public bool chargedShot;
+    public bool map2unlocked;
 
-    public PlayerData(float points, float velocity, float damage, float defense, float soulTime, float decraseRate, float bonusPoints, bool dash, bool doubleShot, bool chargedShot)
+    public PlayerData(float points, float velocity, float damage, float defense, float soulTime, float decraseRate, float bonusPoints, bool dash, bool doubleShot, bool chargedShot, bool map2unlocked)
     {
         this.points = points;
         this.velocity = velocity;
@@ -27,5 +28,6 @@ public class PlayerData
         this.dash = dash;
         this.doubleShot = doubleShot;
         this.chargedShot = chargedShot;
+        this.map2unlocked = map2unlocked;
     }
 }
