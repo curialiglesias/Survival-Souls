@@ -9,6 +9,7 @@ public class TeleportCircle : MonoBehaviour
     public Boolean isTutorial;
     public TextMeshProUGUI pressE;
     private Vector2 initialPosition = new Vector2(0.097f, 7.75f);
+    public GameObject audio;
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -23,6 +24,7 @@ public class TeleportCircle : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                audio.GetComponent<AudioSource>().Play();
                 collision.gameObject.GetComponent<PlayerLife>().HP = 200;
 
                 if (!isTutorial)

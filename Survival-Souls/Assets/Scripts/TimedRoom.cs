@@ -14,6 +14,7 @@ public class TimedRoom : MonoBehaviour
     public TextMeshProUGUI pressE;
     private Vector2 initialPosition = new Vector2(0.097f, 7.75f);
     private Boolean done = false;
+    public GameObject audio;
 
 
     void Start()
@@ -139,6 +140,7 @@ public class TimedRoom : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                audio.GetComponent<AudioSource>().Play();
                 collision.gameObject.GetComponent<PlayerLife>().HP = 200;
                 collision.attachedRigidbody.transform.position = initialPosition;
                 HallManager.SharedInstance.LightNextRoom();

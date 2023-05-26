@@ -11,12 +11,13 @@ public class BossTeleport : MonoBehaviour
     private Vector2 initialPosition = new Vector2(-31.69f, -1.16f);
     public GameObject ScriptHolder1;
     public GameObject ScriptHolder2;
+    public GameObject audio;
     private void OnTriggerStay2D(Collider2D collision)
     {
         pressE.text = "E";
-
         if (Input.GetKeyDown(KeyCode.E))
         {
+            audio.GetComponent<AudioSource>().Play();
 
             ScriptHolder1.GetComponent<GreyollLegacy>().enabled = true;
             ScriptHolder2.GetComponent<spawnGolemsMap2>().enabled = true;
