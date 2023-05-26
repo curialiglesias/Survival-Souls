@@ -17,11 +17,15 @@ public class ShootBow : MonoBehaviour
     private bool doubleShotUnlocked = false;
     private bool chargedShotUnlocked = false;
 
+    private AudioSource chargedSoundAudioSource;
+    private bool playSound = false;
+
     void Start()
     {
         doubleShotUnlocked = JSONSaving.SharedInstance.LoadData().doubleShot;
         chargedShotUnlocked = JSONSaving.SharedInstance.LoadData().chargedShot;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        chargedSoundAudioSource = GameObject.Find("ChargedSound").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -31,6 +35,7 @@ public class ShootBow : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 chargeTime = 0f;
+                playSound = true;
             }
 
             if (Input.GetButton("Fire1"))
@@ -52,6 +57,7 @@ public class ShootBow : MonoBehaviour
                 shotCharged = false;
                 spriteRenderer.color = Color.white;
                 chargedShot();
+                chargedSoundAudioSource.Stop();
             } else {
                 shot();
                 if (doubleShotUnlocked)
@@ -59,6 +65,12 @@ public class ShootBow : MonoBehaviour
                     Invoke("shot", 0.1f);
                 }
             }
+        }
+
+        if (shotCharged && playSound)
+        {
+            chargedSoundAudioSource.Play();
+            playSound = false;
         }
     }
 
