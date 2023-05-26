@@ -133,14 +133,20 @@ public class TimedRoom : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        pressE.text = "E";
-
-        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player" && done)
+        if (done)
         {
-            collision.gameObject.GetComponent<PlayerLife>().HP = 200;
-            collision.attachedRigidbody.transform.position = initialPosition;
-            HallManager.SharedInstance.LightNextRoom();
+            pressE.text = "E";
+
+            if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player")
+            {
+                collision.gameObject.GetComponent<PlayerLife>().HP = 200;
+                collision.attachedRigidbody.transform.position = initialPosition;
+                HallManager.SharedInstance.LightNextRoom();
+            }
         }
+        
+
+        
     }
 
 
