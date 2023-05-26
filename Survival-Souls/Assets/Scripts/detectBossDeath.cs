@@ -9,10 +9,12 @@ public class detectBossDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         HP = enemy.GetComponent<Enemy>().HP;
         if(HP <= 0)
         {
-            this.GetComponent<detectBossDeath>().enabled = false;
+            this.GetComponent<spawnGolemsMap2>().enabled = false;
         }
+        
     }
 }
