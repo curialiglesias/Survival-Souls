@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3822e675176a84cba371baa429f66f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 1
 --- !u!82 &434774755533846294
 AudioSource:
   m_ObjectHideFlags: 0

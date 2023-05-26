@@ -27,6 +27,7 @@ public class BulletBehavior : MonoBehaviour
         {
             charged = true;
             damage *= 5;
+            Debug.Log(damage);
             StartCoroutine(DeactivateChargedArrow(10f));
         } else {
             StartCoroutine(DeactivateArrowCooldown(3f));
