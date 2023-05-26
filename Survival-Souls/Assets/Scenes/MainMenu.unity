@@ -4228,7 +4228,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To unlock Soul Trials you have to survive 15 minutes
+  m_text: To unlock Soul Trials you have to survive 15 minutes in Despair Forest
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a18d41525aeb12d46b987108b53eb28d, type: 2}
   m_sharedMaterial: {fileID: -1663025867196105146, guid: a18d41525aeb12d46b987108b53eb28d, type: 2}
@@ -4387,8 +4387,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 30.2806, y: -220.04}
-  m_SizeDelta: {x: 534.8569, y: 30}
+  m_AnchoredPosition: {x: 43.19609, y: -220.04}
+  m_SizeDelta: {x: 391.3236, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &981667142
 GameObject:
