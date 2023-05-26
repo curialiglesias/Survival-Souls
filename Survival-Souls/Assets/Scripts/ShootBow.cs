@@ -20,12 +20,15 @@ public class ShootBow : MonoBehaviour
     private AudioSource chargedSoundAudioSource;
     private bool playSound = false;
 
+    private FreezingController freezingController;
+
     void Start()
     {
         doubleShotUnlocked = JSONSaving.SharedInstance.LoadData().doubleShot;
         chargedShotUnlocked = JSONSaving.SharedInstance.LoadData().chargedShot;
         spriteRenderer = GetComponent<SpriteRenderer>();
         chargedSoundAudioSource = GameObject.Find("ChargedSound").GetComponent<AudioSource>();
+        freezingController = GetComponent<FreezingController>();
     }
 
     void Update()
@@ -41,8 +44,11 @@ public class ShootBow : MonoBehaviour
             if (Input.GetButton("Fire1"))
             {
                 chargeTime += Time.deltaTime;
-                spriteRenderer.color = Color.Lerp(Color.white, chargedColor, chargeTime / chargeDuration);
-
+                if (!freezingController.isActive)
+                {
+                    spriteRenderer.color = Color.Lerp(Color.white, chargedColor, chargeTime / chargeDuration);
+                }
+                
                 if (chargeTime >= chargeDuration)
                 {
                     shotCharged = true;
