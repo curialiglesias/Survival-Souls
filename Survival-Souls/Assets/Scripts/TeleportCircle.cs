@@ -17,20 +17,24 @@ public class TeleportCircle : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        pressE.text = "E";
-
-        if (Input.GetKeyDown(KeyCode.E))
+        if(collision.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerLife>().HP = 200;
+            pressE.text = "E";
 
-            if (!isTutorial)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                HallManager.SharedInstance.LightNextRoom();
-                HallManager.SharedInstance.OpenNextDoor();
-            }
+                collision.gameObject.GetComponent<PlayerLife>().HP = 200;
 
-            collision.attachedRigidbody.transform.position = initialPosition;
+                if (!isTutorial)
+                {
+                    HallManager.SharedInstance.LightNextRoom();
+                    HallManager.SharedInstance.OpenNextDoor();
+                }
+
+                collision.attachedRigidbody.transform.position = initialPosition;
+            }
         }
+        
     }
 
 

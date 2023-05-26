@@ -10,11 +10,15 @@ public class CreditsTeleport : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        pressE.text = "E";
-
-        if (Input.GetKeyDown(KeyCode.E))
+        if (collision.tag == "Player")
         {
-            collision.attachedRigidbody.transform.position = initialPosition;
+            pressE.text = "E";
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                collision.attachedRigidbody.transform.position = initialPosition;
+            }
         }
+       
     }
 }

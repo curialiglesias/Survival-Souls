@@ -19,7 +19,7 @@ public class TimedRoom : MonoBehaviour
     void Start()
     {
         StartCoroutine(spawnEnemy(delay));
-        InvokeRepeating("TickLight", 1, 30);
+        InvokeRepeating("TickLight", 1, 1);
 
     }
 
@@ -133,11 +133,11 @@ public class TimedRoom : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (done)
+        if (done && collision.tag == "Player")
         {
             pressE.text = "E";
 
-            if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player")
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 collision.gameObject.GetComponent<PlayerLife>().HP = 200;
                 collision.attachedRigidbody.transform.position = initialPosition;
