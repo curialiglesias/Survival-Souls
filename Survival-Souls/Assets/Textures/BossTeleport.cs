@@ -12,6 +12,8 @@ public class BossTeleport : MonoBehaviour
     public GameObject ScriptHolder1;
     public GameObject ScriptHolder2;
     public GameObject audio;
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         pressE.text = "E";
@@ -23,6 +25,11 @@ public class BossTeleport : MonoBehaviour
             ScriptHolder2.GetComponent<spawnGolemsMap2>().enabled = true;
             collision.attachedRigidbody.transform.position = initialPosition;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        pressE.text = "";
     }
 
 }

@@ -9,13 +9,14 @@ public class RIPGreyoll : MonoBehaviour
     public GameObject enemy;
     public GameObject slider;
     private float HP;
+    public GameObject player;
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        HP = enemy.GetComponent<Enemy>().HP;
-        if (collision.tag.Contains("Golem")) {
+        if (collision.tag.Contains("Golem") && !player.GetComponent<PlayerController>().isDashing) {
             enemy.GetComponent<Enemy>().HP = HP - 100;
         }
+
     }
 
     private void Update()

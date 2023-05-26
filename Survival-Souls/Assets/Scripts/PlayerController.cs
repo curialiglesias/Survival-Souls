@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private FreezingController freezingController;
     private SimpleFlash simpleFlash;
 
-    private bool isDashing = false;
+    public bool isDashing = false;
     private float dashDuration = 0.2f;
     private float dashCooldown = 1f;
 
